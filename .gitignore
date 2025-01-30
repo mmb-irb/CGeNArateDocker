@@ -1,0 +1,9 @@
+.DS_Store
+db/
+data/
+*.json
+*.pdb
+*.env
+*.ok.yml
+*.old
+website/config.php
