@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Wait for MongoDB to be read"
+# Wait for MongoDB to be ready before importing the data
 until mongosh "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@${DB_HOST}:${MONGO_PORT}/${MONGO_INITDB_DATABASE}?authSource=admin" --eval "db.stats()" >/dev/null 2>&1; do 
   echo "Waiting for MongoDB..."
   sleep 2

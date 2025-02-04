@@ -19,6 +19,23 @@ COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 # Perform search and replace using sed
 RUN sed -i "s/WEBSITE_INNER_PORT/${WEBSITE_INNER_PORT}/g" /etc/apache2/sites-available/000-default.conf
 
+# Change working directory to /app
+WORKDIR /app
+
+# Create the entrypoint script to create the symbolic link to the data folder
+RUN echo '#!/bin/sh' > entrypoint.sh && \
+    echo 'set -e' >> entrypoint.sh && \
+    echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \
+    echo 'ln -sf /data/Web /var/www/html/public/data' >> entrypoint.sh && \
+    echo 'exec "$@"' >> entrypoint.sh && \
+    chmod +x entrypoint.sh
+
+# Change working directory to /var/www/html
+WORKDIR /var/www/html
+
+# Expose the port
 EXPOSE ${WEBSITE_INNER_PORT}
 
+# Start the server
+ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["apache2-foreground"]

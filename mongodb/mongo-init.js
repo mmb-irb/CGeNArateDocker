@@ -11,6 +11,6 @@ db.createUser({
   ]
 });
 
-// Create a collections
+// Create predefined collections
 db.createCollection(process.env.DB_COLLECTION_WFS);
 db.createCollection(process.env.DB_COLLECTION_PRJ);

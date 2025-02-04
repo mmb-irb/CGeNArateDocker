@@ -17,7 +17,7 @@ docker stack deploy -c docker-compose.yml my_stack
 
 ## Credits
 
-Davif Farré-Gil, Genís Bayarri, Adam Hospital.
+David Farré-Gil, Genís Bayarri, Adam Hospital.
 
 ## Copyright & licensing
 
