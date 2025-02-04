@@ -10,3 +10,7 @@ db.createUser({
     { role: 'readWrite', db: process.env.MONGO_INITDB_DATABASE }
   ]
 });
+
+// Create a collections
+db.createCollection(process.env.DB_COLLECTION_WFS);
+db.createCollection(process.env.DB_COLLECTION_PRJ);

@@ -1,7 +1,19 @@
 
 # CGeNArate docker web services
 
-TODO
+Check that mongodb/import.sh has exec permissions, if not:
+
+    chmod +x mongodb/import.sh
+
+docker swarm init
+
+docker network create --driver overlay --attachable dbnet
+
+docker-compose build
+
+export $(grep -v '^#' .env | xargs)
+docker stack deploy -c docker-compose.yml my_stack
+
 
 ## Credits
 

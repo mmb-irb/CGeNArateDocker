@@ -1,28 +1,24 @@
-# Use nginx Alpine Linux as base image
-FROM docker.io/library/nginx:alpine
+FROM php:7.4-apache
 
-# Define the build arguments
 ARG WEBSITE_INNER_PORT
 
-# Define working dir
-WORKDIR /app
+# Install dependencies for building PHP extensions
+RUN apt-get update && apt-get install -y libssl-dev \
+    && pecl install mongodb \
+    && docker-php-ext-enable mongodb
 
-# Download and unzip mdposit-client-build repo
-RUN git clone https://github.com/mmb-irb/CGeNArateWeb.git
+# Enable apache modules
+RUN a2enmod ssl && a2enmod rewrite
+#RUN mkdir -p /etc/apache2/ssl
 
-# TODO: edit config.php with env variables and remove config.php from this repo!!!
-# RUN cp /app/CGeNArateWeb/app/config.git.php /app/CGeNArateWeb/app/config.php
-# RUN echo "DB_HOST=${DB_HOST}" > /app/CGeNArateWeb/app/config.php && \
-#     echo "DB_DATABASE=${DB_DATABASE}" >> /app/CGeNArateWeb/app/config.php && \
-#     ...
-# And then, remove the line below:
-COPY config.php /app/CGeNArateWeb/app/config.php
+#COPY ./ssl/*.pem /etc/apache2/ssl/
 
-# Copy the built React app to nginx
-RUN cp -r /app/CGeNArateWeb/* /usr/share/nginx/html
+# Configure apache
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
-# Expose port ${WEBSITE_INNER_PORT}
+# Perform search and replace using sed
+RUN sed -i "s/WEBSITE_INNER_PORT/${WEBSITE_INNER_PORT}/g" /etc/apache2/sites-available/000-default.conf
+
 EXPOSE ${WEBSITE_INNER_PORT}
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["apache2-foreground"]

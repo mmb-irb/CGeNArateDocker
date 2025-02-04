@@ -1,0 +1,198 @@
+[{
+  "_id": "5a3c3972c7be71.61030885",
+  "id": "MCDUSER5a3c3972c20bb",
+  "email": "juergen.walther@irbbarcelona.org",
+  "tool": "3",
+  "resolution": "1",
+  "operations": [
+    "createStructure",
+    "createTrajectory"
+  ],
+  "numStructures": "50",
+  "proteins": [
+    {
+      "id": "1vfc 12",
+      "code": "1vfc",
+      "length": "12",
+      "position": "2"
+    },
+    {
+      "id": "1wtr 7",
+      "code": "1wtr",
+      "length": "7",
+      "position": "30"
+    },
+    {
+      "id": "3zhm 8",
+      "code": "3zhm",
+      "length": "8",
+      "position": "60"
+    },
+    {
+      "id": "1bnz 7",
+      "code": "1bnz",
+      "length": "7",
+      "position": "80"
+    }
+  ],
+  "analysis": 1,
+  "folder": "MCD5a3c3972c20bb",
+  "inputFile": "MCD5a3c3972c20bb/inputSequence.txt",
+  "type": 1000,
+  "status": 1,
+  "uploadDate": {
+    "$date": "2017-12-21T22:45:06.818Z"
+  },
+  "pid": 370,
+  "endDate": {
+    "$date": "2017-12-22T01:15:36.015Z"
+  }
+},
+{
+  "_id": "5a3cd2d4106f78.82278285",
+  "id": "MCDUSER5a3cd2d405179",
+  "email": "juergen.walther@irbbarcelona.org",
+  "tool": "3",
+  "resolution": "0",
+  "operations": [
+    "createStructure",
+    "createTrajectory"
+  ],
+  "numStructures": "50",
+  "proteins": [
+    {
+      "id": "1vfc 12",
+      "code": "1vfc",
+      "length": "12",
+      "position": "2"
+    },
+    {
+      "id": "1wtr 7",
+      "code": "1wtr",
+      "length": "7",
+      "position": "30"
+    },
+    {
+      "id": "3zhm 8",
+      "code": "3zhm",
+      "length": "8",
+      "position": "60"
+    },
+    {
+      "id": "1bnz 7",
+      "code": "1bnz",
+      "length": "7",
+      "position": "80"
+    }
+  ],
+  "analysis": 1,
+  "folder": "MCD5a3cd2d405179",
+  "inputFile": "MCD5a3cd2d405179/inputSequence.txt",
+  "type": 1000,
+  "status": 1,
+  "uploadDate": {
+    "$date": "2017-12-22T09:39:32.067Z"
+  },
+  "pid": 371,
+  "endDate": {
+    "$date": "2017-12-22T10:23:28.590Z"
+  }
+},
+{
+  "_id": "5a3cd6a32b9e45.88876421",
+  "id": "MCDUSER5a3cd6a32a98a",
+  "email": "juergen.walther@irbbarcelona.org",
+  "tool": "1",
+  "resolution": "0",
+  "operations": [
+    "createStructure",
+    "createTrajectory"
+  ],
+  "numStructures": "100",
+  "analysis": 1,
+  "folder": "MCD5a3cd6a32a98a",
+  "inputFile": "MCD5a3cd6a32a98a/inputSequence.txt",
+  "type": 1000,
+  "status": 1,
+  "uploadDate": {
+    "$date": "2017-12-22T09:55:47.178Z"
+  },
+  "pid": 372,
+  "endDate": {
+    "$date": "2017-12-22T10:25:36.156Z"
+  }
+},
+{
+  "_id": "5a3cee1ac4a6c4.69000433",
+  "id": "MCDUSER5a3cee1ac44de",
+  "email": "juergen.walther@irbbarcelona.org",
+  "tool": "2",
+  "resolution": "1",
+  "operations": [
+    "createStructure",
+    "createTrajectory"
+  ],
+  "numStructures": "10",
+  "deltaLN": "-1",
+  "analysis": 1,
+  "folder": "MCD5a3cee1ac44de",
+  "inputFile": "MCD5a3cee1ac44de/inputSequence.txt",
+  "type": 1000,
+  "status": 1,
+  "uploadDate": {
+    "$date": "2017-12-22T11:35:54.805Z"
+  },
+  "pid": 374,
+  "endDate": {
+    "$date": "2017-12-22T13:32:36.725Z"
+  }
+},
+{
+  "_id": "5a3d7be6e49fb7.88498829",
+  "id": "MCDUSER5a3d7be6b752a",
+  "email": "juergen.walther@irbbarcelona.org",
+  "tool": "2",
+  "resolution": "0",
+  "operations": [
+    "createStructure",
+    "createTrajectory"
+  ],
+  "numStructures": "10",
+  "deltaLN": "-1",
+  "analysis": 1,
+  "folder": "MCD5a3d7be6b752a",
+  "inputFile": "MCD5a3d7be6b752a/inputSequence.txt",
+  "type": 1000,
+  "status": 1,
+  "uploadDate": {
+    "$date": "2017-12-22T21:40:54.936Z"
+  },
+  "pid": 376,
+  "endDate": {
+    "$date": "2017-12-28T11:31:51.296Z"
+  }
+},
+{
+  "_id": "5a9d4e7bb01b31.44017553",
+  "id": "MCDUSER5a9d4e7bac195",
+  "email": "",
+  "tool": "1",
+  "resolution": "1",
+  "operations": [
+    "createStructure",
+    "createTrajectory"
+  ],
+  "numStructures": "100",
+  "analysis": 1,
+  "folder": "MCD5a9d4e7bac195",
+  "inputFile": "MCD5a9d4e7bac195/inputSequence.txt",
+  "type": 1000,
+  "status": 1,
+  "uploadDate": {
+    "$date": "2018-03-05T14:04:43.721Z"
+  },
+  "pid": 219,
+  "endDate": {
+    "$date": "2018-03-05T14:15:07.864Z"
+  }
+}]
