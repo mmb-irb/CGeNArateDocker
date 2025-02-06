@@ -79,6 +79,22 @@ services:
       update_config:
         order: start-first  # Priority over other services
 
+  workflow:
+    image: workflow_image   # name of website image
+    build:
+      context: ./workflow  # folder to search Dockerfile for this image
+    networks:
+      - dbnet
+    deploy:
+      replicas: ${WORKFLOW_REPLICAS}  # Ensure this service is not deployed by default as it is a one-time task
+      resources:
+        limits:
+          cpus: ${WORKFLOW_CPU_LIMIT}   # Specify the limit number of CPUs
+          memory: ${WORKFLOW_MEMORY_LIMIT}   # Specify the limit memory
+        reservations:
+          cpus: ${WORKFLOW_CPU_RESERVATION}   # Specify the reserved number of CPUs
+          memory: ${WORKFLOW_MEMORY_RESERVATION}   # Specify the reserved memory
+
   mongodb:
     image: mongo:6
     environment:
