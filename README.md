@@ -226,7 +226,7 @@ For building the services via **Docker Compose**, please execute the following i
 docker-compose build
 ```
 
-Export environment variables defined in [**root .env file**](#root) and deploy docker stack:
+Export environment variables defined in [**root .env file**](#env-file) and deploy docker stack:
 
 ```sh
 export $(grep -v '^#' .env | xargs)
@@ -361,9 +361,9 @@ Check that the **mongo** and the replicas of **web containers** are up & running
 ```sh
 $ docker ps -a
 CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS                 PORTS             NAMES
-<ID>           mongo:6                "docker-entrypoint.s…"   2 days ago      Up 2 days               27017/tcp          my_stack_mongodb.1.<ID>
-<ID>           website_image:latest   "/app/entrypoint.sh …"   2 days ago      Up 2 days               80/tcp, 3001/tcp   my_stack_website.1.<ID>
-<ID>           mongo:6                "bash /import.sh"        2 days ago      Exited (0) 2 days ago                      my_stack_mongo-seed.1.<ID>
+<ID>           mongo:6                "docker-entrypoint.s…"   2 days ago      Up 2 days              27017/tcp         my_stack_mongodb.1.<ID>
+<ID>           website_image:latest   "/app/entrypoint.sh …"   2 days ago      Up 2 days              80/tcp, 3001/tcp  my_stack_website.1.<ID>
+<ID>           mongo:6                "bash /import.sh"        2 days ago      Exited (0) 2 days ago                    my_stack_mongo-seed.1.<ID>
 ```
 
 ### Inspect docker network 
@@ -458,10 +458,8 @@ Check resources consumption for all running containers:
 ```sh
 $ docker stats
 CONTAINER ID   NAME                                           CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O         PIDS
-<ID>           my_stack_apache.1.<ID>                         0.01%     13.35MiB / 1GiB     1.30%     13.1kB / 12.7kB   6.73MB / 4.1kB    109
 <ID>           my_stack_mongodb.1.<ID>                        0.44%     105.2MiB / 2GiB     1.28%     43.1MB / 247MB    0B / 499MB        50
 <ID>           my_stack_website.1.<ID>                        0.26%     73.03MiB / 2GiB     0.71%     59.3MB / 29.9MB   0B / 24.6kB       22
-<ID>           my_stack_website.2.<ID>                        0.33%     70.78MiB / 2GiB     0.69%     60.4MB / 29.5MB   0B / 24.6kB       22
 ```
 
 ### Docker logs
