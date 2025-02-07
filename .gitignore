@@ -6,3 +6,5 @@ data/
 *.ok.yml
 *.old
 website/config.php
+website/id_rsa
+sge/id_rsa.pub

@@ -234,10 +234,19 @@ docker swarm init
 docker swarm init --advertise-addr <IP_ADDRESS>
 ```
 
-In order to execute the **long-term** tasks in **Docker Swarm** and the **one-off tasks**, such as the **loader** in this proof of concept, the **networks** are declared as **external** in the **docker-compose.yml** file, so they must be created before the `docker-compose build` and the `docker stack deploy`:
+In order to **share a volume** between the different **services** it must be created beforehand. It must be created before the `docker-compose build` and the `docker stack deploy`:
+
+```sh
+docker volume create --driver local --opt type=none --opt device=/path/to/data --opt o=bind workflow_data
+```
+
+Where /path/to/data is the path where **the workflow will store its outputs** and the **website will seek for the data**. Defined in [`.env`](#env-file) as **WEBSITE_DATA_VOLUME_PATH**.
+
+In order to execute the **long-term** tasks in **Docker Swarm** and the **one-off tasks**, such as the **workflow** in this prject, the **networks** are declared as **external** in the **docker-compose.yml** file, so they must be created before the `docker-compose build` and the `docker stack deploy`:
 
 ```sh
 docker network create --driver overlay --attachable dbnet
+docker network create --driver overlay --attachable sgenet
 ```
 
 > NOTE: **From July 2024 onwards**, the instruction for Docker Compose in **mac** is without hyphen, so from now on, `docker-compose build` is `docker compose build` when executing in **macOS**.
@@ -262,6 +271,7 @@ $ docker stack services my_stack
 ID             NAME                  MODE         REPLICAS   IMAGE                  PORTS   
 <ID>           my_stack_mongo-seed   replicated   0/1        mongo:6                
 <ID>           my_stack_mongodb      replicated   1/1        mongo:6                *:27017->27017/tcp
+<ID>           my_stack_sge          replicated   1/1        sge_image:latest       *:22->22/tcp, *:6444->6444/tcp
 <ID>           my_stack_website      replicated   1/1        website_image:latest   *:8080->3001/tcp
 <ID>           my_stack_workflow     replicated   0/0        workflow_image:latest
 ```
@@ -277,8 +287,6 @@ docker node ls
 ### Use workflow
 
 While the **mongodb**, **client** and **rest** containers will remain up, the **workflow** must be called every time is needed. As it is a **one-off task**, **Docker Compose** is used for running it.
-
-Workflow **help**:
 
 ```sh
 docker compose run --rm workflow
@@ -398,6 +406,7 @@ $ docker ps -a
 CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS                 PORTS             NAMES
 <ID>           mongo:6                "docker-entrypoint.s…"   2 days ago      Up 2 days              27017/tcp         my_stack_mongodb.1.<ID>
 <ID>           website_image:latest   "/app/entrypoint.sh …"   2 days ago      Up 2 days              80/tcp, 3001/tcp  my_stack_website.1.<ID>
+<ID>           sge_image:latest       "bash -c 'service ss…"   2 days ago      Up 2 days              22/tcp, 6444/tcp  my_stack_sge.1.<ID>
 <ID>           mongo:6                "bash /import.sh"        2 days ago      Exited (0) 2 days ago                    my_stack_mongo-seed.1.<ID>
 ```
 
@@ -496,6 +505,7 @@ Check resources consumption for all running containers:
 $ docker stats
 CONTAINER ID   NAME                       CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O         PIDS
 <ID>           my_stack_mongodb.1.<ID>    0.44%     105.2MiB / 2GiB     1.28%     43.1MB / 247MB    0B / 499MB        50
+<ID>           my_stack_sge.1.<ID>        0.27%     129.1MiB / 1GiB     12.61%    746B / 0B         0B / 23.1MB       23
 <ID>           my_stack_website.1.<ID>    0.26%     73.03MiB / 2GiB     0.71%     59.3MB / 29.9MB   0B / 24.6kB       22
 ```
 
