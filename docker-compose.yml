@@ -39,7 +39,6 @@ services:
       - dbnet
     volumes:
       - workflow_data:/mnt
-      #- ${WEBSITE_DATA_VOLUME_PATH}:/data
     deploy:
       replicas: ${WORKFLOW_REPLICAS}  # Ensure this service is not deployed by default as it is a one-time task
       resources:
@@ -59,10 +58,8 @@ services:
     ports:
       - 22:22
       - 6444:6444
-      #- 6445:6445
     volumes:
       - workflow_data:/data
-      #- ${WEBSITE_DATA_VOLUME_PATH}:/data
       - /var/run/docker.sock:/var/run/docker.sock
     devices:
       - '/dev/fuse:/dev/fuse'

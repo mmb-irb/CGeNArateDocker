@@ -57,6 +57,7 @@ services:
         WEBSITE_INNER_PORT: ${WEBSITE_INNER_PORT}
     depends_on:
       - mongodb
+      - sge
     ports:
       - "${WEBSITE_PORT}:${WEBSITE_INNER_PORT}"   # port mapping, be aware that the second port is the same exposed in the website/Dockerfile
     volumes:
@@ -65,6 +66,7 @@ services:
       - ${SCRIPTS_VOLUME_PATH}:/scripts   # path where the scripts used by the website will be stored
     networks:
       - dbnet
+      - sgenet
     deploy:
       replicas: ${WEBSITE_REPLICAS}   # Specify the number of replicas for Docker Swarm
       resources:
@@ -85,6 +87,8 @@ services:
       context: ./workflow  # folder to search Dockerfile for this image
     networks:
       - dbnet
+    volumes:
+      - workflow_data:/mnt
     deploy:
       replicas: ${WORKFLOW_REPLICAS}  # Ensure this service is not deployed by default as it is a one-time task
       resources:
@@ -94,6 +98,39 @@ services:
         reservations:
           cpus: ${WORKFLOW_CPU_RESERVATION}   # Specify the reserved number of CPUs
           memory: ${WORKFLOW_MEMORY_RESERVATION}   # Specify the reserved memory
+
+  sge:
+    image: sge_image   # name of SGE image
+    build:
+      context: ./sge  # folder to search Dockerfile for this image
+    networks:
+      - sgenet
+    ports:
+      - 22:22
+      - 6444:6444
+    volumes:
+      - workflow_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    devices:
+      - '/dev/fuse:/dev/fuse'
+    cap_add:
+        - SYS_ADMIN
+    security_opt:
+        - apparmor:unconfined
+    stdin_open: true
+    restart: always
+    deploy:
+      replicas: ${SGE_REPLICAS}  # Ensure this service is not deployed by default as it is a one-time task
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: ${SGE_CPU_LIMIT}   # Specify the limit number of CPUs
+          memory: ${SGE_MEMORY_LIMIT}   # Specify the limit memory
+        reservations:
+          cpus: ${SGE_CPU_RESERVATION}   # Specify the reserved number of CPUs
+          memory: ${SGE_MEMORY_RESERVATION}   # Specify the reserved memory
 
   mongodb:
     image: mongo:6
@@ -149,8 +186,14 @@ services:
       restart_policy:
         condition: none  # Prevents auto-restart after completion
 
+volumes:
+  workflow_data:
+    external: true
+
 networks:
   dbnet: 
+    external: true   # Use an external network
+  sgenet:
     external: true   # Use an external network
 ```
 
