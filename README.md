@@ -185,6 +185,12 @@ An `.env` file must be created in the root folder. The file [`.env.git`](./.env.
 |WORKFLOW_CPU_RESERVATION         | string  | workflow reserved number of CPUs                               |
 |WORKFLOW_MEMORY_RESERVATION         | string  | workflow reserved memory            
 | &nbsp;
+|SGE_REPLICAS         | number  | SGE number of replicas to deploy                               |
+|SGE_CPU_LIMIT         | string  | SGE limit number of CPUs                                |
+|SGE_MEMORY_LIMIT         | string  | SGE limit memory                                 |
+|SGE_CPU_RESERVATION         | string  | SGE reserved number of CPUs                               |
+|SGE_MEMORY_RESERVATION         | string  | SGE reserved memory            
+| &nbsp;
 |DB_VOLUME_PATH         | string  | path where the DB will look for files                               |
 |DB_OUTER_PORT         | number  | DB outer port                                  |
 |DB_INNER_PORT         | number  | DB inner port                                |
