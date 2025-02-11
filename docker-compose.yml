@@ -16,15 +16,15 @@ services:
       - ${SCRIPTS_VOLUME_PATH}:/scripts   # path where the scripts used by the website will be stored
       - ./website/act_qmaster:/var/lib/gridengine/default/common/act_qmaster
       - ${SSH_KEYS_VOLUME_PATH}:/keys
-    networks:
-      sgenet:
-        # ipv4_address: 172.19.0.18
-        aliases:
-          - my_stack_website
-      dbnet: {}
     # networks:
-    #   - sgenet
-    #   - dbnet
+    #   sgenet:
+    #     ipv4_address: 172.19.0.18
+    #     aliases:
+    #       - my_stack_website
+    #   dbnet: {}
+    networks:
+      - sgenet
+      - dbnet
     deploy:
       replicas: ${WEBSITE_REPLICAS}   # Specify the number of replicas for Docker Swarm
       resources:
@@ -43,8 +43,8 @@ services:
     image: workflow_image   # name of workflow image
     build:
       context: ./workflow  # folder to search Dockerfile for this image
-    networks:
-      - dbnet
+    # networks:
+    #   - dbnet
     volumes:
       - workflow_data:/mnt
     deploy:
@@ -67,13 +67,13 @@ services:
         SUBMITTER_HOSTNAME: ${SUBMITTER_HOSTNAME}
         SGE_SSH_PORT: ${SGE_SSH_PORT}
         SGE_PORT: ${SGE_PORT}
-    networks:
-      sgenet:
-        # ipv4_address: 172.19.0.19
-        aliases:
-          - my_stack_sge
     # networks:
-    #   - sgenet
+    #   sgenet:
+    #     ipv4_address: 172.19.0.19
+    #     aliases:
+    #       - my_stack_sge
+    networks:
+      - sgenet
     depends_on:
       - mongo-seed
     ports:

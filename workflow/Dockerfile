@@ -9,5 +9,9 @@ COPY mock.sh /usr/local/bin/mock.sh
 # Make the mock.sh file executable
 RUN chmod +x /usr/local/bin/mock.sh
 
+ENV ARG_VALUE=
+
+ENTRYPOINT ["/bin/bash", "-c"]
+
 # Set the entrypoint to execute the mock.sh file
-ENTRYPOINT ["/usr/local/bin/mock.sh"]
+CMD ["/usr/local/bin/mock.sh \"$ARG_VALUE\""]
