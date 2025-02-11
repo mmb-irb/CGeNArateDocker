@@ -4,6 +4,11 @@ FROM debian:bullseye-20241111-slim
 # Set non-interactive mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG DOCKER_GROUP_ID
+ARG SUBMITTER_HOSTNAME
+ARG SGE_SSH_PORT
+ARG SGE_PORT
+
 # Install necessary packages: gnupg, vim, parallel, g++
 RUN apt-get update -y  \
     && apt-get install -y \
@@ -33,17 +38,15 @@ RUN gpg --import /keys/AA8E81B4331F7F50.asc \
 # Update the package lists and install GridEngine packages
 RUN apt-get update -y && apt-get install -y gridengine-exec gridengine-master gridengine-qmon
 
-# Create a new user 'application' and set password
-RUN useradd -m application \
-    && echo "application:application" | chpasswd
+# Create a new user 'application'
+RUN useradd -m application
 
+# Copy the public key to the authorized_keys file
 RUN mkdir -p /home/application/.ssh
-ADD id_rsa.pub /home/application/.ssh/authorized_keys 
+# ADD id_rsa.pub /home/application/.ssh/authorized_keys 
 
 # Make sure host and container share the same GID for group 'docker', bc it has reading permissions to the socket file
-# ARG DOCKER_GROUP
-# $DOCKER_GROUP HARDCODED TO 455 O_O
-RUN groupmod -g 455 docker
+RUN groupmod -g $DOCKER_GROUP_ID docker
 RUN usermod -aG docker application
 
 # Add setup script and set permissions
@@ -52,15 +55,11 @@ ADD setup_submitter.sh  /usr/local/bin/setup_submitter.sh
 RUN chmod +x /usr/local/bin/setup_gridengine.sh
 RUN chmod +x /usr/local/bin/setup_submitter.sh
 
-RUN echo "my_stack_website" > /home/application/submit_hosts.list
+# Add the submitter hostname to the submit_hosts.list file
+RUN echo "$SUBMITTER_HOSTNAME" > /home/application/submit_hosts.list
 RUN cat /home/application/submit_hosts.list
 
-#RUN service ssh start
-
-#CMD /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf  && tail -f /var/spool/gridengine/qmaster/messages
-
 # Expose SSH and SGE ports
-EXPOSE 22 6444 
-# 6445
+EXPOSE ${SGE_SSH_PORT} ${SGE_PORT}
 
-CMD ["bash", "-c", "service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]
+CMD ["bash", "-c", "cp /keys/id_rsa.pub /home/application/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]

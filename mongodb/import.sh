@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Creates ssh keys for SGE and copy them into a shared volume
+echo "Generating ssh keys for SGE..."
+apt-get update && apt-get install openssh-client -y
+mkdir /.ssh
+ssh-keygen -t rsa -b 4096 -f /.ssh/id_rsa -N '' -q
+cp /.ssh/id_rsa /.ssh/id_rsa.pub /keys
+
 # Wait for MongoDB to be ready before importing the data
 until mongosh "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@${DB_HOST}:${MONGO_PORT}/${MONGO_INITDB_DATABASE}?authSource=admin" --eval "db.stats()" >/dev/null 2>&1; do 
   echo "Waiting for MongoDB..."

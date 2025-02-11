@@ -295,7 +295,10 @@ In order to execute the **long-term** tasks in **Docker Swarm** and the **one-of
 
 ```sh
 docker network create --driver overlay --attachable dbnet
+#########
+###docker network create -d macvlan --subnet=172.19.0.0/24 --gateway=172.19.0.1 -o parent=eth0 --scope swarm sgenet
 docker network create --driver overlay --attachable sgenet
+#########
 ```
 
 > NOTE: **From July 2024 onwards**, the instruction for Docker Compose in **mac** is without hyphen, so from now on, `docker-compose build` is `docker compose build` when executing in **macOS**.
@@ -321,7 +324,7 @@ ID             NAME                  MODE         REPLICAS   IMAGE              
 <ID>           my_stack_mongo-seed   replicated   0/1        mongo:6                
 <ID>           my_stack_mongodb      replicated   1/1        mongo:6                *:27017->27017/tcp
 <ID>           my_stack_sge          replicated   1/1        sge_image:latest       *:22->22/tcp, *:6444->6444/tcp
-<ID>           my_stack_website      replicated   1/1        website_image:latest   *:8080->3001/tcp
+<ID>           my_stack_website      replicated   1/1        website_image:latest   *:80->3001/tcp
 <ID>           my_stack_workflow     replicated   0/0        workflow_image:latest
 ```
 
@@ -352,7 +355,7 @@ docker run --rm workflow_image
 Open a browser and type:
 
 ```
-http://localhost:8080/public/
+http://localhost/public/
 ```
 
 ## Stop services
