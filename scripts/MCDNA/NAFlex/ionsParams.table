@@ -1,0 +1,37 @@
+# Ions parameters 
+# Extracted from:
+# The impact of monovalent ion force field model in nucleic acids simulations
+# Noy et al., PCCP, 11, 10596–10607 (2009).
+#
+# Ion molecule
+# FF 	    Sigma (A) Rvdw (A) Epsilon (Kcal/mol)
+#
+Na+
+Aqvist        3.330 1.8690 0.002700
+AqvistLB      3.328 1.8680 0.002770
+Dang          2.350 1.3190 0.130000
+Jorgensen     4.070 2.2840 0.000500
+JorgensenLB   4.014 2.2520 0.000500
+Roux          2.430 1.3640 0.046900
+Cheatham      2.160 1.2120 0.352642
+#
+K+
+Aqvist        4.935 2.7690 0.000328
+AqvistLB      4.735 2.6580 0.000328
+Dang          3.332 1.8690 0.100000
+Jorgensen     5.170 2.9010 0.000500
+JorgensenLB   4.926 2.7650 0.000500
+Roux          3.143 1.7640 0.087000
+Cheatham      2.839 1.5930 0.429705
+#
+Cl-
+#Aqvist        —     —     —
+#AqvistLB      —     —     —
+Dang          4.400 2.4700 0.100000
+Jorgensen     4.020 2.2560 0.710000
+JorgensenLB   3.969 2.2280 0.710000
+Roux          4.045 2.2700 0.150000
+Cheatham      4.830 2.7110 0.012785
+#
+Mg2
+Aqvist        -     0.7926 0.894700

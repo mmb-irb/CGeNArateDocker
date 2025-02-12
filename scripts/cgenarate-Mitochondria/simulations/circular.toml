@@ -1,0 +1,27 @@
+[simulation]
+name = "Circular31"
+T0 = 298.0 # Temperature (K)
+dt0 = 0.1 # timestep in picoseconds
+N = 678 # Number of beads
+frames = 5 # Number of frames
+steps = 10 # Number of steps between frames
+linear = false
+seed = 1234 # random seed
+
+[input]
+file = "./input/Circular31.pdb"
+
+[output]
+coordinates = "output/Circular31.mdcrd"
+energy = "output/Circular31energy.csv"
+# Uncomment plots file to enable plots output.
+# plots = "output/1j5nplots.csv"
+
+[restore]
+# Load Restart mode:
+# "none" -> do nothing
+# "print" -> print, but don't load (out)
+# "load" -> load and print
+mode = "none"
+# current = "output/current_circular.pdb"
+# restart = "output/restart_circular.pdb"

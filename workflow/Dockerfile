@@ -1,17 +1,40 @@
-FROM alpine:latest
+# Use Ubuntu as the base image
+FROM docker.io/continuumio/miniconda3:latest
 
-# Install necessary packages
-RUN apk add --no-cache bash
+# Update the package list and install some basic tools
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy the mock.sh file into the container
-COPY mock.sh /usr/local/bin/mock.sh
+# Set the working directory
+WORKDIR /app
 
-# Make the mock.sh file executable
-RUN chmod +x /usr/local/bin/mock.sh
+# Copy application code to the container
+COPY environment.yml .
+COPY ./dnatraj ./dnatraj
 
-ENV ARG_VALUE=
+# Enable libmamba as solver
+RUN conda config --set solver libmamba
 
-ENTRYPOINT ["/bin/bash", "-c"]
+# Create new environment
+RUN conda env create --file=environment.yml && conda clean -afy
 
-# Set the entrypoint to execute the mock.sh file
-CMD ["/usr/local/bin/mock.sh \"$ARG_VALUE\""]
+# Install mdplus
+RUN conda run -n glimps_env pip install --upgrade pip setuptools wheel mdplus 
+
+# Install dnatraj
+RUN cd dnatraj && conda run -n glimps_env pip install . 
+
+# Install Switch Perl module using conda-cpan
+RUN conda run -n glimps_env cpan Switch 
+
+# Run a command 
+# Code to run when container is started
+RUN echo '#!/bin/sh' > entrypoint.sh && \
+    echo 'conda run --no-capture-output -n glimps_env "$@"' >> entrypoint.sh && \
+    chmod +x entrypoint.sh
+
+# Serve the app
+ENTRYPOINT ["/app/entrypoint.sh"]
+

@@ -1,0 +1,13 @@
+name: glimps_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - ambertools
+  - numpy 
+  - cython 
+  - mdtraj
+  - pip
+  - pcasuite
+  - curves
+  - perl-app-cpanminus  

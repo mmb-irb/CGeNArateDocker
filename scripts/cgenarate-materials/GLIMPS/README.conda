@@ -1,0 +1,4 @@
+conda env create -f environment.yml
+pip install mdplus
+cd /orozco/services/MCDNA_dev/Scripts/2025/ABCtools-main/dnatraj
+pip install .

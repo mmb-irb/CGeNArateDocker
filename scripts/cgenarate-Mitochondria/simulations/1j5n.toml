@@ -1,0 +1,28 @@
+[simulation]
+name = "1j5n"
+T0 = 298.0 # Temperature (K)
+dt0 = 0.1 # timestep in picoseconds
+N = 30 # Number of beads
+frames = 10 # Number of frames
+steps = 200 # Number of steps between frames
+linear = true
+seed = 1234 # random seed
+
+[input]
+file = "./input/1j5n.pdb"
+
+[output]
+coordinates = "output/1j5n.mdcrd"
+energy = "output/1j5nenergy.csv"
+# Uncomment plots file to enable plots output.
+# plots = "output/1j5nplots.csv"
+
+[restore]
+# Load Restart mode:
+# "none" -> do nothing
+# "print" -> print, but don't load (out)
+# "load" -> load and print
+mode = "print"
+current = "output/current_1j5n.pdb"
+restart = "output/restart_1j5n.pdb"
+

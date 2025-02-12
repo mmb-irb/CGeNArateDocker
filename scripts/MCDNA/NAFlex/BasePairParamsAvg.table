@@ -1,0 +1,21 @@
+#########
+# R. Lavery, K. Zakrzewska, D. Beveridge, T.C. Bishop, D.A. Case, T. Cheatham III, S. Dixit, B. Jayaram, F. Lankas, C. Laughton,
+# J.H. Maddocks, A. Michon, R. Osman, M. Orozco, A. Perez, T. Singh, N. Spackova, J. Sponer. 
+# A systematic molecular dynamics study of nearest-neighbor effects on base pair and base pair step conformations and fluctuations in B-DNA.
+# Nucleic Acids Research 2010, 38, 299-313.
+#########
+# BasePair Shear Stretch Stagger Buckle Propeller Opening Xdisp Ydisp Inclination Tip 
+#########
+AT  0.10±0.29  0.03±0.12  0.07±0.42  3.7±11.7 -12.9±9.0  3.1±5.5  -1.45±0.82  0.10±0.53  6.7±5.5  0.2±5.0
+GC  0.02±0.31  0.03±0.11  0.10±0.39  2.8±12.3  -9.1±9.2  1.1±3.3  -1.43±0.96  0.00±0.56  6.9±5.2  0.5±4.9
+TA  0.10±0.29  0.03±0.12  0.07±0.42  3.7±11.7 -12.9±9.0  3.1±5.5  -1.45±0.82  0.10±0.53  6.7±5.5  0.2±5.0
+CG  0.02±0.31  0.03±0.11  0.10±0.39  2.8±12.3  -9.1±9.2  1.1±3.3  -1.43±0.96  0.00±0.56  6.9±5.2  0.5±4.9
+#
+#########
+# RNA Avg params by Ignacio Faustino
+#########
+#
+AU  0.10±0.29  0.03±0.12  0.07±0.42  3.7±11.7 -12.9±9.0  3.1±5.5  -1.45±0.82  0.10±0.53  6.7±5.5  0.2±5.0
+GC  0.02±0.31  0.03±0.11  0.10±0.39  2.8±12.3  -9.1±9.2  1.1±3.3  -1.43±0.96  0.00±0.56  6.9±5.2  0.5±4.9
+UA  0.10±0.29  0.03±0.12  0.07±0.42  3.7±11.7 -12.9±9.0  3.1±5.5  -1.45±0.82  0.10±0.53  6.7±5.5  0.2±5.0
+CG  0.02±0.31  0.03±0.11  0.10±0.39  2.8±12.3  -9.1±9.2  1.1±3.3  -1.43±0.96  0.00±0.56  6.9±5.2  0.5±4.9

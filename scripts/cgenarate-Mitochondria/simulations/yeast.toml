@@ -1,0 +1,27 @@
+[simulation]
+name = "yeast"
+T0 = 298.0 # Temperature (K)
+dt0 = 0.1 # timestep in picoseconds
+N = 2634 # Number of beads
+frames = 5 # Number of frames
+steps = 10 # Number of steps between frames
+linear = true
+seed = 1234 # random seed
+
+[input]
+file = "./input/yeastCG.pdb"
+
+[output]
+coordinates = "output/yeast.mdcrd"
+energy = "output/yeastenergy.csv"
+# Uncomment plots file to enable plots output.
+# plots = "output/1j5nplots.csv"
+
+[restore]
+# Load Restart mode:
+# "none" -> do nothing
+# "print" -> print, but don't load (out)
+# "load" -> load and print
+mode = "none"
+# current = "output/current_yeast.pdb"
+# restart = "output/restart_yeast.pdb"

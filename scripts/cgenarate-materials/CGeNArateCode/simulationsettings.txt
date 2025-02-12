@@ -1,0 +1,17 @@
+#do not change this file, only edit the corresponding numbers/flags in their corresponding lines
+#define loadrestart (0) /*0 Nothing, 1 print not load, 2 load and print, both require name*/
+0
+#define PrintVectors (0) 1 will print velocities
+0
+#define PlotPrint (1) 1 will print all distances and angles relevant to the (bonded) hamiltonian
+1
+#define T0 (298) temperature
+298
+#define dt0 (0.1) timestep in picoseconds
+0.1
+#define N (2*15) number of beads
+30
+#define nframes (1000) Record nframes
+100
+#define STEP (200) Record a frame every STEP*dt0 picoseconds
+200

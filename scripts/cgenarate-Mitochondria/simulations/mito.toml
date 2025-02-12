@@ -1,0 +1,27 @@
+[simulation]
+name = "Mithochondria"
+T0 = 298.0 # Temperature (K)
+dt0 = 0.1 # timestep in picoseconds
+N = 33138 # Number of beads
+frames = 5 # Number of frames
+steps = 10 # Number of steps between frames
+linear = false
+seed = 1234 # random seed
+
+[input]
+file = "./input/mitochondriaCG.pdb"
+
+[output]
+coordinates = "output/mito.mdcrd"
+energy = "output/mitoenergy.csv"
+# Uncomment plots file to enable plots output.
+# plots = "output/1j5nplots.csv"
+
+[restore]
+# Load Restart mode:
+# "none" -> do nothing
+# "print" -> print, but don't load (out)
+# "load" -> load and print
+mode = "none"
+# current = "output/current_mito.pdb"
+# restart = "output/restart_mito.pdb"

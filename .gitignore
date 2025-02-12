@@ -2,7 +2,9 @@
 db/
 data/
 keys/
-*.pdb
 *.env
 *.ok.yml
 *.old
+*.BCK
+scripts/Test
+scripts/launch_lin.sh
