@@ -360,14 +360,14 @@ docker swarm init
 docker swarm init --advertise-addr <IP_ADDRESS>
 ```
 
-In order to **share a volume** between the different **services** it must be created beforehand. It must be created before the `docker-compose build` and the `docker stack deploy`:
+In order to **share volumes** between the different **services** they must be created beforehand. They must be created before the `docker-compose build` and the `docker stack deploy`:
 
 ```sh
 docker volume create --driver local --opt type=none --opt device=/path/to/data --opt o=bind workflow_data
 docker volume create --driver local --opt type=none --opt device=/path/to/scripts --opt o=bind workflow_scripts
 ```
 
-Where /path/to/data is the path where **the workflow will store its outputs** and the **website will seek for the data**. Defined in [`.env`](#env-file) as **WEBSITE_DATA_VOLUME_PATH**.
+Where /path/to/data is the path where **the workflow will store its outputs** and the **website will seek for the data**. Defined in [`.env`](#env-file) as **WEBSITE_DATA_VOLUME_PATH**. And /path/to/scripts is the path where **the workflow will look for scripts**. Defined in [`.env`](#env-file) as **SCRIPTS_VOLUME_PATH**.
 
 In order to execute the **long-term** tasks in **Docker Swarm** and the **one-off tasks**, such as the **workflow** in this prject, the **networks** are declared as **external** in the **docker-compose.yml** file, so they must be created before the `docker-compose build` and the `docker stack deploy`:
 
@@ -381,7 +381,7 @@ docker network create --driver overlay --attachable sgenet
 
 Workaround for **deploying in macOS**:
 
-**Uncomment** in the [**docker-compose.yml**](./docker-compose.yml) file the line:
+**Uncomment** in the [**docker-compose.yml**](./docker-compose.yml#L44) file the line:
 
 ```yaml
 platform: linux/amd64
@@ -430,14 +430,50 @@ docker node ls
 
 While the **mongodb**, **client** and **rest** containers will remain up, the **workflow** must be called every time is needed. As it is a **one-off task**, **Docker Compose** is used for running it.
 
+#### Check workflow
+
 ```sh
-docker compose run --rm workflow
+docker compose run --rm workflow ls -la /mnt
 ```
 
 Or, if the above doesn't work:
 
 ```sh
-docker run --rm workflow_image
+docker run --rm -v workflow_data:/mnt workflow_image ls -la /mnt
+```
+
+#### Execute workflow
+
+Take into account that, for running properly the workflow, a **.sh file** with the **correct format** must be created beforehand in the folder defined in 
+**WEBSITE_DATA_VOLUME_PATH** in the [`.env`](#env-file) file. This template can be taken as an example for creating this launch.sh file:
+
+```sh
+#!/bin/csh
+
+cd /mnt/folder
+
+hostname > hostname.out
+
+echo "## CGeNArate ##"
+perl /app/Scripts/MCDNA/runMCDNA_all_new.pl /mnt/folder/inputSequence.txt 1 0 0
+
+echo "## Analysis ##"
+perl /app/Scripts/Analysis/runMCDNA_Analysis.pl 1 0 0
+```
+
+And **inputSequence.txt** is the **input sequence** in text format and it must be as well in the **same folder** as the **.sh file**. For example:
+
+```sh
+GATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACA
+```
+
+```sh
+docker compose run --rm workflow sh /mnt/folder/launch.sh
+```
+Or, if the above doesn't work:
+
+```sh
+docker run --rm -v workflow_data:/mnt -v workflow_scripts:/app/Scripts workflow_image sh /mnt/folder/launch.sh
 ```
 
 ### Check website
@@ -466,7 +502,7 @@ docker swarm leave --force
 
 ### Rebuild service(s)
 
-A **rebuild script** is provided for rebuilding **one or more services** in an **automatic** way. Please execute the script, located in [**scripts/rebuild.py**](./scripts/rebuild.py). 
+A **rebuild script** is provided for rebuilding **one or more services** in an **automatic** way. Please execute the script, located in [**scripts/helper/rebuild.py**](./scripts/helper/rebuild.py). 
 
 How to execute the help script from the root of this repository:
 
