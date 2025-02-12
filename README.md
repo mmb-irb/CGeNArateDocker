@@ -467,6 +467,8 @@ And **inputSequence.txt** is the **input sequence** in text format and it must b
 GATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACA
 ```
 
+Then, once both files **.sh** and **.txt** are in the same folder in **WEBSITE_DATA_VOLUME_PATH**, the workflow can be launched:
+
 ```sh
 docker compose run --rm workflow sh /mnt/folder/launch.sh
 ```
