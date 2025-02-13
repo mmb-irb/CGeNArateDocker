@@ -43,7 +43,7 @@ RUN echo '#!/bin/sh' > entrypoint.sh && \
     echo 'set -e' >> entrypoint.sh && \
     echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \
     echo 'ln -sf /data/Web /var/www/html/public/data' >> entrypoint.sh && \
-    echo 'mkdir /data/Web/.tmp' >> entrypoint.sh && \
+    echo 'mkdir -p /data/Web/.tmp' >> entrypoint.sh && \
     echo 'exec "$@"' >> entrypoint.sh && \
     chmod +x entrypoint.sh
 
