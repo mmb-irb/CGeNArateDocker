@@ -18,12 +18,10 @@ RUN a2enmod ssl && a2enmod rewrite
 
 #COPY ./ssl/*.pem /etc/apache2/ssl/
 
+# create .ssh directories for root and www-data
 RUN mkdir -p /root/.ssh
 RUN mkdir -p /var/www/.ssh
 RUN chown -R www-data:root /var/www/.ssh
-# ADD id_rsa /root/.ssh/id_rsa 
-# RUN cp /keys/id_rsa /root/.ssh/id_rsa
-# RUN chmod 600 /root/.ssh/id_rsa
 
 # Configure apache
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
@@ -34,16 +32,25 @@ RUN sed -i "s/WEBSITE_INNER_PORT/${WEBSITE_INNER_PORT}/g" /etc/apache2/sites-ava
 # Change working directory to /app
 WORKDIR /app
 
-# Create the entrypoint script to create the symbolic link to the data folder
+# Create a cron job file for www-data
+RUN echo "0 1 * * * php -f /var/www/html/scripts/clean-cronjob.php" > /etc/cron.d/my-apache-cronjob
+
+# Set the correct permissions for the cron file
+RUN chmod 0644 /etc/cron.d/my-apache-cronjob
+
+# Install the cron job for www-data
+RUN crontab -u www-data /etc/cron.d/my-apache-cronjob
+
+# Create the entrypoint script: ssh keys, website code directory, .tmp and cron
 RUN echo '#!/bin/sh' > entrypoint.sh && \
-    # echo 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user@my_stack_sge' >> entrypoint.sh && \
-    echo 'cp /keys/id_rsa /root/.ssh' >> entrypoint.sh && \
-    echo 'cp /keys/id_rsa /var/www/.ssh' >> entrypoint.sh && \
+    echo 'ln -s /keys/id_rsa /root/.ssh/id_rsa' >> entrypoint.sh && \
+    echo 'ln -s /keys/id_rsa /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chown -R www-data:www-data /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'set -e' >> entrypoint.sh && \
     echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \
     echo 'ln -sf /data/Web /var/www/html/public/data' >> entrypoint.sh && \
     echo 'mkdir -p /data/Web/.tmp' >> entrypoint.sh && \
+    echo 'cron' >> entrypoint.sh && \
     echo 'exec "$@"' >> entrypoint.sh && \
     chmod +x entrypoint.sh
 
