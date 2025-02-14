@@ -63,6 +63,7 @@ RUN cat /home/application/submit_hosts.list
 # Expose SSH and SGE ports
 EXPOSE ${SGE_SSH_PORT} ${SGE_PORT}
 
+# Set the maximum number of jobs as an environment variable for making it accessible in setup_gridengine.sh
 ENV SGE_MAX_JOBS=${SGE_MAX_JOBS}
 
 CMD ["bash", "-c", "cp /keys/id_rsa.pub /home/application/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]

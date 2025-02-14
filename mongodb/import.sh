@@ -13,7 +13,16 @@ until mongosh "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSW
   sleep 2
 done
 
-echo "MongoDB is ready. Importing ${DB_COLLECTION_WFS} collection..."
+echo "MongoDB is ready. Dropping collection ${DB_COLLECTION_WFS}..."
+mongosh --host ${DB_HOST} \
+        --port ${MONGO_PORT} \
+        -u ${MONGO_INITDB_ROOT_USERNAME} \
+        -p ${MONGO_INITDB_ROOT_PASSWORD} \
+        --authenticationDatabase admin \
+        ${MONGO_INITDB_DATABASE} \
+        --eval "db.getCollection('${DB_COLLECTION_WFS}').drop()"
+
+echo "Importing ${DB_COLLECTION_WFS} collection..."
 mongoimport --host ${DB_HOST} \
             --db ${MONGO_INITDB_DATABASE} \
             --port ${MONGO_PORT} \

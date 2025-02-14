@@ -1,144 +1,144 @@
 [{
   "_id": "MCDNA.AA.TR.AN",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
 },
 {
   "_id": "PROTDNA.CG.STTR.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 3: Superposing protein structure with nucleic acid fiber"
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 3: Superposing protein structure with nucleic acid fiber"
 },
 {
   "_id": "CIRC.AA.TR.AN",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
 },
 {
   "_id": "CIRC.AA.ST.AN",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structure## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structure## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
 },
 {
   "_id": "CIRC.CG.ST.AN",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
 },
 {
   "_id": "PROTDNA.AA.ST.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "PROTDNA.AA.TR.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "MCDNA.AA.STTR.NA",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures..."
 },
 {
   "_id": "PROTDNA.AA.STTR.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber"
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber"
 },
 {
   "_id": "CIRC.AA.ST.NA",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structure"
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structure"
 },
 {
   "_id": "CIRC.AA.TR.NA",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures"
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures"
 },
 {
   "_id": "MCDNA.AA.TR.NA",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures..."
 },
 {
   "_id": "PROTDNA.CG.ST.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 3: Superposing protein structure with nucleic acid fiber"
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 3: Superposing protein structure with nucleic acid fiber"
 },
 {
   "_id": "PROTDNA.CG.STTR.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 3: Superposing protein structure with nucleic acid fiber## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 3: Superposing protein structure with nucleic acid fiber## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "PROTDNA.AA.STTR.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "PROTDNA.CG.TR.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "CIRC.AA.STTR.AN",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structure## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structure## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
 },
 {
   "_id": "MCDNA.CG.STTR.AN",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
 },
 {
   "_id": "CIRC.CG.STTR.NA",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA"
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate"
 },
 {
   "_id": "PROTDNA.AA.TR.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)..."
 },
 {
   "_id": "CIRC.CG.TR.AN",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
 },
 {
   "_id": "MCDNA.CG.ST.AN",
-  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
+  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
 },
 {
   "_id": "MCDNA.CG.STTR.NA",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate..."
 },
 {
   "_id": "CIRC.CG.STTR.AN",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Circularity...# STEP 4: Analysis on Elastic Energy..."
 },
 {
   "_id": "MCDNA.CG.ST.NA",
-  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA.."
+  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate.."
 },
 {
   "_id": "CIRC.CG.TR.NA",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building trajectory from PDB structures"
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 4 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building trajectory from PDB structures"
 },
 {
   "_id": "MCDNA.AA.ST.AN",
-  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
+  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
 },
 {
   "_id": "MCDNA.AA.STTR.AN",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures...# STEP 3: Building trajectory from PDB structures...## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
 },
 {
   "_id": "MCDNA.CG.TR.NA",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 3: Building trajectory from PDB structures..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 3: Building trajectory from PDB structures..."
 },
 {
   "_id": "CIRC.AA.STTR.NA",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing MCDNA# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structure"
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING TRAJECTORY (ENSEMBLE with 10 STRUCTURES)# STEP 4: Executing CGeNArate# STEP 5: Building all-atom structures# STEP 6: Building trajectory from PDB structures## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structure"
 },
 {
   "_id": "CIRC.CG.ST.NA",
-  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA"
+  "steps": "## BUILDING CIRCULAR STRUCTURE# STEP 1: Generating Nucleic Acid structure from input sequence# STEP 2: Computing ideal Twist for delta Lk# STEP 3: Circularizing the DNA structure## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate"
 },
 {
   "_id": "PROTDNA.AA.ST.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber"
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 2: Building all-atom structures# STEP 3: Superposing protein structure with nucleic acid fiber"
 },
 {
   "_id": "PROTDNA.CG.ST.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing MCDNA# STEP 3: Superposing protein structure with nucleic acid fiber## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING STRUCTURE (Best single structure)# STEP 1: Executing CGeNArate# STEP 3: Superposing protein structure with nucleic acid fiber## STRUCTURE ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "PROTDNA.CG.TR.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building MCDNA-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing MCDNA# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures"
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures"
 },
 {
   "_id": "MCDNA.AA.ST.NA",
-  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing MCDNA...# STEP 2: Building all-atom structures..."
+  "steps": "## GENERATING STRUCTURE (Best Single Structure)# STEP 1: Executing CGeNArate...# STEP 2: Building all-atom structures..."
 },
 {
   "_id": "MCDNA.CG.TR.AN",
-  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing MCDNA...# STEP 3: Building trajectory from PDB structures...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
+  "steps": "## GENERATING TRAJECTORY (ENSEMBLE with 100 STRUCTURES)# STEP 1: Executing CGeNArate...# STEP 3: Building trajectory from PDB structures...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy..."
 }]
