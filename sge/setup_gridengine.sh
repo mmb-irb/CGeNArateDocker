@@ -38,7 +38,7 @@ qtype                 BATCH INTERACTIVE
 ckpt_list             NONE
 pe_list               make
 rerun                 FALSE
-slots                 1
+slots                 ${SGE_MAX_JOBS}
 tmpdir                /tmp
 shell                 /bin/bash
 prolog                NONE
@@ -77,6 +77,18 @@ h_vmem                INFINITY
 EOS
 
 qconf -Aq /tmp/qconf-aq.txt 
+
+# Set max jobs per user limit
+cat << EOS > /tmp/qconf-arqs.txt
+{
+   name         max_jobs_per_user
+   description  "Limit max jobs per user"
+   enabled      TRUE
+   limit        users {*} to slots=${SGE_MAX_JOBS}
+}
+EOS
+
+qconf -Arqs /tmp/qconf-arqs.txt
 
 # avoid 'stdin: is not a tty'
 #sed -i -e 's/^mesg n//' /root/.profile

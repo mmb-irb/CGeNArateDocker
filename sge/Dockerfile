@@ -8,6 +8,7 @@ ARG DOCKER_GROUP_ID
 ARG SUBMITTER_HOSTNAME
 ARG SGE_SSH_PORT
 ARG SGE_PORT
+ARG SGE_MAX_JOBS
 
 # Install necessary packages: gnupg, vim, parallel, g++
 RUN apt-get update -y  \
@@ -61,5 +62,7 @@ RUN cat /home/application/submit_hosts.list
 
 # Expose SSH and SGE ports
 EXPOSE ${SGE_SSH_PORT} ${SGE_PORT}
+
+ENV SGE_MAX_JOBS=${SGE_MAX_JOBS}
 
 CMD ["bash", "-c", "cp /keys/id_rsa.pub /home/application/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]
