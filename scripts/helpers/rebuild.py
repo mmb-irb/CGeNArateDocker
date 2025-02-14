@@ -2,7 +2,6 @@ import argparse
 import subprocess
 import sys
 
-
 def run_command(command):
     try:
         subprocess.run(command, check=True)
@@ -41,6 +40,9 @@ def main():
         build_command.extend(['--no-cache', service])
     print(f"Running command: {' '.join(build_command)}")
     run_command(build_command)
+
+    # export .env variables
+    subprocess.run("bash -c 'export $(grep -v \'^#\' .env | xargs)'", shell=True, check=True)
 
     # Update services
     for service in args.services:

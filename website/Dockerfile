@@ -33,7 +33,7 @@ RUN sed -i "s/WEBSITE_INNER_PORT/${WEBSITE_INNER_PORT}/g" /etc/apache2/sites-ava
 WORKDIR /app
 
 # Create a cron job file for www-data
-RUN echo "0 1 * * * php -f /var/www/html/scripts/clean-cronjob.php" > /etc/cron.d/my-apache-cronjob
+RUN echo "0 1 * * * php -f /var/www/html/scripts/clean-cronjob.php >> /logs/cronjobs/cron.log 2>&1" > /etc/cron.d/my-apache-cronjob
 
 # Set the correct permissions for the cron file
 RUN chmod 0644 /etc/cron.d/my-apache-cronjob
@@ -50,6 +50,10 @@ RUN echo '#!/bin/sh' > entrypoint.sh && \
     echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \
     echo 'ln -sf /data/Web /var/www/html/public/data' >> entrypoint.sh && \
     echo 'mkdir -p /data/Web/.tmp' >> entrypoint.sh && \
+    echo 'mkdir -p /logs/cronjobs' >> entrypoint.sh && \
+    echo 'touch /logs/cronjobs/cron.log' >> entrypoint.sh && \
+    echo 'mkdir -p /logs/website' >> entrypoint.sh && \
+    echo 'chown -R www-data:www-data /logs/website' >> entrypoint.sh && \
     echo 'cron' >> entrypoint.sh && \
     echo 'exec "$@"' >> entrypoint.sh && \
     chmod +x entrypoint.sh

@@ -2,6 +2,7 @@
 db/
 data/
 keys/
+logs/
 *.env
 *.ok.yml
 *.old
