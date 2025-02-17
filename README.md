@@ -595,7 +595,25 @@ When working with Docker, **even after removing images and containers**, Docker 
 
         docker system prune --volumes -f
 
-4. **Check disk usage** by Docker objects
+    To ensure, list volumes:
+
+        docker volume ls
+
+    For removing all volumes (beware):
+
+        docker volume rm $(docker volume ls -q)
+
+4. Remove unused **networks**:
+
+    Usually, the steps above remove the networks related to the project, but this instruction removes the unused networks:
+
+        docker network prune -f
+
+    To ensure, list networks:
+
+        docker network ls
+
+5. **Check disk usage** by Docker objects
 
         docker system df
 
