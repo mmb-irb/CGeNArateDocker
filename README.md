@@ -343,6 +343,12 @@ The **path** assigned to the **SSH_KEYS_VOLUME_PATH** variable in the [`.env`](#
 
 Go to somewhere in the **VM** where all the **swarm** will be deployed or in the **volume** where the data is stored and create a **/ssh_keys folder**.
 
+### Logs
+
+The **path** assigned to the **LOGS_VOLUME_PATH** variable in the [`.env`](#env-file) file.
+
+Go to somewhere in the **VM** where all the **swarm** will be deployed or in the **volume** where the data is stored and create a **/logs folder**.
+
 ### MongoDB
 
 The **path** assigned to the **DB_VOLUME_PATH** variable in the [`.env`](#env-file) file.
