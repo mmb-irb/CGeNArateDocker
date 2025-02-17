@@ -359,6 +359,10 @@ In the **volume** where the data is stored, create the following **/db folder**:
 
 All the **MongoDB** data will be stored inside this volume.
 
+## Setup website code
+
+git clone at WEBSITE_VOLUME_PATH / create config.php
+
 ## Build services
 
 Check that mongodb/import.sh has exec permissions, if not:

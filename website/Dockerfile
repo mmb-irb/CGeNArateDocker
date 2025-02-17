@@ -49,6 +49,7 @@ RUN echo '#!/bin/sh' > entrypoint.sh && \
     echo 'set -e' >> entrypoint.sh && \
     echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \
     echo 'ln -sf /data/Web /var/www/html/public/data' >> entrypoint.sh && \
+    echo 'chown -R www-data:root /data/Web' >> entrypoint.sh && \
     echo 'mkdir -p /data/Web/.tmp' >> entrypoint.sh && \
     echo 'mkdir -p /logs/cronjobs' >> entrypoint.sh && \
     echo 'touch /logs/cronjobs/cron.log' >> entrypoint.sh && \
