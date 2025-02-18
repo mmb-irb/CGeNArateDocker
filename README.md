@@ -361,7 +361,19 @@ All the **MongoDB** data will be stored inside this volume.
 
 ## Setup website code
 
-git clone at WEBSITE_VOLUME_PATH / create config.php
+The website code is in a repository apart:
+
+https://github.com/mmb-irb/CGeNArateWeb
+
+Please **clone it** somewhere in the VM where the stack will be deployed:
+
+    git clone https://github.com/mmb-irb/CGeNArateWeb.git
+
+The path for this code must be assigned to the **WEBSITE_VOLUME_PATH** variable in the [`.env`](#env-file) file.
+
+Once cloned, go to the /app folder in the website structure and **create a new config.php file** taking [**config.git.php**](https://github.com/mmb-irb/CGeNArateWeb/blob/main/app/config.git.php) as a reference. In this file, some **paths** and **credentials** must be added. 
+
+> **IMPORTANT:** The paths must be referred to the **docker container** where the website is executed. So, for example, the path for **diskPath** should be **/data/Web/** : `'diskPath' => '/data/Web/'`
 
 ## Build services
 

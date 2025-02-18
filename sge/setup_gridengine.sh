@@ -1,8 +1,25 @@
 #!/bin/bash
 
-#hostname > /var/lib/gridengine/default/common/act_qmaster
+# Start Grid Engine services
 /etc/init.d/gridengine-master start
 /etc/init.d/gridengine-exec start
+
+# Export the current SGE configuration to a temp file
+qconf -sconf global > /tmp/global
+
+# Modify the min_uid value for allowing users with uid >= 33 to submit jobs
+sed -i 's/^min_uid.*/min_uid                      33/' /tmp/global
+sed -i 's/^min_gid.*/min_gid                      33/' /tmp/global
+
+# Apply the modified configuration
+qconf -Mconf /tmp/global
+
+# Clean up temp file
+rm -f /tmp/global
+
+#hostname > /var/lib/gridengine/default/common/act_qmaster
+/etc/init.d/gridengine-master restart
+/etc/init.d/gridengine-exec restart
 
 cat << EOS  > /tmp/qconf-ae.txt
 hostname              $(hostname)

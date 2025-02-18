@@ -19,7 +19,7 @@ RUN a2enmod ssl && a2enmod rewrite
 #COPY ./ssl/*.pem /etc/apache2/ssl/
 
 # create .ssh directories for root and www-data
-RUN mkdir -p /root/.ssh
+# RUN mkdir -p /root/.ssh
 RUN mkdir -p /var/www/.ssh
 RUN chown -R www-data:root /var/www/.ssh
 
@@ -43,13 +43,12 @@ RUN crontab -u www-data /etc/cron.d/my-apache-cronjob
 
 # Create the entrypoint script: ssh keys, website code directory, .tmp and cron
 RUN echo '#!/bin/sh' > entrypoint.sh && \
-    echo 'cp /keys/id_rsa /root/.ssh/id_rsa' >> entrypoint.sh && \
+    # echo 'cp /keys/id_rsa /root/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'cp /keys/id_rsa /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chown -R www-data:www-data /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'set -e' >> entrypoint.sh && \
     echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \
     echo 'ln -sf /data/Web /var/www/html/public/data' >> entrypoint.sh && \
-    echo 'chown -R www-data:root /data/Web' >> entrypoint.sh && \
     echo 'mkdir -p /data/Web/.tmp' >> entrypoint.sh && \
     echo 'mkdir -p /logs/cronjobs' >> entrypoint.sh && \
     echo 'touch /logs/cronjobs/cron.log' >> entrypoint.sh && \
@@ -58,6 +57,8 @@ RUN echo '#!/bin/sh' > entrypoint.sh && \
     echo 'cron' >> entrypoint.sh && \
     echo 'exec "$@"' >> entrypoint.sh && \
     chmod +x entrypoint.sh
+
+# echo 'chown -R www-data:www-data /data/Web' >> entrypoint.sh && \
 
 # Change working directory to /var/www/html
 WORKDIR /var/www/html
