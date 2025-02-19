@@ -64,7 +64,8 @@ RUN chmod +x /usr/local/bin/setup_submitter.sh
 # RUN echo "$SUBMITTER_HOSTNAME" > /home/application/submit_hosts.list
 # RUN cat /home/application/submit_hosts.list
 RUN echo "$SUBMITTER_HOSTNAME" > /var/www/submit_hosts.list
-RUN cat /var/www/submit_hosts.list
+# RUN echo "my_stack_sge" >> /var/www/submit_hosts.list
+# RUN cat /var/www/submit_hosts.list
 
 # Expose SSH and SGE ports
 EXPOSE ${SGE_SSH_PORT} ${SGE_PORT}
@@ -74,4 +75,4 @@ ENV SGE_MAX_JOBS=${SGE_MAX_JOBS}
 
 # CMD ["bash", "-c", "cp /keys/id_rsa.pub /home/application/.ssh/authorized_keys && chown application:application /home/application/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]
 
-CMD ["bash", "-c", "cp /keys/id_rsa.pub /var/www/.ssh/authorized_keys && chown www-data:www-data /var/www/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /var/www/submit_hosts.list && /usr/local/bin/setup_submitter.sh /var/www/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]
+CMD ["bash", "-c", "cp /keys/id_rsa.pub /var/www/.ssh/authorized_keys && chown www-data:www-data /var/www/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && cat /var/www/submit_hosts.list && /usr/local/bin/setup_gridengine.sh && cat /var/www/submit_hosts.list && /usr/local/bin/setup_submitter.sh /var/www/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]

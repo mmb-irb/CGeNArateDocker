@@ -45,6 +45,7 @@ RUN crontab -u www-data /etc/cron.d/my-apache-cronjob
 RUN echo '#!/bin/sh' > entrypoint.sh && \
     # echo 'cp /keys/id_rsa /root/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'cp /keys/id_rsa /var/www/.ssh/id_rsa' >> entrypoint.sh && \
+    echo 'chmod 600 /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chown -R www-data:www-data /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'set -e' >> entrypoint.sh && \
     echo 'mkdir -p /var/www/html/public' >> entrypoint.sh && \

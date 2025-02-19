@@ -4,10 +4,10 @@
 /etc/init.d/gridengine-master start
 /etc/init.d/gridengine-exec start
 
-# Export the current SGE configuration to a temp file
+# Export the current SGE global configuration to a temp file
 qconf -sconf global > /tmp/global
 
-# Modify the min_uid value for allowing users with uid >= 33 to submit jobs
+# Modify the UID value for allowing users with uid >= 33 to submit jobs
 sed -i 's/^min_uid.*/min_uid                      33/' /tmp/global
 sed -i 's/^min_gid.*/min_gid                      33/' /tmp/global
 
