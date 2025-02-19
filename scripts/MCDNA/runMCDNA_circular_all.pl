@@ -173,7 +173,8 @@ if($traj == 2 or $traj == 0){
 
 		# Standard output file name (for the web server)
 		#`cp mc_dna_str.pdb str.pdb`;
-		`cp $out_folder/output_pdb/structure_000000_AA.pdb str.pdb`;
+		#`cp $out_folder/output_pdb/structure_000000_AA.pdb str.pdb`;
+		`cp $out_folder/output_pdb/structure_000000_AA_fdh_circ.pdb str.pdb`;
 	}
 }
 
