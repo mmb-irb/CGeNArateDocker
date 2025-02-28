@@ -1,4 +1,5 @@
-FROM php:7.4-apache
+#FROM php:7.4-apache
+FROM php:8.1-apache
 
 # Set non-interactive mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
