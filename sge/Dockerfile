@@ -39,18 +39,12 @@ RUN gpg --import /keys/AA8E81B4331F7F50.asc \
 # Update the package lists and install GridEngine packages
 RUN apt-get update -y && apt-get install -y gridengine-exec gridengine-master gridengine-qmon
 
-# Create a new user 'application'
-# RUN useradd -m application
-
 # Copy the public key to the authorized_keys file
-# RUN mkdir -p /home/application/.ssh
 RUN mkdir -p /var/www/.ssh
 RUN chown -R www-data:www-data /var/www
-# ADD id_rsa.pub /home/application/.ssh/authorized_keys 
 
 # Make sure host and container share the same GID for group 'docker', bc it has reading permissions to the socket file
 RUN groupmod -g $DOCKER_GROUP_ID docker
-#RUN usermod -aG docker application
 RUN usermod -s /bin/bash www-data
 RUN usermod -aG docker www-data
 
@@ -61,18 +55,12 @@ RUN chmod +x /usr/local/bin/setup_gridengine.sh
 RUN chmod +x /usr/local/bin/setup_submitter.sh
 
 # Add the submitter hostname to the submit_hosts.list file
-# RUN echo "$SUBMITTER_HOSTNAME" > /home/application/submit_hosts.list
-# RUN cat /home/application/submit_hosts.list
 RUN echo "$SUBMITTER_HOSTNAME" > /var/www/submit_hosts.list
-# RUN echo "my_stack_sge" >> /var/www/submit_hosts.list
-# RUN cat /var/www/submit_hosts.list
 
 # Expose SSH and SGE ports
 EXPOSE ${SGE_SSH_PORT} ${SGE_PORT}
 
 # Set the maximum number of jobs as an environment variable for making it accessible in setup_gridengine.sh
 ENV SGE_MAX_JOBS=${SGE_MAX_JOBS}
-
-# CMD ["bash", "-c", "cp /keys/id_rsa.pub /home/application/.ssh/authorized_keys && chown application:application /home/application/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && /usr/local/bin/setup_gridengine.sh && cat /home/application/submit_hosts.list && /usr/local/bin/setup_submitter.sh /home/application/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]
 
 CMD ["bash", "-c", "cp /keys/id_rsa.pub /var/www/.ssh/authorized_keys && chown www-data:www-data /var/www/.ssh/authorized_keys && service ssh start && chmod 666 /var/run/docker.sock && cat /var/www/submit_hosts.list && /usr/local/bin/setup_gridengine.sh && cat /var/www/submit_hosts.list && /usr/local/bin/setup_submitter.sh /var/www/submit_hosts.list && qconf -mconf && tail -f /var/spool/gridengine/qmaster/messages"]

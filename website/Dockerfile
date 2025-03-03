@@ -7,7 +7,6 @@ ARG WEBSITE_INNER_PORT
 
 # Install dependencies for building PHP extensions
 RUN apt-get update && apt-get install -y libssl-dev \
-    # && pecl install mongodb \
     && pecl install mongodb-1.9.1 \
     && docker-php-ext-enable mongodb \
     && apt-get install openssh-client -y \
@@ -15,12 +14,8 @@ RUN apt-get update && apt-get install -y libssl-dev \
 
 # Enable apache modules
 RUN a2enmod ssl && a2enmod rewrite
-#RUN mkdir -p /etc/apache2/ssl
 
-#COPY ./ssl/*.pem /etc/apache2/ssl/
-
-# create .ssh directories for root and www-data
-# RUN mkdir -p /root/.ssh
+# create .ssh directory for www-data
 RUN mkdir -p /var/www/.ssh
 RUN chown -R www-data:root /var/www/.ssh
 
@@ -44,7 +39,6 @@ RUN crontab -u www-data /etc/cron.d/my-apache-cronjob
 
 # Create the entrypoint script: ssh keys, website code directory, .tmp and cron
 RUN echo '#!/bin/sh' > entrypoint.sh && \
-    # echo 'cp /keys/id_rsa /root/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'cp /keys/id_rsa /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chmod 600 /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chown -R www-data:www-data /var/www/.ssh/id_rsa' >> entrypoint.sh && \
@@ -59,8 +53,6 @@ RUN echo '#!/bin/sh' > entrypoint.sh && \
     echo 'cron' >> entrypoint.sh && \
     echo 'exec "$@"' >> entrypoint.sh && \
     chmod +x entrypoint.sh
-
-# echo 'chown -R www-data:www-data /data/Web' >> entrypoint.sh && \
 
 # Change working directory to /var/www/html
 WORKDIR /var/www/html
