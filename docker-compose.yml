@@ -17,12 +17,6 @@ services:
       - ${LOGS_VOLUME_PATH}:/logs   # path where the logs will be stored
       - ./website/act_qmaster:/var/lib/gridengine/default/common/act_qmaster
       - ${SSH_KEYS_VOLUME_PATH}:/keys
-    # networks:
-    #   sgenet:
-    #     ipv4_address: 172.19.0.18
-    #     aliases:
-    #       - my_stack_website
-    #   dbnet: {}
     networks:
       - sgenet
       - dbnet
@@ -45,8 +39,6 @@ services:
     # platform: linux/amd64
     build:
       context: ./workflow  # folder to search Dockerfile for this image
-    # networks:
-    #   - dbnet
     volumes:
       - workflow_data:/mnt
       - workflow_scripts:/app/Scripts
@@ -71,11 +63,6 @@ services:
         SGE_SSH_PORT: ${SGE_SSH_PORT}
         SGE_PORT: ${SGE_PORT}
         SGE_MAX_JOBS: ${SGE_MAX_JOBS}
-    # networks:
-    #   sgenet:
-    #     ipv4_address: 172.19.0.19
-    #     aliases:
-    #       - my_stack_sge
     networks:
       - sgenet
     depends_on:
@@ -175,6 +162,3 @@ networks:
     external: true   # Use an external network
   sgenet:
     external: true   # Use an external network
-    # ipam:
-    #   config:
-    #         - subnet: 10.0.2.0/24

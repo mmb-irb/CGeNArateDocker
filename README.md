@@ -71,12 +71,6 @@ services:
       - ${LOGS_VOLUME_PATH}:/logs   # path where the logs will be stored
       - ./website/act_qmaster:/var/lib/gridengine/default/common/act_qmaster
       - ${SSH_KEYS_VOLUME_PATH}:/keys
-    # networks:
-    #   sgenet:
-    #     ipv4_address: 172.19.0.18
-    #     aliases:
-    #       - my_stack_website
-    #   dbnet: {}
     networks:
       - sgenet
       - dbnet
@@ -99,8 +93,6 @@ services:
     # platform: linux/amd64
     build:
       context: ./workflow  # folder to search Dockerfile for this image
-    # networks:
-    #   - dbnet
     volumes:
       - workflow_data:/mnt
       - workflow_scripts:/app/Scripts
@@ -125,11 +117,6 @@ services:
         SGE_SSH_PORT: ${SGE_SSH_PORT}
         SGE_PORT: ${SGE_PORT}
         SGE_MAX_JOBS: ${SGE_MAX_JOBS}
-    # networks:
-    #   sgenet:
-    #     ipv4_address: 172.19.0.19
-    #     aliases:
-    #       - my_stack_sge
     networks:
       - sgenet
     depends_on:
@@ -229,9 +216,6 @@ networks:
     external: true   # Use an external network
   sgenet:
     external: true   # Use an external network
-    # ipam:
-    #   config:
-    #         - subnet: 10.0.2.0/24
 ```
 
 All the variables are defined in a `.env` file. See following section.
@@ -406,7 +390,6 @@ In order to execute the **long-term** tasks in **Docker Swarm** and the **one-of
 
 ```sh
 docker network create --driver overlay --attachable dbnet
-#docker network create -d macvlan --subnet=172.19.0.0/24 --gateway=172.19.0.1 -o parent=eth0 --scope swarm sgenet
 docker network create --driver overlay --attachable sgenet
 ```
 
@@ -414,7 +397,7 @@ docker network create --driver overlay --attachable sgenet
 
 Workaround for **deploying in macOS**:
 
-**Uncomment** in the [**docker-compose.yml**](./docker-compose.yml#L45) file the line:
+**Uncomment** in the [**docker-compose.yml**](./docker-compose.yml#L39) file the line:
 
 ```yaml
 platform: linux/amd64
