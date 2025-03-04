@@ -57,6 +57,10 @@ RUN chmod +x /usr/local/bin/setup_submitter.sh
 # Add the submitter hostname to the submit_hosts.list file
 RUN echo "$SUBMITTER_HOSTNAME" > /var/www/submit_hosts.list
 
+# Change the SSH port from 22 default to the one specified in the environment variable
+ENV SGE_SSH_PORT=${SGE_SSH_PORT}
+RUN sed -i "s/#Port 22/Port ${SGE_SSH_PORT}/" /etc/ssh/sshd_config
+
 # Expose SSH and SGE ports
 EXPOSE ${SGE_SSH_PORT} ${SGE_PORT}
 
