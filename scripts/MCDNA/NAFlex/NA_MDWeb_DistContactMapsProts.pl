@@ -92,8 +92,9 @@ sub run_distContactMaps{
 	my $end = $l;
 	my $offset = 1;
 	chdir("NUC-NUC");
-	`cp ../seqR.info .`;
-	`perl $scriptsDir/plotContactMap_R.pl "$title" $ini $end $offset $out `;
+	#`cp ../seqR.info .`;
+	#`perl $scriptsDir/plotContactMap_R.pl "$title" $ini $end $offset $out `;
+	`python $scriptsDir/plotContactMap_Python.py $end`;
 
 	# END TO END distances: distances from nucleotide number 1 to the last one.
 	#my $end2end = `ls --color=never -rlht 1-$l1.dat | tail -1 | awk '{print \$NF}'`;
@@ -105,7 +106,7 @@ sub run_distContactMaps{
 	my $outClass = `cat ptraj.out`;
 
         # Cleaning folder...
-        `rm *-*.dat`;
+        #`rm *-*.dat`;
 
 	# PROT-PROT
 

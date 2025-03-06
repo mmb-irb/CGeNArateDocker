@@ -7,7 +7,8 @@ if ($long<2){
         exit(0);
 }
     
-my $softForces = "/home/NAFlex/soft/force_ctes";
+#my $softForces = "/home/NAFlex/soft/force_ctes";
+my $softForces = "/app/Scripts/MCDNA/NAFlex/soft/force_ctes";
 
 &generate_files_forces($fwd,$rev);
 
@@ -138,5 +139,6 @@ $softForces/forces.adam -x FORCE_CTES/$file.txt -n 6 -helical > FORCE_CTES/$file
 mv average.txt FORCE_CTES/$file.av
 EOF
     close(TMP);
-    system("csh temp.csh;rm -f temp.csh");
+    #system("csh temp.csh;rm -f temp.csh");
+    system("sh temp.csh;rm -f temp.csh");
 }

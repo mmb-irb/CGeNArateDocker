@@ -72,7 +72,7 @@ print "STARTING ANALYSIS FOR $methodTXT{$method} METHOD...\n\n";
 #print "## SECTION NAME ANALYSIS FOR $methodTXT{$method} METHOD\n";
 #print "## TRAJ\n";
 
-# MCDNA "regular" METHOD
+# CGeNArate "regular" METHOD
 if ($method == 1){
 
 	if($traj == 1 or $traj == 2){
@@ -87,6 +87,7 @@ if ($method == 1){
 		chdir("$out_folder/ANALYSIS");
 
 		my $traj_folder = "$out_folder/output_schnarp/display";
+		my $pdb_folder = "$out_folder/output_pdb";
 
 		if($rebuilt) {
 			# STEP 1: Analysis on Flexibility (NAFlex) 
@@ -97,7 +98,8 @@ if ($method == 1){
 				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.nc $out_folder/ANALYSIS NAFlex Stiffness > NAFlex.stiffness.log 2>&1`;
 			}
 
-			`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
+			#`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
+			`perl $naflex/runNucleicAcidAnalysis.pl $pdb_folder/structure_000000_AA.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
 
 			# End 2 End distances
 			if (-s "$out_folder/ANALYSIS/NAFlex/CONTACTS/NUC-NUC/end2end.dat"){
@@ -127,7 +129,8 @@ if ($method == 1){
 			# STEP 1: Analysis on Flexibility (NAFlex) 
 			print "# STEP 1: Analysis on Flexibility (NAFlex)...\n";
 			`perl $naflex/prepTOP.pl $traj_folder/traj.pdb > $traj_folder/struc.prmtop`;
-			`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.nc $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
+			#`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.nc $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
+			`perl $naflex/runNucleicAcidAnalysis.pl $pdb_folder/structure_000000.pdb $traj_folder/struc.prmtop $traj_folder/traj.nc $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
 
 			# End 2 End distances
 			if (-s "$out_folder/ANALYSIS/NAFlex/CONTACTS/NUC-NUC/end2end.dat"){
@@ -516,7 +519,7 @@ elsif ($method == 3){
 }
 
 # Building downloadable tar package
-print "Building downloadable tar package for MCDNA Analysis...\n";
+print "Building downloadable tar package for CGeNArate Analysis...\n";
 chdir("$curr_folder");
 #`tar -zcvf mcdna.analysis.tgz EQ*/ANALYSIS` if ($traj == 0);
 #`tar -zcvf mcdna.analysis.tgz TRAJ*/ANALYSIS` if ($traj == 1);
@@ -555,7 +558,7 @@ sub download_readme {
 
 	# Auxiliary Files
 	open SUM,">download/summary.txt";
-	print SUM "# MCDNA process summary #\n";
+	print SUM "# CGeNArate process summary #\n";
 	print SUM "Sequence: $seq\n";
 	print SUM "Method: $method\n";
 	print SUM "Resolution: $resolution\n";
@@ -569,7 +572,7 @@ sub download_eq {
 
 	mkdir("download") if (! -s "download");
 	
-	# MCDNA Analysis
+	# CGeNArate Analysis
 	mkdir("download/STRUCT") if (! -s "download/STRUCT");
 	mkdir("download/STRUCT/ANALYSIS") if (! -s "download/STRUCT/ANALYSIS");
 
@@ -618,7 +621,7 @@ sub download_traj {
 
 	mkdir("download") if (! -s "download");
 	
-	# MCDNA Analysis
+	# CGeNArate Analysis
 	mkdir("download/TRAJ") if (! -s "download/TRAJ");
 	mkdir("download/TRAJ/ANALYSIS") if (! -s "download/TRAJ/ANALYSIS");
 

@@ -43,7 +43,8 @@ sub run_pcazip{
 		my $xlabel = "Time (Snapshots)";
 		my $ylabel = "Displacement (Angstroms)";
 		#print "\tPlotting plotXY_R.pl $output.proj$i.dat $title $xlabel $ylabel &> gnuplot.errors\n";
-		`perl $scriptsDir/plotXY_R.pl $output.proj$i.plot.dat "$title" "$xlabel" "$ylabel" &> gnuplot.errors`;
+		#`perl $scriptsDir/plotXY_R.pl $output.proj$i.plot.dat "$title" "$xlabel" "$ylabel" &> gnuplot.errors`;
+		`python $scriptsDir/plotXY_Python.py $output.proj$i.plot.dat "$title" "$xlabel" "$ylabel" &> gnuplot.errors`;
 	}
 
 	# Computing Animations from PCZ.

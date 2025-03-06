@@ -131,6 +131,9 @@ if($traj == 1 or $traj == 2){
 			
 		`cp $out_folder/output_schnarp/display/traj_glimps.pdb $out_folder/output_schnarp/display/traj.pdb`;
 		`cp $out_folder/output_schnarp/display/traj_glimps.dcd $out_folder/output_schnarp/display/traj.dcd`;
+
+		# Converting trajectory format for Curves+
+		`mdconvert $out_folder/output_schnarp/display/traj.dcd -o $out_folder/output_schnarp/display/traj.nc`;
 	}
 	else{
 		`cp $out_folder/output_schnarp/str.pdb $out_folder/output_schnarp/display/traj.pdb`;
@@ -148,7 +151,7 @@ if($traj == 2 or $traj == 0){
 
 	# STEP 1: Executing CGeNArate
 	# It needs to be executed in the same folder where the binary is placed (auxiliar files hardcoded)
-	print "# STEP 1: Executing MCDNA...\n";
+	print "# STEP 1: Executing CGeNArate...\n";
 	&runMCDNA_new($MCDNAbinStruct,$out_folder,$seq,$nstructs,$rebuilt);
 
 	if ($resolution eq "AA"){
@@ -220,7 +223,7 @@ sub runCgenerate {
 
 	my $config = "$out_folder/output_schnarp/cgenerate_config.toml";
         open CONFIG,">$config";
-        print CONFIG "# CGeNArate config file, created by MCDNA web server #\n";
+        print CONFIG "# CGeNArate config file, created by CGeNArate web server #\n";
 	print CONFIG "[simulation]\n";
 	print CONFIG "name = 'CGeNArate web server - Circular DNA'\n";
 	print CONFIG "T0 = 298.0 # Temperature (K)\n";
@@ -265,8 +268,8 @@ sub runMCDNA_new {
 		print "$MCDNAbinStruct_AA $seq $out_folder/output_pdb/structure_000000_ \n";
 		`$MCDNAbinStruct_AA $seq ${out_folder}/output_pdb/structure_000000_`;
 
-		print "python $MCDNAfdhelix/buildCircular2.py $out_folder/output_pdb/structure_000000_AA_fdh.pdb $out_folder/output_pdb/structure_000000_AA_fdh_circ.pdb $deltalk\n"; 
-		`python $MCDNAfdhelix/buildCircular2.py $out_folder/output_pdb/structure_000000_AA_fdh.pdb $out_folder/output_pdb/structure_000000_AA_fdh_circ.pdb $deltalk`;
+		print "python $MCDNAfdhelix/buildCircular.py $out_folder/output_pdb/structure_000000_AA_fdh.pdb $out_folder/output_pdb/structure_000000_AA_fdh_circ.pdb $deltalk\n"; 
+		`python $MCDNAfdhelix/buildCircular.py $out_folder/output_pdb/structure_000000_AA_fdh.pdb $out_folder/output_pdb/structure_000000_AA_fdh_circ.pdb $deltalk`;
 
                 # Standard output file name (for the web server)
 		`cp $out_folder/output_pdb/structure_000000_AA_fdh_circ.pdb $out_folder/output_pdb/str.pdb`;
@@ -276,8 +279,8 @@ sub runMCDNA_new {
 		print "$MCDNAbinStruct $seq $out_folder/output_pdb/structure_000000.pdb \n";
 		`$MCDNAbinStruct $seq $out_folder/output_pdb/structure_000000.pdb`;
 
-		print "python $MCDNAfdhelix/buildCircular2.py $out_folder/output_pdb/structure_000000.pdb $out_folder/output_pdb/structure_000000_circ.pdb $deltalk\n"; 
-		`python $MCDNAfdhelix/buildCircular2.py $out_folder/output_pdb/structure_000000.pdb $out_folder/output_pdb/structure_000000_circ.pdb $deltalk`;
+		print "python $MCDNAfdhelix/buildCircular.py $out_folder/output_pdb/structure_000000.pdb $out_folder/output_pdb/structure_000000_circ.pdb $deltalk\n"; 
+		`python $MCDNAfdhelix/buildCircular.py $out_folder/output_pdb/structure_000000.pdb $out_folder/output_pdb/structure_000000_circ.pdb $deltalk`;
 
                 # Standard output file name (for the web server)
                 `cp $out_folder/output_pdb/structure_000000_circ.pdb $out_folder/output_schnarp/str.pdb`;
@@ -299,7 +302,7 @@ sub download_readme {
 
         # Auxiliary Files
         open SUM,">download/summary.txt";
-        print SUM "# MCDNA process summary #\n";
+        print SUM "# CGeNArate process summary #\n";
         print SUM "Sequence: $seq\n";
         print SUM "Method: $method\n";
         print SUM "Resolution: $resolution\n";
@@ -315,11 +318,11 @@ sub download_eq {
 
         # MCDNA Structure
         mkdir("download/STRUCT") if (! -s "download/STRUCT");
-        mkdir("download/STRUCT/MCDNA") if (! -s "download/STRUCT/MCDNA");
+        mkdir("download/STRUCT/CGeNArate") if (! -s "download/STRUCT/CGeNArate");
 
-        `cp EQ_$resolution/output_schnarp/str.pdb download/STRUCT/MCDNA`;
-        `cp -r EQ_$resolution/output_helpar download/STRUCT/MCDNA`;
-	`mv download/STRUCT/MCDNA/output_helpar download/STRUCT/MCDNA/bps_parms`;
+        `cp EQ_$resolution/output_schnarp/str.pdb download/STRUCT/CGeNArate`;
+        `cp -r EQ_$resolution/output_helpar download/STRUCT/CGeNArate`;
+	`mv download/STRUCT/CGeNArate/output_helpar download/STRUCT/CGeNArate/bps_parms`;
 }
 
 sub download_traj {
@@ -327,13 +330,13 @@ sub download_traj {
 
         mkdir("download") if (! -s "download");
 
-        # MCDNA Structure
+        # CGeNArate Structure
         mkdir("download/TRAJ") if (! -s "download/TRAJ");
-        mkdir("download/TRAJ/MCDNA") if (! -s "download/TRAJ/MCDNA");
+        mkdir("download/TRAJ/CGeNArate") if (! -s "download/TRAJ/CGeNArate");
 
-        `cp TRAJ_$resolution/output_schnarp/display/traj.pdb download/TRAJ/MCDNA`;
-        `cp TRAJ_$resolution/output_schnarp/display/traj.dcd download/TRAJ/MCDNA`;
-        `cp -r TRAJ_$resolution/output_helpar download/TRAJ/MCDNA`;
-	`mv download/TRAJ/MCDNA/output_helpar download/TRAJ/MCDNA/bps_parms`;
+        `cp TRAJ_$resolution/output_schnarp/display/traj.pdb download/TRAJ/CGeNArate`;
+        `cp TRAJ_$resolution/output_schnarp/display/traj.dcd download/TRAJ/CGeNArate`;
+        `cp -r TRAJ_$resolution/output_helpar download/TRAJ/CGeNArate`;
+	`mv download/TRAJ/CGeNArate/output_helpar download/TRAJ/CGeNArate/bps_parms`;
 }
 

@@ -74,9 +74,9 @@ if($traj == 1 or $traj == 2){
 	mkdir("$out_folder") if (! -s "$out_folder");
 	chdir("$out_folder");
 
-	# STEP 1: Executing CGeNArate. 	
+	# STEP 1: Generating starting structure  	
 	# It needs to be executed in the same folder where the binary is placed (auxiliar files hardcoded)
-	print "# STEP 1: Executing CGeNArate...\n";
+	print "# STEP 1: Generating starting structure...\n";
 	&runMCDNA_new($MCDNAbinStruct,$out_folder,$seq,$nstructs,$rebuilt);
 
 	print "# STEP 2: Executing CGenerate...\n";
@@ -84,7 +84,7 @@ if($traj == 1 or $traj == 2){
 
 	if ($resolution eq "AA"){
 
-		print "# STEP 3: Building trajectory from PDB structures... 2\n";
+		print "# STEP 3: Atomistic Reconstruction (GLIMPS)...\n";
 	
 		mkdir("$out_folder/output_schnarp") if (! -s "$out_folder/output_schnarp");
 		mkdir("$out_folder/output_schnarp/display") if (! -s "$out_folder/output_schnarp/display");
@@ -111,7 +111,7 @@ if($traj == 1 or $traj == 2){
 		# CG TRAJECTORY
 
 		# STEP 3: Building trajectory from PDB structures.
-		print "# STEP 3: Building trajectory from PDB structures... 3\n";
+		print "# STEP 3: Building trajectory...\n";
 
 		mkdir("$out_folder/output_schnarp") if (! -s "$out_folder/output_schnarp");
 		mkdir("$out_folder/output_schnarp/display") if (! -s "$out_folder/output_schnarp/display");
@@ -140,22 +140,22 @@ if($traj == 1 or $traj == 2){
 
 if($traj == 2 or $traj == 0){
 
-	# GENERATING STRUCTURE ("Best" single structure)
-        print "## GENERATING STRUCTURE (Best Single Structure)\n";
+	# GENERATING STRUCTURE 
+        print "## GENERATING STRUCTURE\n";
 
 	my $out_folder = "$curr_folder/EQ_$resolution";
 	chdir("$out_folder");
 
 	# STEP 1: Executing CGeNArate. 	
 	# It needs to be executed in the same folder where the binary is placed (auxiliar files hardcoded)
-	print "# STEP 1: Executing CGeNArate...\n";
+	print "# STEP 1: Generating starting structure...\n";
 	&runMCDNA_new($MCDNAbinStruct,$out_folder,$seq,$nstructs,$rebuilt);
 
 	if ($resolution eq "AA"){
 
 		# AA STRUCTURE
 
-		print "# STEP 3: Building trajectory from PDB structures... 1\n";
+		print "# STEP 2: Atomistic Reconstruction (GLIMPS)...\n";
 	
 		mkdir("$out_folder/output_schnarp") if (! -s "$out_folder/output_schnarp");
 		chdir("$out_folder/output_schnarp");
@@ -229,7 +229,7 @@ sub runCgenerate {
 
 	my $config = "$out_folder/output_schnarp/cgenerate_config.toml";
         open CONFIG,">$config";
-        print CONFIG "# CGeNArate config file, created by MCDNA web server #\n";
+        print CONFIG "# CGeNArate config file, created by CGeNArate web server #\n";
 	print CONFIG "[simulation]\n";
 	print CONFIG "name = 'CGeNArate web server'\n";
 	print CONFIG "T0 = 298.0 # Temperature (K)\n";
@@ -298,7 +298,7 @@ sub download_readme {
 
         # Auxiliary Files
         open SUM,">download/summary.txt";
-        print SUM "# MCDNA process summary #\n";
+        print SUM "# CGeNArate process summary #\n";
         print SUM "Sequence: $seq\n";
         print SUM "Method: $method\n";
         print SUM "Resolution: $resolution\n";
@@ -314,11 +314,11 @@ sub download_eq {
 
         # MCDNA Structure
         mkdir("download/STRUCT") if (! -s "download/STRUCT");
-        mkdir("download/STRUCT/MCDNA") if (! -s "download/STRUCT/MCDNA");
+        mkdir("download/STRUCT/CGeNArate") if (! -s "download/STRUCT/CGeNArate");
 
-        `cp EQ_$resolution/output_schnarp/str.pdb download/STRUCT/MCDNA`;
-        `cp -r EQ_$resolution/output_helpar download/STRUCT/MCDNA`;
-	`mv download/STRUCT/MCDNA/output_helpar download/STRUCT/MCDNA/bps_parms`;
+        `cp EQ_$resolution/output_schnarp/str.pdb download/STRUCT/CGeNArate`;
+        `cp -r EQ_$resolution/output_helpar download/STRUCT/CGeNArate`;
+	`mv download/STRUCT/CGeNArate/output_helpar download/STRUCT/CGeNArate/bps_parms`;
 }
 
 sub download_traj {
@@ -328,11 +328,11 @@ sub download_traj {
 
         # MCDNA Structure
         mkdir("download/TRAJ") if (! -s "download/TRAJ");
-        mkdir("download/TRAJ/MCDNA") if (! -s "download/TRAJ/MCDNA");
+        mkdir("download/TRAJ/CGeNArate") if (! -s "download/TRAJ/CGeNArate");
 
-        `cp TRAJ_$resolution/output_schnarp/display/traj.pdb download/TRAJ/MCDNA`;
-        `cp TRAJ_$resolution/output_schnarp/display/traj.dcd download/TRAJ/MCDNA`;
-        `cp -r TRAJ_$resolution/output_helpar download/TRAJ/MCDNA`;
-	`mv download/TRAJ/MCDNA/output_helpar download/TRAJ/MCDNA/bps_parms`;
+        `cp TRAJ_$resolution/output_schnarp/display/traj.pdb download/TRAJ/CGeNArate`;
+        `cp TRAJ_$resolution/output_schnarp/display/traj.dcd download/TRAJ/CGeNArate`;
+        `cp -r TRAJ_$resolution/output_helpar download/TRAJ/CGeNArate`;
+	`mv download/TRAJ/CGeNArate/output_helpar download/TRAJ/CGeNArate/bps_parms`;
 }
 
