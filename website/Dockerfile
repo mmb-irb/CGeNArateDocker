@@ -37,8 +37,12 @@ RUN chmod 0644 /etc/cron.d/my-apache-cronjob
 # Install the cron job for www-data
 RUN crontab -u www-data /etc/cron.d/my-apache-cronjob
 
-# Create the entrypoint script: ssh keys, website code directory, .tmp and cron
+# Create the entrypoint script: check seed, ssh keys, website code directory, .tmp and cron
 RUN echo '#!/bin/sh' > entrypoint.sh && \
+    echo 'while [ ! -f /logs/seed/seed-complete ]; do' >> entrypoint.sh && \
+    echo '  echo "Waiting for mongo-seed to complete...";' >> entrypoint.sh && \
+    echo '  sleep 5;' >> entrypoint.sh && \
+    echo 'done;' >> entrypoint.sh && \
     echo 'cp /keys/id_rsa /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chmod 600 /var/www/.ssh/id_rsa' >> entrypoint.sh && \
     echo 'chown -R www-data:www-data /var/www/.ssh/id_rsa' >> entrypoint.sh && \

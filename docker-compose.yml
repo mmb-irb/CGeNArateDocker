@@ -75,6 +75,7 @@ services:
       - workflow_scripts:/scripts
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SSH_KEYS_VOLUME_PATH}:/keys
+      - ${LOGS_VOLUME_PATH}:/logs
     devices:
       - '/dev/fuse:/dev/fuse'
     cap_add:
@@ -145,6 +146,7 @@ services:
       - "./mongodb/${DB_COLLECTION_PRJ}.json:/${DB_COLLECTION_PRJ}.json:ro"
       - ./mongodb/import.sh:/import.sh:ro
       - ${SSH_KEYS_VOLUME_PATH}:/keys
+      - ${LOGS_VOLUME_PATH}:/logs
     entrypoint: ["bash", "/import.sh"]
     deploy:
       replicas: 1  # Ensures it runs only once
