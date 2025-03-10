@@ -110,7 +110,7 @@ if($traj == 1 or $traj == 2){
 
 		# CG TRAJECTORY
 
-		# STEP 3: Building trajectory from PDB structures.
+		# STEP 3: Building trajectory...
 		print "# STEP 3: Building trajectory...\n";
 
 		mkdir("$out_folder/output_schnarp") if (! -s "$out_folder/output_schnarp");

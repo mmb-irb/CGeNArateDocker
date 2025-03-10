@@ -106,7 +106,7 @@ sub run_distContactMaps{
 	my $outClass = `cat ptraj.out`;
 
         # Cleaning folder...
-        #`rm *-*.dat`;
+        `rm *-*.dat`;
 
 	# PROT-PROT
 

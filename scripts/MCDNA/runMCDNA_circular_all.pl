@@ -85,7 +85,7 @@ if($traj == 1 or $traj == 2){
 	print "# STEP 2: Executing CGenerate...\n";
 	&runCgenerate($MCDNAbinTraj,$out_folder,$seq,$nstructs,$rebuilt);
 
-	print "# STEP 3: Building trajectory from PDB structures...\n";
+	print "# STEP 3: Building trajectory...\n";
 	
 	mkdir("$out_folder/output_schnarp") if (! -s "$out_folder/output_schnarp");
 	mkdir("$out_folder/output_schnarp/display") if (! -s "$out_folder/output_schnarp/display");
@@ -125,6 +125,9 @@ if($traj == 1 or $traj == 2){
 	`cpptraj -p $out_folder/output_pdb/structure_000000_CG.pdb -y $out_folder/output_schnarp/cgenarate_traj.fitted.mdcrd -x $out_folder/output_schnarp/display/mc_dna_str.dcd > cpptraj_dcd.log 2>&1`;
 
 	if ($resolution eq "AA"){
+	
+		print "# STEP 4: Atomistic Reconstruction (GLIMPS)...\n";
+
                 # GLIMPS atomistic reconstruction
        	        print "python $glimps/Rebuild_nmer_Circ_web.py $out_folder/output_schnarp/str.pdb $out_folder/output_schnarp/display/mc_dna_str.dcd $out_folder/output_schnarp/display/traj_glimps.pdb $out_folder/output_schnarp/display/traj_glimps.dcd\n";
                	`python $glimps/Rebuild_nmer_Circ_web.py $out_folder/output_schnarp/str.pdb $out_folder/output_schnarp/display/mc_dna_str.dcd $out_folder/output_schnarp/display/traj_glimps.pdb $out_folder/output_schnarp/display/traj_glimps.dcd`;
@@ -143,8 +146,8 @@ if($traj == 1 or $traj == 2){
 
 if($traj == 2 or $traj == 0){
 
-	# GENERATING STRUCTURE ("Best" single structure)
-        print "## GENERATING STRUCTURE (Best Single Structure)\n";
+	# GENERATING STRUCTURE 
+        print "## GENERATING STRUCTURE \n";
 
 	my $out_folder = "$curr_folder/EQ_$resolution";
 	chdir("$out_folder");
@@ -158,7 +161,7 @@ if($traj == 2 or $traj == 0){
 
 		# AA STRUCTURE
 
-		print "# STEP 3: Building trajectory from PDB structures...\n";
+		print "# STEP 3: Building trajectory...\n";
 	
 		mkdir("$out_folder/output_schnarp") if (! -s "$out_folder/output_schnarp");
 		chdir("$out_folder/output_schnarp");
