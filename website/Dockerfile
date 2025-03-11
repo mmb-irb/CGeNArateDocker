@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y libssl-dev \
     && pecl install mongodb-1.9.1 \
     && docker-php-ext-enable mongodb \
     && apt-get install openssh-client -y \
-    && apt-get install -y gridengine-client
+    && apt-get install -y gridengine-client \
+    && apt install r-base -y
 
 # Enable apache modules
 RUN a2enmod ssl && a2enmod rewrite
