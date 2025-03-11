@@ -43,7 +43,8 @@ my $seq = '';
 my $inputSeq = "$curr_folder/inputSequence.txt";
 if (-s "$inputSeq"){
 	$length = `wc -c $inputSeq | awk '{print \$1}'`;
-	$length += 0;
+	#$length += 0;
+	$length -= 1;
 	$seq = `cat $inputSeq`;
 }
 
