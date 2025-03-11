@@ -295,13 +295,13 @@ sub download_readme {
 
         mkdir("download") if (! -s "download");
 
-        my $nstructs = 0;
-        my $log = "TRAJ_$resolution/output_schnarp/display/cpptraj_dcd.log";
-        if (-s "$log"){
-                my $g = `grep "frames and processed" $log`;
-                $g =~ /Read (\d+) frames and processed/;
-                $nstructs = $1;
-        }
+        #my $nstructs = 0;
+        #my $log = "TRAJ_$resolution/output_schnarp/display/cpptraj_dcd.log";
+        #if (-s "$log"){
+        #        my $g = `grep "frames and processed" $log`;
+        #        $g =~ /Read (\d+) frames and processed/;
+        #        $nstructs = $1;
+        #}
 
         # Auxiliary Files
         open SUM,">download/summary.txt";
@@ -310,7 +310,8 @@ sub download_readme {
         print SUM "Method: $method\n";
         print SUM "Resolution: $resolution\n";
         print SUM "System: $system\n";
-        print SUM "Number of structures: $nstructs\n" if ($system =~ /TRAJ/ and $nstructs);
+        #print SUM "Number of structures: $nstructs\n" if ($system =~ /TRAJ/ and $nstructs);
+        print SUM "Number of structures: $nstructs\n"; 
         close SUM;
 }
 
@@ -324,8 +325,8 @@ sub download_eq {
         mkdir("download/STRUCT/CGeNArate") if (! -s "download/STRUCT/CGeNArate");
 
         `cp EQ_$resolution/output_schnarp/str.pdb download/STRUCT/CGeNArate`;
-        `cp -r EQ_$resolution/output_helpar download/STRUCT/CGeNArate`;
-	`mv download/STRUCT/CGeNArate/output_helpar download/STRUCT/CGeNArate/bps_parms`;
+        #`cp -r EQ_$resolution/output_helpar download/STRUCT/CGeNArate`;
+	#`mv download/STRUCT/CGeNArate/output_helpar download/STRUCT/CGeNArate/bps_parms`;
 }
 
 sub download_traj {
@@ -339,7 +340,7 @@ sub download_traj {
 
         `cp TRAJ_$resolution/output_schnarp/display/traj.pdb download/TRAJ/CGeNArate`;
         `cp TRAJ_$resolution/output_schnarp/display/traj.dcd download/TRAJ/CGeNArate`;
-        `cp -r TRAJ_$resolution/output_helpar download/TRAJ/CGeNArate`;
-	`mv download/TRAJ/CGeNArate/output_helpar download/TRAJ/CGeNArate/bps_parms`;
+        #`cp -r TRAJ_$resolution/output_helpar download/TRAJ/CGeNArate`;
+	#`mv download/TRAJ/CGeNArate/output_helpar download/TRAJ/CGeNArate/bps_parms`;
 }
 

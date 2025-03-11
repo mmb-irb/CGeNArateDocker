@@ -539,8 +539,8 @@ chdir("$curr_folder");
 #`tar -zcvf mcdna.analysis.tgz TRAJ*/ANALYSIS` if ($traj == 1);
 #`tar -zcvf mcdna.analysis.tgz EQ*/ANALYSIS TRAJ*/ANALYSIS` if ($traj == 2);
 
-&download_readme($seq,$methodTXT{$method},$resolution,$system);
-&download_eq($methodTXT{$method},$resolution);
+#&download_readme($seq,$methodTXT{$method},$resolution,$system);
+#&download_eq($methodTXT{$method},$resolution);
 &download_traj($methodTXT{$method},$resolution);
 
 chdir("$curr_folder/download");
@@ -563,7 +563,7 @@ sub download_readme {
 	mkdir("download") if (! -s "download");
 
 	my $nstructs = 0;
-	my $log = "TRAJ_$resolution/output_schnarp/display/cpptraj_dcd.log";
+	my $log = "TRAJ_$resolution/output_schnarp/display/cpptraj_dcd.log"; 
 	if (-s "$log"){
 		my $g = `grep "frames and processed" $log`;
 		$g =~ /Read (\d+) frames and processed/;
@@ -686,9 +686,9 @@ sub download_traj {
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/backbone_torsions/*.dat download/TRAJ/ANALYSIS/HelicalParams/backbone_torsions`;
 
 	}
-	if ($method eq "circular"){
-		`cp -r EQ_$resolution/ANALYSIS/Circular download/STRUCT/ANALYSIS`;
-	}
+	#if ($method eq "circular"){
+	#	`cp -r EQ_$resolution/ANALYSIS/Circular download/STRUCT/ANALYSIS`;
+	#}
 	if ($method eq "prot-dna"){
 		mkdir("download/TRAJ/ANALYSIS/Sasa") if (! -s "download/TRAJ/ANALYSIS/Sasa");
 		`cp TRAJ_$resolution/ANALYSIS/Sasa/sasa.*.dat download/TRAJ/ANALYSIS/Sasa`;
