@@ -30,7 +30,7 @@ sub run_stiffness{
 		print "Curves Analysis has already been computed, using Curves files to compute Stiffness analysis.\n";
 		`cp $workdir/$dirCurves/* . &> curvesCopy.log`;
 		`cp -r $workdir/$dirCurves/FORCE_CTES .`;
-		chmod 0774, "FORCE_CTES";
+		chmod 0775, "FORCE_CTES";
 
         	($seq1,$seq2,$firsts,$lasts) = checkPDB($pdb);
 	       	print "SEQ1: $seq1\n";
@@ -40,7 +40,7 @@ sub run_stiffness{
 
 		print "Curves Analysis has not already been computed, running Curves to obtain necessary files to compute Stiffness analysis.\n";
 		mkdir("FORCE_CTES")  if(! -e "FORCE_CTES");
-		chmod 0774, "FORCE_CTES";
+		chmod 0775, "FORCE_CTES";
 
 	        ($seq1,$seq2,$firsts,$lasts) = checkPDB($pdb);
        		print "SEQ1: $seq1\n";
