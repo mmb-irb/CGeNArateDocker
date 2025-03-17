@@ -5,6 +5,8 @@ FROM docker.io/continuumio/miniconda3:latest
 RUN apt-get update && \
     apt-get install -y \
     build-essential \
+    csh \
+    gfortran \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
