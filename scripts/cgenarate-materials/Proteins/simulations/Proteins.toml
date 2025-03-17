@@ -1,0 +1,27 @@
+[simulation]
+name = "nucl"
+T0 = 298.0 # Temperature (K)
+dt0 = 0.1 # timestep in picoseconds
+N = 180 # Number of beads
+frames = 5000 # Number of frames
+steps = 200 # Number of steps between frames
+linear = true
+seed = 1234 # random seed
+
+[input]
+file = "./input/Proteins.pdb"
+
+[output]
+coordinates = "output/Proteins.mdcrd"
+energy = "output/Proteins.csv"
+# Uncomment plots file to enable plots output.
+# plots = "output/NRL_195plots.csv"
+
+[restore]
+# Load Restart mode:
+# "none" -> do nothing
+# "print" -> print, but don't load (out)
+# "load" -> load and print
+mode = "none"
+# current = "output/current_yeast.pdb"
+# restart = "output/restart_yeast.pdb"

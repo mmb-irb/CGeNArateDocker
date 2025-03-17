@@ -1,0 +1,18 @@
+Compiled in IRBCluster:
+
+salloc -N1 -p mmb_cpu_zen3 -t10:00:00
+bash
+
+spack load llvm /aqmfzxi
+module load anaconda3/2023.09
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/spack/opt/spack/linux-rocky8-zen3/gcc-13.2.0/llvm-18.1.8-aqmfzxibktzgdmgkcb4oefnw57o7xsgu/lib
+conda activate
+
+vim Makefile <-- Edit Makefile, remove omp dependency: 
+  else
+        #OMP_FLAG ?= -fopenmp
+        OMP_FLAG ?=
+  endif
+
+make clean
+make 
