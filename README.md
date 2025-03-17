@@ -1,6 +1,8 @@
 
 # CGeNArate docker web services
 
+<div align="center"><a href="https://mmb.irbbarcelona.org/CGeNArate/"><img src="logo.png" /></a></div>
+
 In this repository there are all the files needed for executing the different **CGeNArate** services: **website, workflow and SGE**. All these services have been integrated into **containers** and connected between them via docker **network**.
 
 Schema of **CGeNArate container** web services. Each box in the schema is a service encapsulated into a **docker container**. The services cover the entire process from the **raw data** to the **website** analyses. See the following figure:
