@@ -76,7 +76,8 @@ our %residue_codes_std = (
         THR => 1,
         TRP => 1,
         TYR => 1,
-        VAL => 1
+        VAL => 1,
+	NN => 1
 );
 
 our %residue_codes_charmm = (

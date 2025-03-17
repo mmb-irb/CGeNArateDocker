@@ -132,8 +132,10 @@ sub run_distContactMaps{
 			my $resCh2 = $residues{$chain2};
 			my ($iniProt2,$endProt2) = max_min(%{$resCh2});
 
-			print "perl $scriptsDir/plotContactMap_prots_R.pl \"$title\" $iniProt $endProt $iniProt2 $endProt2 $offset prot$chain.$chain2.$out \n";
-			`perl $scriptsDir/plotContactMap_prots_R.pl "$title" $iniProt $endProt $iniProt2 $endProt2 $offset prot$chain.$chain2.$out `;
+			#print "perl $scriptsDir/plotContactMap_prots_R.pl \"$title\" $iniProt $endProt $iniProt2 $endProt2 $offset prot$chain.$chain2.$out \n";
+			#`perl $scriptsDir/plotContactMap_prots_R.pl "$title" $iniProt $endProt $iniProt2 $endProt2 $offset prot$chain.$chain2.$out `;
+			print "python $scriptsDir/plotContactMap_prots_Python.py \"$title\" $iniProt $endProt $iniProt2 $endProt2 $offset prot$chain-$chain2.$out \n";
+			`python $scriptsDir/plotContactMap_prots_Python.py "$title" $iniProt $endProt $iniProt2 $endProt2 $offset prot$chain-$chain2.$out`;
 
 			$done{"$chain-$chain2"} = 1;
 		}
@@ -142,7 +144,8 @@ sub run_distContactMaps{
 	$outClass .= `cat ptraj.out`;
 
         # Cleaning folder...
-        `rm *-*.dat`;
+        #`rm *-*.dat`;
+	unlink for grep { /^\d+-\d+\.dat$/ } glob("*-*.dat");
 
 	# PROT-NUC
 
@@ -153,15 +156,20 @@ sub run_distContactMaps{
 		my $resCh = $residues{$chain2};
 		my ($ini2,$end2) = max_min(%{$resCh});
 
-		print "perl $scriptsDir/plotContactMap_prots_R.pl \"$title\" $ini $end $ini2 $end2 $offset nuc.$chain2.$out \n";
-		`perl $scriptsDir/plotContactMap_prots_R.pl "$title" $ini $end $ini2 $end2 $offset nuc.$chain2.$out `;
+		#print "perl $scriptsDir/plotContactMap_prots_R.pl \"$title\" $ini $end $ini2 $end2 $offset nuc.$chain2.$out \n";
+		#`perl $scriptsDir/plotContactMap_prots_R.pl "$title" $ini $end $ini2 $end2 $offset nuc.$chain2.$out `;
+		#print "python $scriptsDir/plotContactMap_Python.py $end\n";
+		#`python $scriptsDir/plotContactMap_Python.py $end`;
+		print "python $scriptsDir/plotContactMap_prots_Python.py \"$title\" $ini $end $ini2 $end2 $offset nuc-$chain2.$out \n";
+		`python $scriptsDir/plotContactMap_prots_Python.py "$title" $ini $end $ini2 $end2 $offset nuc-$chain2.$out`;
 	}
 
 	# LOG file
 	$outClass .= `cat ptraj.out`;
 
         # Cleaning folder...
-        `rm *-*.dat`;
+        #`rm *-*.dat`;
+	unlink for grep { /^\d+-\d+\.dat$/ } glob("*-*.dat");
 
 	chdir("..");
 
@@ -253,6 +261,7 @@ sub exePtrajCM_Distances {
 			#print IN "distance $d-$d2 :$d\@* :$d2\@* out NUC-NUC/$d-$d2.dat\n"
 			#print IN "distance $d-$d2 :$d\@C5 :$d2\@C5 out NUC-NUC/$d-$d2.dat\n"
 			print IN "distance $d-$d2 :$d\@C1' :$d2\@C1' out NUC-NUC/$d-$d2.dat\n"
+			#print IN "distance $d-$d2 ::A:$d\@C1' ::B:$d2\@C1' out NUC-NUC/$d-$d2.dat\n"
 		}
 	}
 	print IN "analyze statistics all\n";
@@ -276,6 +285,8 @@ sub exePtrajCM_Distances {
 			foreach my $d (sort {$a <=> $b} keys %{$residues{$chain}}){
 				foreach my $d2 (sort {$a <=> $b} keys %{$residues{$chain2}}){
 					print IN "distance $d-$d2 :$d\@CA :$d2\@CA out PROT-PROT/$d-$d2.dat\n" if (!$done{"$d-$d2"});
+					#print IN "distance $d-$d2 ::$chain:$d\@CA ::$chain2:$d2\@CA out PROT-PROT/$d-$d2.dat\n" if (!$done{"$d-$d2"});
+					#print IN "distance $d-$d2 :$d\@NC :$d2\@NC out PROT-PROT/$d-$d2.dat\n" if (!$done{"$d-$d2"});
 					#print IN "distance $d-$d2 :$d\@* :$d2\@* out PROT-PROT/$d-$d2.dat\n" if (!$done{"$d-$d2"});
 					$done{"$d-$d2"} = 1;
 				}
@@ -301,6 +312,8 @@ sub exePtrajCM_Distances {
 		foreach my $chain (sort {$a <=> $b} keys %residues){
 			foreach my $d2 (sort {$a <=> $b} keys %{$residues{$chain}}){
 				print IN "distance $d-$d2 :$d\@* :$d2\@CA out PROT-NUC/$d-$d2.dat\n" if (!$done{"$d-$d2"});
+				#print IN "distance $d-$d2 $d\@* ::$chain:$d2\@CA out PROT-NUC/$d-$d2.dat\n" if (!$done{"$d-$d2"});
+				#print IN "distance $d-$d2 :$d\@* :$d2\@NC out PROT-NUC/$d-$d2.dat\n" if (!$done{"$d-$d2"});
 				#print IN "distance $d-$d2 :$d\@* :$d2\@* out PROT-NUC/$d-$d2.dat\n" if (!$done{"$d-$d2"});
 				$done{"$d-$d2"} = 1;
 			}

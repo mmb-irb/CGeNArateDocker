@@ -112,8 +112,15 @@ print IN "parmstrip :ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX
 print IN "parmwrite out $NAFleWorkDir/INFO/structure.stripped.top amber\n";
 print IN "go\n";
 close IN;
-#`cpptraj $top < $NAFleWorkDir/INFO/cpptraj.stripTop.in > $NAFleWorkDir/INFO/cpptraj.stripTop.out 2>&1`; 
-`cp $top $NAFleWorkDir/INFO/structure.stripped.top`;
+
+# Only remove proteins if computing CURVES (we want to keep the proteins for the Distance Contact Maps)
+if (grep { $_ eq 'Curves' } @operation) {
+    print "Generating structure.stripped.top with CPPTRAJ (removing proteins!!)\n";
+    `cpptraj $top < $NAFleWorkDir/INFO/cpptraj.stripTop.in > $NAFleWorkDir/INFO/cpptraj.stripTop.out 2>&1`; 
+} else {
+    print "Copying structure.stripped.top (keeping proteins!!)\n";
+    `cp $top $NAFleWorkDir/INFO/structure.stripped.top`;
+}
 
 print "Generating stripped top without hydrogens (for pcazip) ...\n";
 open IN,">$NAFleWorkDir/INFO/cpptraj.stripTop.noH.in";
@@ -131,7 +138,16 @@ print IN "parmwrite out $NAFleWorkDir/INFO/structure.stripped.noH.top amber\n";
 print IN "go\n";
 close IN;
 #`cpptraj $top < $NAFleWorkDir/INFO/cpptraj.stripTop.noH.in > $NAFleWorkDir/INFO/cpptraj.stripTop.noH.out 2>&1`; 
-`cp $top $NAFleWorkDir/INFO/structure.stripped.noH.top`;
+#`cp $top $NAFleWorkDir/INFO/structure.stripped.noH.top`;
+
+# Only remove proteins if computing CURVES (we want to keep the proteins for the Distance Contact Maps)
+if (grep { $_ eq 'Curves' } @operation) {
+    print "Generating structure.stripped.noH.top with CPPTRAJ (removing proteins!!)\n";
+    `cpptraj $top < $NAFleWorkDir/INFO/cpptraj.stripTop.noH.in > $NAFleWorkDir/INFO/cpptraj.stripTop.noH.out 2>&1`;
+} else {
+    print "Copying structure.stripped.noH.top (keeping proteins!!)\n";
+    `cp $top $NAFleWorkDir/INFO/structure.stripped.noH.top`;
+}
 
 print "Generating stripped pdb...\n";
 open IN,">$NAFleWorkDir/INFO/cpptraj.stripPdb.in";

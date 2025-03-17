@@ -57,13 +57,16 @@ if (-s "$inputSeq"){
 my $naflex = "/app/Scripts/MCDNA/NAFlex";
 my $bending = "/app/Scripts/MCDNA/Bending";
 my $sasa = "/app/Scripts/MCDNA/SASA";
+my $pl = "/app/Scripts/PersistenceLength";
 
 # Maximum number of atoms for PCAZIP
 #my $pcaMaxNatoms = 2000;
+#my $pcaMaxNatoms = 2500;
 my $pcaMaxNatoms = 2500;
 
 # Maximum number of bases for CURVES
-my $curvesMaxBases = 250;
+#my $curvesMaxBases = 250;
+my $curvesMaxBases = 500;
 
 print "\n#\n# RESOLUTION: $resolution, SYSTEM: $system, METHOD: $methodTXT{$method}, SEQ_LEN: $length\n#\n\n";
 
@@ -125,6 +128,20 @@ if ($method == 1){
 			print "# STEP 3: Analysis on Elastic Energy...\n";
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 0 0 > elasticEnergy.R.log 2>&1`;
 			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+
+			# STEP 4: Analysis on Persistence Length
+			mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+
+			# Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
+			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x input/traj.mdcrd`;
+
+			# Copying needed files to current working folder & executing SerraNA			
+			`cp $traj_folder/struc.prmtop $out_folder/ANALYSIS/PersistenceLength/input/`;
+			`cp $traj_folder/traj.mdcrd $out_folder/ANALYSIS/PersistenceLength/input/`;
+			`cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
+			`perl getPL.sh traj > PL.out`;
 		}
 		else{
 			# STEP 1: Analysis on Flexibility (NAFlex) 
@@ -263,6 +280,20 @@ elsif ($method == 2){
 			print "# STEP 4: Analysis on Elastic Energy...\n";
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 0 1 > elasticEnergy.R.log 2>&1`;
 			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+
+			# STEP 4: Analysis on Persistence Length
+			mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+
+			# Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
+			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x input/traj.mdcrd`;
+
+			# Copying needed files to current working folder & executing SerraNA			
+			`cp $traj_folder/struc.prmtop $out_folder/ANALYSIS/PersistenceLength/input/`;
+			`cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
+			`perl getPL.sh traj > PL.out`;
+
 		}
 		else{
 			# STEP 1: Analysis on Flexibility (NAFlex) 
@@ -382,8 +413,8 @@ elsif ($method == 3){
 			#`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex Curves > NAFlex.curves.log 2>&1`;
 			if ($length < $curvesMaxBases){
 				#`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/nucleic_mc_dna_str.pdb $traj_folder/struc.prmtop $traj_folder/nucleic_mc_dna_str.dcd $out_folder/ANALYSIS NAFlex Curves > NAFlex.curves.log 2>&1`;
-				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/nucleic_mc_dna_str.pdb $traj_folder/struc.prmtop $traj_folder/traj.nc $out_folder/ANALYSIS NAFlex Curves > NAFlex.curves.log 2>&1`;
-				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.nc $out_folder/ANALYSIS NAFlex Stiffness > NAFlex.stiffness.log 2>&1`;
+				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex Curves > NAFlex.curves.log 2>&1`;
+				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex Stiffness > NAFlex.stiffness.log 2>&1`;
 			}
 
 			`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
@@ -405,29 +436,46 @@ elsif ($method == 3){
 			print "# STEP 2: Analysis on Bending...\n";
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
 			print "# STEP 3: Analysis on Elastic Energy...\n";
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 1 0 > elasticEnergy.R.log 2>&1`;
-			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+			`python $naflex/convertEnergyProts.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound.csv`;
+			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound_meansd.csv`;
 
-			# STEP 4: Analysis on SASA (Virtual Footprinting)
+			# STEP 4: Analysis on Persistence Length
+			mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+
+			# Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
+			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x input/traj.mdcrd`;
+
+			# Copying needed files to current working folder & executing SerraNA			
+			`cp $out_folder/ANALYSIS/NAFlex/INFO/structure.stripped.noH.top $out_folder/ANALYSIS/PersistenceLength/input/traj.prmtop`;
+			`cp $out_folder/ANALYSIS/NAFlex/INFO/structure.stripped.noH.trj $out_folder/ANALYSIS/PersistenceLength/input/traj.mdcrd`;
+			
+			`cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
+			`perl getPL.sh traj > PL.out`;
+
+			# STEP 5: Analysis on SASA (Virtual Footprinting)
 			mkdir("$out_folder/ANALYSIS/Sasa") if (! -s "$out_folder/ANALYSIS/Sasa");
-			print "# STEP 4: Analysis on SASA (Virtual Footprinting)...\n";
+			print "# STEP 5: Analysis on SASA (Virtual Footprinting)...\n";
 			chdir("$out_folder/ANALYSIS/Sasa");
 			`perl $naflex/prepTOP.pl $traj_folder/traj.pdb > $traj_folder/struc.proteins.prmtop`;
 			#`perl $sasa/getSASA.pl $traj_folder/traj.pdb $traj_folder/struc.proteins.prmtop $traj_folder/traj.dcd > SASA.log 2>&1`;
+			print "perl $sasa/getSASA.pl $traj_folder/traj.pdb $traj_folder/traj.pdb $traj_folder/traj.dcd\n";
 			`perl $sasa/getSASA.pl $traj_folder/traj.pdb $traj_folder/traj.pdb $traj_folder/traj.dcd > SASA.log 2>&1`;
 			chdir("..");
-			
 		}
 		else{
 			# STEP 1: Analysis on Flexibility (NAFlex) 
 			print "# STEP 1: Analysis on Flexibility (NAFlex)...\n";
 			`perl $naflex/prepTOP.pl $traj_folder/traj.pdb > $traj_folder/struc.prmtop`;
-			`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
+			`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/traj.pdb $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex DistanceContactMaps > NAFlex.dist.log 2>&1`;
 
 			# End 2 End distances
 			if (-s "$out_folder/ANALYSIS/NAFlex/CONTACTS/NUC-NUC/end2end.dat"){
@@ -438,7 +486,7 @@ elsif ($method == 3){
 			my $nats = `grep "^ATOM" $traj_folder/traj.pdb | wc -l`;
 			chomp($nats);
 			if ($nats < $pcaMaxNatoms){
-				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/struc.prmtop $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex Pcazip > NAFlex.pcazip.log 2>&1`;
+				`perl $naflex/runNucleicAcidAnalysis.pl $traj_folder/traj.pdb $traj_folder/traj.pdb $traj_folder/traj.dcd $out_folder/ANALYSIS NAFlex Pcazip > NAFlex.pcazip.log 2>&1`;
 			}
 
 			# STEP 2: Analysis on Bending
@@ -446,13 +494,15 @@ elsif ($method == 3){
 			print "# STEP 2: Analysis on Bending...\n";
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
 			print "# STEP 3: Analysis on Elastic Energy...\n";
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 1 0 > elasticEnergy.R.log 2>&1`;
-			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+			`python $naflex/convertEnergyProts.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound.csv`;
+			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound_meansd.csv`;
 
 			# STEP 4: Analysis on SASA (Virtual Footprinting)
 			mkdir("$out_folder/ANALYSIS/Sasa") if (! -s "$out_folder/ANALYSIS/Sasa");
@@ -487,7 +537,7 @@ elsif ($method == 3){
 			mkdir("$out_folder/ANALYSIS/Bending") if (! -s "$out_folder/ANALYSIS/Bending");
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_single_structure.R $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -595,7 +645,7 @@ sub download_eq {
 
 	mkdir("download/STRUCT/ANALYSIS/Contacts") if (! -s "download/STRUCT/ANALYSIS/Contacts");
 	`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CONTACTS/*/*.dat download/STRUCT/ANALYSIS/Contacts`;
-	`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CONTACTS/*/*.png download/STRUCT/ANALYSIS/Contacts`;
+	#`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CONTACTS/*/*.png download/STRUCT/ANALYSIS/Contacts`;
 
 	if ($resolution eq "AA"){
 		mkdir("download/STRUCT/ANALYSIS/HelicalParams") if (! -s "download/STRUCT/ANALYSIS/HelicalParams");
@@ -604,19 +654,19 @@ sub download_eq {
 		mkdir("download/STRUCT/ANALYSIS/HelicalParams/helical_bps") if (! -s "download/STRUCT/ANALYSIS/HelicalParams/helical_bps");
 		mkdir("download/STRUCT/ANALYSIS/HelicalParams/axis_bp") if (! -s "download/STRUCT/ANALYSIS/HelicalParams/axis_bp");
 		mkdir("download/STRUCT/ANALYSIS/HelicalParams/backbone_torsions") if (! -s "download/STRUCT/ANALYSIS/HelicalParams/backbone_torsions");
-		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/helical_bp/*.png download/STRUCT/ANALYSIS/HelicalParams/helical_bp`;
+		#`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/helical_bp/*.png download/STRUCT/ANALYSIS/HelicalParams/helical_bp`;
 		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/helical_bp/*.dat download/STRUCT/ANALYSIS/HelicalParams/helical_bp`;
 
-		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/helical_bpstep/*.png download/STRUCT/ANALYSIS/HelicalParams/helical_bps`;
+		#`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/helical_bpstep/*.png download/STRUCT/ANALYSIS/HelicalParams/helical_bps`;
 		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/helical_bpstep/*.dat download/STRUCT/ANALYSIS/HelicalParams/helical_bps`;
 
-		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/grooves/*.png download/STRUCT/ANALYSIS/HelicalParams/grooves`;
+		#`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/grooves/*.png download/STRUCT/ANALYSIS/HelicalParams/grooves`;
 		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/grooves/*.dat download/STRUCT/ANALYSIS/HelicalParams/grooves`;
 
-		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/axis_bp/*.png download/STRUCT/ANALYSIS/HelicalParams/axis_bp`;
+		#`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/axis_bp/*.png download/STRUCT/ANALYSIS/HelicalParams/axis_bp`;
 		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/axis_bp/*.dat download/STRUCT/ANALYSIS/HelicalParams/axis_bp`;
 
-		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/backbone_torsions/*.png download/STRUCT/ANALYSIS/HelicalParams/backbone_torsions`;
+		#`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/backbone_torsions/*.png download/STRUCT/ANALYSIS/HelicalParams/backbone_torsions`;
 		`cp EQ_$resolution/ANALYSIS/NAFlex/PDB/CURVES/backbone_torsions/*.dat download/STRUCT/ANALYSIS/HelicalParams/backbone_torsions`;
 
 	}
@@ -644,13 +694,13 @@ sub download_traj {
 
 	mkdir("download/TRAJ/ANALYSIS/Contacts") if (! -s "download/TRAJ/ANALYSIS/Contacts");
 	`cp TRAJ_$resolution/ANALYSIS/NAFlex/CONTACTS/*/*.dat download/TRAJ/ANALYSIS/Contacts`;
-	`cp TRAJ_$resolution/ANALYSIS/NAFlex/CONTACTS/*/*.png download/TRAJ/ANALYSIS/Contacts`;
+	#`cp TRAJ_$resolution/ANALYSIS/NAFlex/CONTACTS/*/*.png download/TRAJ/ANALYSIS/Contacts`;
 
 	if (-s "TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP"){
 		mkdir("download/TRAJ/ANALYSIS/Pca") if (! -s "download/TRAJ/ANALYSIS/Pca");
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/*.pdb download/TRAJ/ANALYSIS/Pca`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/*.dat download/TRAJ/ANALYSIS/Pca`;
-		`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/*.dat.png download/TRAJ/ANALYSIS/Pca`;
+		#`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/*.dat.png download/TRAJ/ANALYSIS/Pca`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/NAFlex_pcazipOut.bfactors download/TRAJ/ANALYSIS/Pca`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/NAFlex_pcazipOut.collectivity download/TRAJ/ANALYSIS/Pca`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/PCAZIP/NAFlex_pcazipOut.evals download/TRAJ/ANALYSIS/Pca`;
@@ -670,19 +720,19 @@ sub download_traj {
 		mkdir("download/TRAJ/ANALYSIS/HelicalParams/helical_bps") if (! -s "download/TRAJ/ANALYSIS/HelicalParams/helical_bps");
 		mkdir("download/TRAJ/ANALYSIS/HelicalParams/axis_bp") if (! -s "download/TRAJ/ANALYSIS/HelicalParams/axis_bp");
 		mkdir("download/TRAJ/ANALYSIS/HelicalParams/backbone_torsions") if (! -s "download/TRAJ/ANALYSIS/HelicalParams/backbone_torsions");
-		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/helical_bp/*.png download/TRAJ/ANALYSIS/HelicalParams/helical_bp`;
+		#`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/helical_bp/*.png download/TRAJ/ANALYSIS/HelicalParams/helical_bp`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/helical_bp/*.dat download/TRAJ/ANALYSIS/HelicalParams/helical_bp`;
 
-		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/helical_bpstep/*.png download/TRAJ/ANALYSIS/HelicalParams/helical_bps`;
+		#`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/helical_bpstep/*.png download/TRAJ/ANALYSIS/HelicalParams/helical_bps`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/helical_bpstep/*.dat download/TRAJ/ANALYSIS/HelicalParams/helical_bps`;
 
-		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/grooves/*.png download/TRAJ/ANALYSIS/HelicalParams/grooves`;
+		#`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/grooves/*.png download/TRAJ/ANALYSIS/HelicalParams/grooves`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/grooves/*.dat download/TRAJ/ANALYSIS/HelicalParams/grooves`;
 
-		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/axis_bp/*.png download/TRAJ/ANALYSIS/HelicalParams/axis_bp`;
+		#`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/axis_bp/*.png download/TRAJ/ANALYSIS/HelicalParams/axis_bp`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/axis_bp/*.dat download/TRAJ/ANALYSIS/HelicalParams/axis_bp`;
 
-		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/backbone_torsions/*.png download/TRAJ/ANALYSIS/HelicalParams/backbone_torsions`;
+		#`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/backbone_torsions/*.png download/TRAJ/ANALYSIS/HelicalParams/backbone_torsions`;
 		`cp TRAJ_$resolution/ANALYSIS/NAFlex/CURVES/backbone_torsions/*.dat download/TRAJ/ANALYSIS/HelicalParams/backbone_torsions`;
 
 	}
