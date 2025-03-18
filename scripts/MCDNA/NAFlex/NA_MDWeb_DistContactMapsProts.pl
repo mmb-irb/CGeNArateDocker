@@ -300,6 +300,28 @@ sub exePtrajCM_Distances {
 	#`$amberexe/cpptraj14 $pdb < ptraj.prots.in > ptraj.prots.out`;
 	`cpptraj $pdb < ptraj.prots.in > ptraj.prots.out`;
 
+	# PROT (pilota) - PROT (pilota) distances
+
+	mkdir("PROTpi-PROTpi") if (! -s "PROTpi-PROTpi");
+
+	open IN,">ptraj.prots_pi.in";
+	print IN "trajin $crd\n";
+
+	my %done;
+	foreach my $chain (sort {$a <=> $b} keys %residues){
+		foreach my $chain2 (sort {$a <=> $b} keys %residues){
+			next if ($chain eq $chain2);
+					print IN "distance $chain-$chain2 ::$chain  ::$chain2 out PROTpi-PROTpi/$chain-$chain2.dat\n" if (!$done{"$chain-$chain2"});
+					$done{"$chain-$chain2"} = 1;
+		}
+	}
+	print IN "analyze statistics all\n";
+	close IN;
+
+	#`$amberexe/cpptraj $top < ptraj.prots.in > ptraj.prots.out`;
+	#`$amberexe/cpptraj14 $pdb < ptraj.prots.in > ptraj.prots.out`;
+	`cpptraj $pdb < ptraj.prots_pi.in > ptraj.prots_pi.out`;
+
 	# PROT - NUC distances
 
 	mkdir("PROT-NUC") if (! -s "PROT-NUC");

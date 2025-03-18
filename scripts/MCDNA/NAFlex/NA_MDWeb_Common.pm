@@ -389,6 +389,7 @@ sub exeCurves {
         print IN "  lib=$curvesDir/standard,\n";
         print IN "  ftop=$inputTop,\n";
         print IN "  itst=$iniSnap,itnd=$endSnap,itdel=$jumpSnap,\n";
+        #print IN "  circ=T,\n";
         print IN "\&end\n";
         print IN "2 1 -1 0 0\n";
         print IN "$strand1_init:$strand1_end\n";

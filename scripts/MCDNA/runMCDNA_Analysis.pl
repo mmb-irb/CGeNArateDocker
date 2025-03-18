@@ -55,9 +55,13 @@ if (-s "$inputSeq"){
 #my $sasa = $ENV{'MCDNA_SCRIPTS'}."/SASA";
 
 my $naflex = "/app/Scripts/MCDNA/NAFlex";
-my $bending = "/app/Scripts/MCDNA/Bending";
 my $sasa = "/app/Scripts/MCDNA/SASA";
 my $pl = "/app/Scripts/PersistenceLength";
+my $circular = "/app/Scripts/cgenarate-materials/Circular";
+my $bending = "/app/Scripts/cgenarate-materials/Bending";
+
+# AMBER folder 
+my $achome = "/opt/conda/envs/glimps_env";
 
 # Maximum number of atoms for PCAZIP
 #my $pcaMaxNatoms = 2000;
@@ -67,6 +71,9 @@ my $pcaMaxNatoms = 2500;
 # Maximum number of bases for CURVES
 #my $curvesMaxBases = 250;
 my $curvesMaxBases = 500;
+
+# Deformation Energy factor
+my $factor = 2.28;
 
 print "\n#\n# RESOLUTION: $resolution, SYSTEM: $system, METHOD: $methodTXT{$method}, SEQ_LEN: $length\n#\n\n";
 
@@ -121,7 +128,8 @@ if ($method == 1){
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			print "# STEP 2: Analysis on Bending...\n";
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			`python $bending/BendingAnalysis.py`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -129,19 +137,46 @@ if ($method == 1){
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 0 0 > elasticEnergy.R.log 2>&1`;
 			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
 
+			# Deformation Energy
+			`python $naflex/adjust_energy.py $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_deformation_energy.csv $factor`; 
+
 			# STEP 4: Analysis on Persistence Length
 			mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
 			mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
 			mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+			mkdir("$out_folder/ANALYSIS/PersistenceLength/Analysis") if (! -s "$out_folder/ANALYSIS/PersistenceLength/Analysis");
 
 			# Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
-			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x input/traj.mdcrd`;
+			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x $traj_folder/traj.mdcrd`;
 
 			# Copying needed files to current working folder & executing SerraNA			
-			`cp $traj_folder/struc.prmtop $out_folder/ANALYSIS/PersistenceLength/input/`;
+			`cp $traj_folder/traj.pdb $out_folder/ANALYSIS/PersistenceLength/input/`;
 			`cp $traj_folder/traj.mdcrd $out_folder/ANALYSIS/PersistenceLength/input/`;
+
+			chdir("$out_folder/ANALYSIS/PersistenceLength");
+
+			open LEAPIN,">tleap.in";
+            print LEAPIN "m = loadpdb input/traj.pdb\n";
+			print LEAPIN "saveamberparm m input/traj_H.prmtop input/traj_H.inpcrd\n";
+			print LEAPIN "quit\n";
+			close LEAPIN;
+
+			print "tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in\n";
+			`tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in`;
+
+			open CPPIN,">cpptraj.in";
+            print CPPIN "parm input/traj_H.prmtop\n";
+			print CPPIN "parmstrip \@H* \n";
+			print CPPIN "parmwrite out input/traj.prmtop\n";
+			print CPPIN "go\n";
+			close CPPIN;
+
+			print "cpptraj < cpptraj.in > cpptraj.log 2>&1\n";
+			`cpptraj < cpptraj.in > cpptraj.log 2>&1`;
+
 			`cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
 			`perl getPL.sh traj > PL.out`;
+			chdir("..");
 		}
 		else{
 			# STEP 1: Analysis on Flexibility (NAFlex) 
@@ -167,13 +202,17 @@ if ($method == 1){
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			print "# STEP 2: Analysis on Bending...\n";
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
 			print "# STEP 3: Analysis on Elastic Energy...\n";
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 0 0 > elasticEnergy.R.log 2>&1`;
 			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+
+			# Deformation Energy
+			`python $naflex/adjust_energy.py $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_deformation_energy.csv $factor`; 
+
 		}
 	}
 	if($traj == 2 or $traj == 0){
@@ -202,7 +241,7 @@ if ($method == 1){
 			mkdir("$out_folder/ANALYSIS/Bending") if (! -s "$out_folder/ANALYSIS/Bending");
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_single_structure.R $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -219,7 +258,7 @@ if ($method == 1){
 			mkdir("$out_folder/ANALYSIS/Bending") if (! -s "$out_folder/ANALYSIS/Bending");
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_single_structure.R $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -268,12 +307,14 @@ elsif ($method == 2){
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			`python $bending/BendingAnalysis.py`;
 
 			# STEP 3: Analysis on Circularity
 			mkdir("$out_folder/ANALYSIS/Circular") if (! -s "$out_folder/ANALYSIS/Circular");
 			print "# STEP 3: Analysis on Circularity...\n";
 			#`Rscript $bending/circle_analysis_webserver_save_csv.R $out_folder $out_folder/ANALYSIS/Circular > Circle.R.log 2>&1`;
 			`python $naflex/rgyr.py --top $traj_folder/struc.prmtop --input_traj $traj_folder/traj.dcd --output_file $out_folder/ANALYSIS/Circular/rg`;
+			`python $circular/CircularAnalysisWeb.py NAFlex/CURVES/NAFlex_canalOut_twist.ser`;
 
 			# STEP 4: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -281,18 +322,47 @@ elsif ($method == 2){
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 0 1 > elasticEnergy.R.log 2>&1`;
 			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
 
-			# STEP 4: Analysis on Persistence Length
-			mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
-			mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
-			mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+			# Deformation Energy
+			`python $naflex/adjust_energy.py $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_deformation_energy.csv $factor`; 
 
-			# Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
-			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x input/traj.mdcrd`;
+			# STEP 5: Analysis on Persistence Length
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength/Analysis") if (! -s "$out_folder/ANALYSIS/PersistenceLength/Analysis");
 
-			# Copying needed files to current working folder & executing SerraNA			
-			`cp $traj_folder/struc.prmtop $out_folder/ANALYSIS/PersistenceLength/input/`;
-			`cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
-			`perl getPL.sh traj > PL.out`;
+			# # Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
+			# `cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x $traj_folder/traj.mdcrd`;
+
+			# # Copying needed files to current working folder & executing SerraNA			
+			# `cp $traj_folder/traj.pdb $out_folder/ANALYSIS/PersistenceLength/input/`;
+			# `cp $traj_folder/traj.mdcrd $out_folder/ANALYSIS/PersistenceLength/input/`;
+
+			# chdir("$out_folder/ANALYSIS/PersistenceLength");
+
+			# open LEAPIN,">tleap.in";
+            # print LEAPIN "m = loadpdb input/traj.pdb\n";
+			# #print LEAPIN "savepdb m \"$file.rebuilt.pdb\"\n";
+			# print LEAPIN "saveamberparm m input/traj_H.prmtop input/traj_H.inpcrd\n";
+			# print LEAPIN "quit\n";
+			# close LEAPIN;
+
+			# print "tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in\n";
+			# `tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in`;
+
+			# open CPPIN,">cpptraj.in";
+            # print CPPIN "parm input/traj_H.prmtop\n";
+			# print CPPIN "parmstrip \@H* \n";
+			# print CPPIN "parmwrite out input/traj.prmtop\n";
+			# print CPPIN "go\n";
+			# close CPPIN;
+
+			# print "cpptraj < cpptraj.in > cpptraj.log 2>&1\n";
+			# `cpptraj < cpptraj.in > cpptraj.log 2>&1`;
+
+			# `cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
+			# `perl getPL.sh traj > PL.out`;
+			# chdir("..");
 
 		}
 		else{
@@ -325,6 +395,10 @@ elsif ($method == 2){
 			print "# STEP 4: Analysis on Elastic Energy...\n";
 			#`Rscript $elastic/MCDNA_comp_elastic_ene_mcdna.R $inputSeq $out_folder $out_folder/ANALYSIS/ElasticEnergy 0 1 > elasticEnergy.R.log 2>&1`;
 			`python $naflex/convertEnergy.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
+
+			# Deformation Energy
+			`python $naflex/adjust_energy.py $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_deformation_energy.csv $factor`; 
+
 		}
 	}
 	if($traj == 2 or $traj == 0){
@@ -352,7 +426,7 @@ elsif ($method == 2){
 			mkdir("$out_folder/ANALYSIS/Bending") if (! -s "$out_folder/ANALYSIS/Bending");
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_single_structure.R $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Circularity
 			mkdir("$out_folder/ANALYSIS/Circular") if (! -s "$out_folder/ANALYSIS/Circular");
@@ -374,7 +448,7 @@ elsif ($method == 2){
 			mkdir("$out_folder/ANALYSIS/Bending") if (! -s "$out_folder/ANALYSIS/Bending");
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_single_structure.R $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Circularity
 			mkdir("$out_folder/ANALYSIS/Circular") if (! -s "$out_folder/ANALYSIS/Circular");
@@ -437,6 +511,7 @@ elsif ($method == 3){
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			`python $bending/BendingAnalysis.py`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -446,20 +521,54 @@ elsif ($method == 3){
 			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound.csv`;
 			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound_meansd.csv`;
 
+			# Deformation Energy
+			`python $naflex/adjust_energy.py $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_deformation_energy.csv $factor`; 
+
 			# STEP 4: Analysis on Persistence Length
-			mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
-			mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
-			mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength") if (! -s "$out_folder/ANALYSIS/PersistenceLength");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength/input") if (! -s "$out_folder/ANALYSIS/PersistenceLength/input");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength/output") if (! -s "$out_folder/ANALYSIS/PersistenceLength/output");
+			# mkdir("$out_folder/ANALYSIS/PersistenceLength/Analysis") if (! -s "$out_folder/ANALYSIS/PersistenceLength/Analysis");
 
-			# Converting traj.dcd to traj.mdcrd (SerraNA needs mdcrd format)
-			`cpptraj -p $traj_folder/struc.prmtop -y $traj_folder/traj.dcd -x input/traj.mdcrd`;
+			# chdir("$out_folder/ANALYSIS/PersistenceLength");
 
-			# Copying needed files to current working folder & executing SerraNA			
-			`cp $out_folder/ANALYSIS/NAFlex/INFO/structure.stripped.noH.top $out_folder/ANALYSIS/PersistenceLength/input/traj.prmtop`;
-			`cp $out_folder/ANALYSIS/NAFlex/INFO/structure.stripped.noH.trj $out_folder/ANALYSIS/PersistenceLength/input/traj.mdcrd`;
-			
-			`cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
-			`perl getPL.sh traj > PL.out`;
+			# print "Generating stripped traj...\n";
+			# open IN,">cpptraj.stripTrj.in";
+			# print IN "trajin $traj_folder/traj.dcd\n";
+			# print IN "strip :ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL\n";
+			# print IN "trajout input/traj.mdcrd\n";
+			# close IN;
+			# `cpptraj $traj_folder/traj.pdb < cpptraj.stripTrj.in > cpptraj.stripTrj.out 2>&1`;
+
+			# print "Generating stripped pdb...\n";
+			# `python $naflex/filterChains.py $traj_folder/traj.pdb input/traj.pdb A,B`;
+
+			# # Copying needed files to current working folder & executing SerraNA			
+			# #`cp $traj_folder/traj.pdb $out_folder/ANALYSIS/PersistenceLength/input/`;
+			# #`cp $traj_folder/traj.mdcrd $out_folder/ANALYSIS/PersistenceLength/input/`;
+
+			# open LEAPIN,">tleap.in";
+            # print LEAPIN "m = loadpdb input/traj.pdb\n";
+			# print LEAPIN "saveamberparm m input/traj_H.prmtop input/traj_H.inpcrd\n";
+			# print LEAPIN "quit\n";
+			# close LEAPIN;
+
+			# print "tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in\n";
+			# `tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in`;
+
+			# open CPPIN,">cpptraj.in";
+            # print CPPIN "parm input/traj_H.prmtop\n";
+			# print CPPIN "parmstrip \@H* \n";
+			# print CPPIN "parmwrite out input/traj.prmtop\n";
+			# print CPPIN "go\n";
+			# close CPPIN;
+
+			# print "cpptraj < cpptraj.in > cpptraj.log 2>&1\n";
+			# `cpptraj < cpptraj.in > cpptraj.log 2>&1`;
+
+			# `cp -r $pl/getPL.sh $pl/fullSerraNA.sh $pl/PL_Agnes .`;
+			# `perl getPL.sh traj > PL.out`;
+			# chdir("..");
 
 			# STEP 5: Analysis on SASA (Virtual Footprinting)
 			mkdir("$out_folder/ANALYSIS/Sasa") if (! -s "$out_folder/ANALYSIS/Sasa");
@@ -503,6 +612,9 @@ elsif ($method == 3){
 			`python $naflex/convertEnergyProts.py $out_folder/output_schnarp/cgenarate_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $length`;
 			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound.csv`;
 			`cp $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_meansd.csv $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy_unbound_meansd.csv`;
+
+			# Deformation Energy
+			`python $naflex/adjust_energy.py $out_folder/ANALYSIS/ElasticEnergy/total_elastic_energy.csv $out_folder/ANALYSIS/ElasticEnergy/total_deformation_energy.csv $factor`; 
 
 			# STEP 4: Analysis on SASA (Virtual Footprinting)
 			mkdir("$out_folder/ANALYSIS/Sasa") if (! -s "$out_folder/ANALYSIS/Sasa");
@@ -563,7 +675,7 @@ elsif ($method == 3){
 			mkdir("$out_folder/ANALYSIS/Bending") if (! -s "$out_folder/ANALYSIS/Bending");
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_single_structure.R $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
-			`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
+			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
