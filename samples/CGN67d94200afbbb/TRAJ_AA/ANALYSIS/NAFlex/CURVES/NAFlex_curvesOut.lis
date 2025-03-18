@@ -1,0 +1,29 @@
+
+     **************************************               **************
+     **** CURVES+ Version 3.0nc 09/2016 ***               *  18 Mar 25 *
+     **************************************               **************
+
+
+  FILE : structure.stripped.trj            FTOP : structure.stripped.top          
+  LIS  : NAFlex_curvesOut                  LIB  : standard                        
+  ibld :                                   sol  :                                 
+  back : P                               
+
+  wback :  2.90  wbase :  3.50  rvfac :  7.50
+
+  isym  :     1  ITST  :     0  ITND  :     0  ITDEL :     1  itbkt :     0
+  naxlim:     0
+
+  circ  :     F  line  :     F  zaxe  :     F  fit   :     T  test  :     F
+  ions  :     F  refo  :     F  axfrm :     F  frames:     F
+
+
+  Strands =    2 Atoms =  1224 Units =    60
+
+  Combined strands have   30 levels ...
+
+  Strand  1 has  30 bases (5'-3'): GATTACATACATACAGATTACATACATACA
+  Strand  2 has  30 bases (3'-5'): CTAATGTATGTATGTCTAATGTATGTATGT
+
+  ... trj loop read      101 snapshots
+

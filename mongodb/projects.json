@@ -1,198 +1,110 @@
 [{
-  "_id": "5a3c3972c7be71.61030885",
-  "id": "MCDUSER5a3c3972c20bb",
-  "email": "juergen.walther@irbbarcelona.org",
+  "_id": "67d86f56eca641.18630477",
+  "id": "CGNUSER67d86f56ec511",
   "tool": "3",
   "resolution": "1",
-  "operations": [
-    "createStructure",
-    "createTrajectory"
-  ],
+  "operations": [ "createStructure", "createTrajectory" ],
   "numStructures": "50",
   "proteins": [
-    {
-      "id": "1vfc 12",
-      "code": "1vfc",
-      "length": "12",
-      "position": "2"
-    },
-    {
-      "id": "1wtr 7",
-      "code": "1wtr",
-      "length": "7",
-      "position": "30"
-    },
-    {
-      "id": "3zhm 8",
-      "code": "3zhm",
-      "length": "8",
-      "position": "60"
-    },
-    {
-      "id": "1bnz 7",
-      "code": "1bnz",
-      "length": "7",
-      "position": "80"
-    }
+    { "id": "1vfc12", "code": "1vfc", "length": "12", "position": "3" },
+    { "id": "1wtr7", "code": "1wtr", "length": "7", "position": "30" },
+    { "id": "3zhm8", "code": "3zhm", "length": "8", "position": "60" },
+    { "id": "1bnz7", "code": "1bnz", "length": "7", "position": "80" }
   ],
   "analysis": 1,
-  "folder": "MCD5a3c3972c20bb",
-  "inputFile": "MCD5a3c3972c20bb/inputSequence.txt",
+  "folder": "CGN67d86f56ec511",
+  "inputFile": "CGN67d86f56ec511/inputSequence.txt",
   "type": 1000,
   "status": 1,
-  "uploadDate": {
-    "$date": "2017-12-21T22:45:06.818Z"
-  },
-  "pid": 370,
-  "endDate": {
-    "$date": "2017-12-22T01:15:36.015Z"
-  }
+  "uploadDate": { "$date": "2025-03-17T18:52:06.969Z" },
+  "pid": 19,
+  "endDate": { "$date": "2025-03-17T19:06:50.210Z" }
 },
 {
-  "_id": "5a3cd2d4106f78.82278285",
-  "id": "MCDUSER5a3cd2d405179",
-  "email": "juergen.walther@irbbarcelona.org",
+  "_id": "67d87049a7f7a2.49210743",
+  "id": "CGNUSER67d87049a7a14",
   "tool": "3",
   "resolution": "0",
-  "operations": [
-    "createStructure",
-    "createTrajectory"
-  ],
+  "operations": ["createStructure", "createTrajectory"],
   "numStructures": "50",
   "proteins": [
-    {
-      "id": "1vfc 12",
-      "code": "1vfc",
-      "length": "12",
-      "position": "2"
-    },
-    {
-      "id": "1wtr 7",
-      "code": "1wtr",
-      "length": "7",
-      "position": "30"
-    },
-    {
-      "id": "3zhm 8",
-      "code": "3zhm",
-      "length": "8",
-      "position": "60"
-    },
-    {
-      "id": "1bnz 7",
-      "code": "1bnz",
-      "length": "7",
-      "position": "80"
-    }
+    { "id": "1vfc12", "code": "1vfc", "length": "12", "position": "3" },
+    { "id": "1wtr7", "code": "1wtr", "length": "7", "position": "30" },
+    { "id": "3zhm8", "code": "3zhm", "length": "8", "position": "60" },
+    { "id": "1bnz7", "code": "1bnz", "length": "7", "position": "80" }
   ],
   "analysis": 1,
-  "folder": "MCD5a3cd2d405179",
-  "inputFile": "MCD5a3cd2d405179/inputSequence.txt",
+  "folder": "CGN67d87049a7a14",
+  "inputFile": "CGN67d87049a7a14/inputSequence.txt",
   "type": 1000,
   "status": 1,
-  "uploadDate": {
-    "$date": "2017-12-22T09:39:32.067Z"
-  },
-  "pid": 371,
-  "endDate": {
-    "$date": "2017-12-22T10:23:28.590Z"
-  }
+  "uploadDate": { "$date": "2025-03-17T18:56:09.688Z" },
+  "pid": 20,
+  "endDate": { "$date": "2025-03-17T19:09:31.441Z" }
 },
 {
-  "_id": "5a3cd6a32b9e45.88876421",
-  "id": "MCDUSER5a3cd6a32a98a",
-  "email": "juergen.walther@irbbarcelona.org",
+  "_id": "67d86f37021ff2.50529559",
+  "id": "CGNUSER67d86f36f0e92",
   "tool": "1",
   "resolution": "0",
-  "operations": [
-    "createStructure",
-    "createTrajectory"
-  ],
+  "operations": ["createStructure", "createTrajectory"],
   "numStructures": "100",
   "analysis": 1,
-  "folder": "MCD5a3cd6a32a98a",
-  "inputFile": "MCD5a3cd6a32a98a/inputSequence.txt",
+  "folder": "CGN67d86f36f0e92",
+  "inputFile": "CGN67d86f36f0e92/inputSequence.txt",
   "type": 1000,
   "status": 1,
-  "uploadDate": {
-    "$date": "2017-12-22T09:55:47.178Z"
-  },
-  "pid": 372,
-  "endDate": {
-    "$date": "2017-12-22T10:25:36.156Z"
-  }
+  "uploadDate": { "$date": "2025-03-17T18:51:35.008Z" },
+  "pid": 18,
+  "endDate": { "$date": "2025-03-17T18:52:38.561Z" }
 },
 {
-  "_id": "5a3cee1ac4a6c4.69000433",
-  "id": "MCDUSER5a3cee1ac44de",
-  "email": "juergen.walther@irbbarcelona.org",
+  "_id": "67d87509b8d2b2.67967905",
+  "id": "CGNUSER67d87509b8772",
   "tool": "2",
   "resolution": "1",
-  "operations": [
-    "createStructure",
-    "createTrajectory"
-  ],
+  "operations": ["createStructure", "createTrajectory"],
   "numStructures": "10",
   "deltaLN": "-1",
   "analysis": 1,
-  "folder": "MCD5a3cee1ac44de",
-  "inputFile": "MCD5a3cee1ac44de/inputSequence.txt",
+  "folder": "CGN67d87509b8772",
+  "inputFile": "CGN67d87509b8772/inputSequence.txt",
   "type": 1000,
   "status": 1,
-  "uploadDate": {
-    "$date": "2017-12-22T11:35:54.805Z"
-  },
-  "pid": 374,
-  "endDate": {
-    "$date": "2017-12-22T13:32:36.725Z"
-  }
+  "uploadDate": { "$date": "2025-03-17T19:16:25.757Z" },
+  "pid": 21,
+  "endDate": { "$date": "2025-03-17T19:21:30.686Z" }
 },
 {
-  "_id": "5a3d7be6e49fb7.88498829",
-  "id": "MCDUSER5a3d7be6b752a",
-  "email": "juergen.walther@irbbarcelona.org",
+  "_id": "67d94208e19073.61173417",
+  "id": "CGNUSER67d94208e0ecb",
   "tool": "2",
   "resolution": "0",
-  "operations": [
-    "createStructure",
-    "createTrajectory"
-  ],
+  "operations": ["createStructure", "createTrajectory"],
   "numStructures": "10",
   "deltaLN": "-1",
   "analysis": 1,
-  "folder": "MCD5a3d7be6b752a",
-  "inputFile": "MCD5a3d7be6b752a/inputSequence.txt",
+  "folder": "CGN67d94208e0ecb",
+  "inputFile": "CGN67d94208e0ecb/inputSequence.txt",
   "type": 1000,
   "status": 1,
-  "uploadDate": {
-    "$date": "2017-12-22T21:40:54.936Z"
-  },
-  "pid": 376,
-  "endDate": {
-    "$date": "2017-12-28T11:31:51.296Z"
-  }
+  "uploadDate": { "$date": "2025-03-18T09:51:04.923Z" },
+  "pid": 23,
+  "endDate": { "$date": "2025-03-18T09:54:40.019Z" }
 },
 {
-  "_id": "5a9d4e7bb01b31.44017553",
-  "id": "MCDUSER5a9d4e7bac195",
-  "email": "",
+  "_id": "67d94200b03b99.28165192",
+  "id": "CGNUSER67d94200afbbb",
   "tool": "1",
   "resolution": "1",
-  "operations": [
-    "createStructure",
-    "createTrajectory"
-  ],
+  "operations": ["createStructure", "createTrajectory"],
   "numStructures": "100",
   "analysis": 1,
-  "folder": "MCD5a9d4e7bac195",
-  "inputFile": "MCD5a9d4e7bac195/inputSequence.txt",
+  "folder": "CGN67d94200afbbb",
+  "inputFile": "CGN67d94200afbbb/inputSequence.txt",
   "type": 1000,
   "status": 1,
-  "uploadDate": {
-    "$date": "2018-03-05T14:04:43.721Z"
-  },
-  "pid": 219,
-  "endDate": {
-    "$date": "2018-03-05T14:15:07.864Z"
-  }
+  "uploadDate": { "$date": "2025-03-18T09:50:56.721Z" },
+  "pid": 22,
+  "endDate": { "$date": "2025-03-18T09:52:57.222Z" }
 }]

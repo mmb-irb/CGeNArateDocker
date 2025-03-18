@@ -1,0 +1,35 @@
+Workdir: /mnt/Web/CGN67d94208e0ecb/TRAJ_CG/ANALYSIS
+Generating stripped traj...
+Generating stripped traj without hydrogens (for pcazip)...
+Generating stripped top...
+Copying structure.stripped.top (keeping proteins!!)
+Generating stripped top without hydrogens (for pcazip) ...
+Copying structure.stripped.noH.top (keeping proteins!!)
+Generating stripped pdb...
+Generating stripped pdb without hydrogens (for pcazip)...
+Problems with generated pdb (188 TERs), stripping TER tags...
+Problems with generated pdb (188 TERs), stripping TER tags...
+Executing Distance Contact-Maps Analysis.
+
+Lasts: A-DG:94
+First: A-DT:1
+Lasts: B-DA:188
+First: B-DC:95
+SEQ1: TCTCTCTCTCTCTCTCTTAAAGGTATACAAGAAAGTTTGTTGGTCTTTTTACCTTCCCGTTTCGCTCCAAGTTAGTATAAAAAAGCTGAACGAG
+SEQ2: AGAGAGAGAGAGAGAGAATTTCCATATGTTCTTTCAAACAACCAGAAAAATGGAAGGGCAAAGCGAGGTTCAATCATATTTTTTCGACTTGCTC
+
+Getting distances with ptraj program from Ambertools...
+Error: analyze statistics: No 1D datasets to analyze.
+Error: Could not setup analysis [statistics]
+	1 errors encountered reading input.
+Error: Error(s) occurred during execution.
+Error: analyze statistics: No 1D datasets to analyze.
+Error: Could not setup analysis [statistics]
+	1 errors encountered reading input.
+Error: Error(s) occurred during execution.
+Plotting Contact Maps...
+
+cat: ptraj.out: No such file or directory
+cat: ptraj.out: No such file or directory
+cat: ptraj.out: No such file or directory
+DONE!!

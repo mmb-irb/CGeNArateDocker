@@ -1,0 +1,5 @@
+parm structure_000000_AA_leap.pdb
+trajin structure_000000_AA_leap.pdb
+strip @H=
+trajout structure_000000_AA.pdb
+run

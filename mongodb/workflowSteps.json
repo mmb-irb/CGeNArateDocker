@@ -8,7 +8,7 @@
 },
 {
   "_id": "PROTDNA.AA.STTR.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File# STEP 2: Building structure# STEP 3: Executing CGenerate...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 5: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "MCDNA.AA.STTR.NA",
@@ -20,7 +20,7 @@
 },
 {
   "_id": "PROTDNA.AA.STTR.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 2 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Building all-atom structures & Superposing protein structures with nucleic acid fiber# STEP 4: Building trajectory from PDB structures# STEP 5: Building trajectory from PDB structures (Nucleic Acid Structure)...# STEP 6: Building trajectory from PDB structures (Prot-DNA)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File# STEP 2: Building structure# STEP 3: Executing CGenerate..."
 },
 {
   "_id": "MCDNA.CG.STTR.AN",
@@ -32,7 +32,7 @@
 },
 {
   "_id": "PROTDNA.CG.STTR.AN",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File# STEP 2: Building structure# STEP 3: Executing CGenerate...## TRAJECTORY ANALYSES# STEP 1: Analysis on Flexibility (NAFlex)...# STEP 2: Analysis on Bending...# STEP 3: Analysis on Elastic Energy...# STEP 4: Analysis on SASA (Virtual Footprinting)..."
 },
 {
   "_id": "MCDNA.CG.STTR.NA",
@@ -44,5 +44,5 @@
 },
 {
   "_id": "PROTDNA.CG.STTR.NA",
-  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File## GENERATING TRAJECTORY (ENSEMBLE with 5 STRUCTURES)# STEP 2: Executing CGeNArate# STEP 3: Superposing protein structures with nucleic acid fiber# STEP 3: Building trajectory from PDB structures"
+  "steps": "## BUILDING CONFIGURATION FILES# STEP 1: Building CGeNArate-prot Configuration File# STEP 2: Building structure# STEP 3: Executing CGenerate..."
 }]

@@ -1,0 +1,4 @@
+trajin /mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/cgenarate_traj.mdcrd 1 1 1
+trajout mc_dna_str.pdb pdb 
+go
+quit

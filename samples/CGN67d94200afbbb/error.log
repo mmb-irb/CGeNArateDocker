@@ -1,0 +1,29 @@
+SETTINGS:
+loadrestart = 1
+PrinttVectors = 0
+PlotPrint = 1
+Linear = 1
+T0 = 298.000000
+dt0 = 0.100000
+N = 60
+nframes = 100
+step = 200
+restore.mode = 1
+simulation.N = 60
+simulation.T0 = 298.000000
+simulation.dt0 = 0.100000
+simulation.frames = 100
+simulation.steps = 200
+simulation.linear = 1
+simulation.seed = 1234
+Seeding 1 threads
+/opt/conda/envs/glimps_env/lib/python3.12/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator LinearRegression from version 0.24.2 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+Error: File 'input/traj.mdcrd': No such file or directory
+Error: Setting up output trajectory 'input/traj.mdcrd'
+cp: cannot stat '/mnt/Web/CGN67d94200afbbb/TRAJ_AA/output_schnarp/display/traj.mdcrd': No such file or directory
+cp: cannot stat '/app/Scripts/PersistenceLength/getPL.sh': No such file or directory
+cp: cannot stat '/app/Scripts/PersistenceLength/fullSerraNA.sh': No such file or directory
+cp: cannot stat '/app/Scripts/PersistenceLength/PL_Agnes': No such file or directory
+Can't open perl script "getPL.sh": No such file or directory

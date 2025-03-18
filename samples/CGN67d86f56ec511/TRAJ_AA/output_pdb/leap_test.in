@@ -1,0 +1,4 @@
+source leaprc.DNA.bsc1
+mol = loadpdb structure_000000_AA_fdh.pdb
+savepdb mol structure_000000_AA_leap.pdb
+quit

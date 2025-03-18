@@ -1,0 +1,6 @@
+# CGeNArate process summary #
+Sequence: GATTACATACATACAGATTACATACATACA
+Method: mcdna
+Resolution: CG
+System: TRAJ
+Number of structures: 100

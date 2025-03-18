@@ -1,0 +1,32 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/17/25 19:19:44
+| Available memory: 2.727 GB
+
+	Reading '/mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/display/traj.pdb' as PDB File
+	Reading bond info from CONECT records.
+	Not reading bond info from LINK records.
+	Determining bond info from distances.
+Warning: Determining bond length parameters from element types for 'traj.pdb'.
+Warning: 6 molecules have non-contiguous segments of atoms.
+	      18        2 segments: 1015-1116 (102)  1118-1132 (15) 
+	      38        2 segments: 1950-1950 (1)  1952-1954 (3) 
+	      49        2 segments: 2316-2316 (1)  2318-2318 (1) 
+	      52        5 segments: 2320-2335 (16)  2340-2396 (57)  2401-2402 (2)  2414-2414 (1)  2416-2417 (2) 
+	      63        3 segments: 2607-2675 (69)  2688-2688 (1)  2690-2690 (1) 
+	      64        2 segments: 2676-2687 (12)  2689-2689 (1) 
+Warning: The 'fixatomorder' command can be used to reorder the topology and any
+Warning:  associated coordinates.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/display/traj.dcd]
+	Reading '/mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/display/traj.dcd' as Charmm DCD
+  [analyze statistics all]
+Warning: The 'analyze' prefix is no longer necessary and may be soon deprecated.
+Warning: To add an analysis command the the queue, only the command name needs
+Warning: to be specified, e.g. 'statistics <args>'.
+TIME: Total execution time: 0.0644 seconds.
+

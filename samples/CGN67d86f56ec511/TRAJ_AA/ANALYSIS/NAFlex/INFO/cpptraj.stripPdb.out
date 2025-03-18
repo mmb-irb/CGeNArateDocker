@@ -1,0 +1,64 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/17/25 18:53:38
+| Available memory: 2.107 GB
+
+	Reading '/mnt/Web/CGN67d86f56ec511/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.top' as Amber Topology
+	This Amber topology does not include atomic numbers.
+	Assigning elements from atom masses/names.
+	No SCEE section: setting Amber default (1.2)
+	No SCNB section: setting Amber default (2.0)
+Warning: Determining bond length parameters from element types for 'structure.stripped.top'.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d86f56ec511/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.trj 1 1 1]
+	Reading '/mnt/Web/CGN67d86f56ec511/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.trj' as Amber Trajectory
+Warning: structure.stripped.trj: Could not accurately predict # frames. This usually
+Warning:  indicates a corrupted trajectory or trajectory/topology
+Warning:  mismatch. Will attempt to read 28 frames.
+  [trajout /mnt/Web/CGN67d86f56ec511/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.pdb]
+	Writing '/mnt/Web/CGN67d86f56ec511/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.pdb' as PDB
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: structure.stripped.top, 6531 atoms, 452 res, box: None, 6531 mol
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'structure.stripped.trj' is an AMBER trajectory, Parm structure.stripped.top (reading 1 of 28)
+  Coordinate processing will occur on 1 frames.
+
+OUTPUT TRAJECTORIES (1 total):
+  'structure.stripped.pdb' (1 frames) is a PDB file
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTIVE OUTPUT TRAJECTORIES (1):
+  /mnt/Web/CGN67d86f56ec511/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.pdb (coordinates)
+----- structure.stripped.trj (1-1, 1) -----
+100% Complete.
+
+Read 1 frames and processed 1 frames.
+TIME: Avg. throughput= 24.9023 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.04%)
+TIME:		Trajectory Process : 0.0402 s ( 94.36%)
+TIME:		Action Post        : 0.0000 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.0000 s (  0.00%)
+TIME:		Other              : 0.0024 s (  0.06%)
+TIME:	Run Total 0.0426 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 0.1941 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+

@@ -1,0 +1,28 @@
+-I: Adding /opt/conda/envs/glimps_env/dat/leap/prep to search path.
+-I: Adding /opt/conda/envs/glimps_env/dat/leap/lib to search path.
+-I: Adding /opt/conda/envs/glimps_env/dat/leap/parm to search path.
+-I: Adding /opt/conda/envs/glimps_env/dat/leap/cmd to search path.
+-f: Source leap_test.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./leap_test.in
+----- Source: /opt/conda/envs/glimps_env/dat/leap/cmd/leaprc.DNA.bsc1
+----- Source of /opt/conda/envs/glimps_env/dat/leap/cmd/leaprc.DNA.bsc1 done
+Log file: ./leap.log
+Loading parameters: /opt/conda/envs/glimps_env/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading library: /opt/conda/envs/glimps_env/dat/leap/lib/parmBSC1.lib
+Loading parameters: /opt/conda/envs/glimps_env/dat/leap/parm/frcmod.parmbsc1
+Reading force field modification type file (frcmod)
+Reading title:
+Parmbsc1 force-field for DNA
+Loading PDB file: ./structure_000000_AA_fdh.pdb
+  total atoms in file: 1224
+  Leap added 686 missing atoms according to residue templates:
+       686 H / lone pairs
+Writing pdb file: structure_000000_AA_leap.pdb
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.

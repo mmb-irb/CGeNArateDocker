@@ -1,0 +1,19 @@
+SETTINGS:
+loadrestart = 1
+PrinttVectors = 0
+PlotPrint = 1
+Linear = 1
+T0 = 298.000000
+dt0 = 0.100000
+N = 60
+nframes = 100
+step = 200
+restore.mode = 1
+simulation.N = 60
+simulation.T0 = 298.000000
+simulation.dt0 = 0.100000
+simulation.frames = 100
+simulation.steps = 200
+simulation.linear = 1
+simulation.seed = 1234
+Seeding 1 threads

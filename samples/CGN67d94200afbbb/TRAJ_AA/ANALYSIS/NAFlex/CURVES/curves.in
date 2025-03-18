@@ -1,0 +1,10 @@
+&inp
+  file=/mnt/Web/CGN67d94200afbbb/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.trj,
+  lis=NAFlex_curvesOut,
+  lib=/opt/conda/envs/glimps_env/.curvesplus/standard,
+  ftop=/mnt/Web/CGN67d94200afbbb/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.top,
+  itst=0,itnd=0,itdel=1,
+&end
+2 1 -1 0 0
+1:30
+60:31

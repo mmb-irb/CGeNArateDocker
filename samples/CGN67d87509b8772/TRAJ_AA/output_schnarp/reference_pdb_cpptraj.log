@@ -1,0 +1,62 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/17/25 19:16:47
+| Available memory: 1.874 GB
+
+	Reading '/mnt/Web/CGN67d87509b8772/TRAJ_AA/output_pdb/structure_000000_CG.pdb' as PDB File
+	Reading bond info from CONECT records.
+	Not reading bond info from LINK records.
+	Determining bond info from distances.
+Warning: Determining bond length parameters from element types for 'structure_000000_CG.pdb'.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/cgenarate_traj.mdcrd 1 1 1]
+	Reading '/mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/cgenarate_traj.mdcrd' as Amber Trajectory
+  [trajout mc_dna_str.pdb pdb]
+	Writing 'mc_dna_str.pdb' as PDB
+  [go]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: structure_000000_CG.pdb, 188 atoms, 188 res, box: None, 188 mol
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'cgenarate_traj.mdcrd' is an AMBER trajectory, Parm structure_000000_CG.pdb (reading 1 of 11)
+  Coordinate processing will occur on 1 frames.
+
+OUTPUT TRAJECTORIES (1 total):
+  'mc_dna_str.pdb' (1 frames) is a PDB file
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTIVE OUTPUT TRAJECTORIES (1):
+  mc_dna_str.pdb (coordinates)
+----- cgenarate_traj.mdcrd (1-1, 1) -----
+100% Complete.
+
+Read 1 frames and processed 1 frames.
+TIME: Avg. throughput= 348.4321 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  1.14%)
+TIME:		Trajectory Process : 0.0029 s ( 82.09%)
+TIME:		Action Post        : 0.0000 s (  0.03%)
+TIME:		Analysis           : 0.0000 s (  0.03%)
+TIME:		Data File Write    : 0.0000 s (  0.03%)
+TIME:		Other              : 0.0006 s (  0.17%)
+TIME:	Run Total 0.0035 s
+---------- RUN END ---------------------------------------------------
+  [quit]
+TIME: Total execution time: 0.0164 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+

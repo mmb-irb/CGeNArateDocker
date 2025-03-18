@@ -1,0 +1,18 @@
+library(Cairo)
+CairoPNG(file="FORCE_CTES/9-ACGT/twist.dat.png",width=1000,height=400)
+layout(matrix(c(1,2),ncol=2), widths=c(6,2), heights=c(1,1))
+par(cex=1,xpd=NA)
+param <- read.table("FORCE_CTES/9-ACGT/twist.dat",header=F)
+prm <- param[[1]]
+prm2 <- param[[2]]
+plot(prm,prm2,ylab="Twist (Degrees)",xlab="Time (Snapshots)",col="red",type="l",lty=1,axes=F)
+axis(2)
+axis(1)
+title(main="Helical Parameters  (used in computing Stiffness constants): Twist")
+dens <- density(prm2)
+population <- dens$y * diff(dens$x)
+write.table( cbind(dens$x,population),"FORCE_CTES/9-ACGT/twist.dat.population.csv", sep=",", col.names=FALSE)
+plot(population,dens$x,axes=F,col="red",ylab="",xlab="density")
+axis(1)
+axis(4)
+dev.off()

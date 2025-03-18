@@ -1,0 +1,23 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/17/25 18:51:55
+| Available memory: 2.175 GB
+
+	Reading '/mnt/Web/CGN67d86f36f0e92/TRAJ_CG/output_pdb/structure_000000.pdb' as PDB File
+	Reading bond info from CONECT records.
+	Not reading bond info from LINK records.
+	Determining bond info from distances.
+Warning: Determining bond length parameters from element types for 'structure_000000.pdb'.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d86f36f0e92/TRAJ_CG/output_schnarp/display/traj.nc]
+	Reading '/mnt/Web/CGN67d86f36f0e92/TRAJ_CG/output_schnarp/display/traj.nc' as Amber NetCDF
+  [analyze statistics all]
+Warning: The 'analyze' prefix is no longer necessary and may be soon deprecated.
+Warning: To add an analysis command the the queue, only the command name needs
+Warning: to be specified, e.g. 'statistics <args>'.
+TIME: Total execution time: 0.0150 seconds.
+
