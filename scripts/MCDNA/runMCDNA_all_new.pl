@@ -300,7 +300,7 @@ sub download_readme {
         open SUM,">download/summary.txt";
         print SUM "# CGeNArate process summary #\n";
         print SUM "Sequence: $seq\n";
-        print SUM "Method: $method\n";
+        print SUM "Method: CGeNArate\n";
         print SUM "Resolution: $resolution\n";
         print SUM "System: $system\n";
         #print SUM "Number of structures: $nstructs\n" if ($system =~ /TRAJ/ and $nstructs);
