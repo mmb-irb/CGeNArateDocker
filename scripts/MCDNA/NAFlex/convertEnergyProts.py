@@ -17,7 +17,7 @@ def convert_file(input_file, output_file, stats_file, divisor):
         values = line.strip().split(',')
 
         # The second value is the "Elastic energy"
-        ee = float(values[4]) * 0.00239006
+        ee = float(values[3]) * 0.00239006
         
         # Store Elastic energy and calculate "Elastic energy per bp"
         elastic_energy.append(ee)
