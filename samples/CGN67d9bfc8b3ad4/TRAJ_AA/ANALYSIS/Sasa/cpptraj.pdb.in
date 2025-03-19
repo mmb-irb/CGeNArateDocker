@@ -1,0 +1,4 @@
+trajin /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.dcd
+strip @H*
+trajout PDB/sasa.pdb multi
+go

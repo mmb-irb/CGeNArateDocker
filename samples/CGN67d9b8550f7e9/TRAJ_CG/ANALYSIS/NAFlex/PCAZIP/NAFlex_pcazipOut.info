@@ -1,0 +1,10 @@
+Title             : Cpptraj Generated trajectory
+Atoms             :       60
+Vectors           :       10
+Frames            :      101
+Total variance    :   668.28
+Explained variance:   621.42
+Quality           :    92.99%
+Dimensionality    :       24
+RMSd type         : Standard RMSd
+Have atom names   : True

@@ -1,0 +1,80 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/18/25 19:49:55
+| Available memory: 1.846 GB
+
+	Reading '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.pdb' as PDB File
+	Reading bond info from CONECT records.
+	Not reading bond info from LINK records.
+	Determining bond info from distances.
+Warning: Determining bond length parameters from element types for 'traj.pdb'.
+Warning: 3 molecules have non-contiguous segments of atoms.
+	      12        2 segments: 615-615 (1)  629-732 (104) 
+	      28        2 segments: 1637-1637 (1)  1648-1649 (2) 
+	      33        2 segments: 2017-2028 (12)  2031-2242 (212) 
+Warning: The 'fixatomorder' command can be used to reorder the topology and any
+Warning:  associated coordinates.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.dcd]
+	Reading '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.dcd' as Charmm DCD
+  [strip @H*]
+    STRIP: Stripping atoms in mask [@H*]
+  [trajout PDB/sasa.pdb multi]
+	Writing 'PDB/sasa.pdb' as PDB
+  [go]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: traj.pdb, 6531 atoms, 452 res, box: None, 45 mol
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'traj.dcd' is a CHARMM DCD file (coords) Little Endian 32 bit, Parm traj.pdb (reading 51 of 51)
+  Coordinate processing will occur on 51 frames.
+
+OUTPUT TRAJECTORIES (1 total):
+  'sasa.pdb' (51 frames) is a PDB file (1 file per frame)
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'traj.pdb' (1 actions):
+  0: [strip @H*]
+	Stripping 647 atoms.
+Warning: 3 molecules have non-contiguous segments of atoms.
+	      12        2 segments: 615-615 (1)  629-732 (104) 
+	      28        2 segments: 1637-1637 (1)  1648-1649 (2) 
+	      33        2 segments: 2017-2028 (12)  2031-2242 (212) 
+Warning: The 'fixatomorder' command can be used to reorder the topology and any
+Warning:  associated coordinates.
+	Stripped topology: 5884 atoms, 452 res, box: None, 45 mol
+.....................................................
+ACTIVE OUTPUT TRAJECTORIES (1):
+  PDB/sasa.pdb (coordinates, time)
+----- traj.dcd (1-51, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 51 frames and processed 51 frames.
+TIME: Avg. throughput= 4.5279 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+RUN TIMING:
+TIME:		Init               : 0.0006 s (  0.01%)
+TIME:		Trajectory Process : 11.2636 s ( 99.97%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.0001 s (  0.00%)
+TIME:		Other              : 0.0027 s (  0.00%)
+TIME:	Run Total 11.2671 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 11.5175 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+

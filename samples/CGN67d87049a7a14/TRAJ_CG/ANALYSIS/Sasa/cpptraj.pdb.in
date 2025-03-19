@@ -1,4 +1,0 @@
-trajin /mnt/Web/CGN67d87049a7a14/TRAJ_CG/output_schnarp/display/traj.dcd
-strip @H*
-trajout PDB/sasa.pdb multi
-go

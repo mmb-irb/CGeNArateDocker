@@ -1,0 +1,311 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/18/25 19:13:34
+| Available memory: 326.382 MB
+
+	Reading '/mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/display/traj.pdb' as PDB File
+	Reading bond info from CONECT records.
+	Not reading bond info from LINK records.
+	Determining bond info from distances.
+Warning: Determining bond length parameters from element types for 'traj.pdb'.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/display/traj.dcd]
+	Reading '/mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/display/traj.dcd' as Charmm DCD
+  [distance D-C ::D ::C out PROTpi-PROTpi/D-C.dat]
+    DISTANCE: ::D to ::C, center of mass.
+  [distance D-E ::D ::E out PROTpi-PROTpi/D-E.dat]
+    DISTANCE: ::D to ::E, center of mass.
+  [distance D-F ::D ::F out PROTpi-PROTpi/D-F.dat]
+    DISTANCE: ::D to ::F, center of mass.
+  [distance C-D ::C ::D out PROTpi-PROTpi/C-D.dat]
+    DISTANCE: ::C to ::D, center of mass.
+  [distance C-E ::C ::E out PROTpi-PROTpi/C-E.dat]
+    DISTANCE: ::C to ::E, center of mass.
+  [distance C-F ::C ::F out PROTpi-PROTpi/C-F.dat]
+    DISTANCE: ::C to ::F, center of mass.
+  [distance E-D ::E ::D out PROTpi-PROTpi/E-D.dat]
+    DISTANCE: ::E to ::D, center of mass.
+  [distance E-C ::E ::C out PROTpi-PROTpi/E-C.dat]
+    DISTANCE: ::E to ::C, center of mass.
+  [distance E-F ::E ::F out PROTpi-PROTpi/E-F.dat]
+    DISTANCE: ::E to ::F, center of mass.
+  [distance F-D ::F ::D out PROTpi-PROTpi/F-D.dat]
+    DISTANCE: ::F to ::D, center of mass.
+  [distance F-C ::F ::C out PROTpi-PROTpi/F-C.dat]
+    DISTANCE: ::F to ::C, center of mass.
+  [distance F-E ::F ::E out PROTpi-PROTpi/F-E.dat]
+    DISTANCE: ::F to ::E, center of mass.
+  [analyze statistics all]
+Warning: The 'analyze' prefix is no longer necessary and may be soon deprecated.
+Warning: To add an analysis command the the queue, only the command name needs
+Warning: to be specified, e.g. 'statistics <args>'.
+    ANALYZE STATISTICS: Using all data sets (12 total).
+# SNB = Values from: Schneider, Neidle, and Berman, "Conformations of the
+#       Sugar-Phosphate Backbone in Helical DNA Crystal Structures.",
+#       Biopolymers (1997), V.42 (1), pp.113-124.
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: traj.pdb, 3027 atoms, 452 res, box: None, 184 mol
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'traj.dcd' is a CHARMM DCD file (coords) Little Endian 32 bit, Parm traj.pdb (reading 51 of 51)
+  Coordinate processing will occur on 51 frames.
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'traj.pdb' (12 actions):
+  0: [distance D-C ::D ::C out PROTpi-PROTpi/D-C.dat]
+	::D (530 atoms) to ::C (1038 atoms), imaging off.
+  1: [distance D-E ::D ::E out PROTpi-PROTpi/D-E.dat]
+	::D (530 atoms) to ::E (639 atoms), imaging off.
+  2: [distance D-F ::D ::F out PROTpi-PROTpi/D-F.dat]
+	::D (530 atoms) to ::F (640 atoms), imaging off.
+  3: [distance C-D ::C ::D out PROTpi-PROTpi/C-D.dat]
+	::C (1038 atoms) to ::D (530 atoms), imaging off.
+  4: [distance C-E ::C ::E out PROTpi-PROTpi/C-E.dat]
+	::C (1038 atoms) to ::E (639 atoms), imaging off.
+  5: [distance C-F ::C ::F out PROTpi-PROTpi/C-F.dat]
+	::C (1038 atoms) to ::F (640 atoms), imaging off.
+  6: [distance E-D ::E ::D out PROTpi-PROTpi/E-D.dat]
+	::E (639 atoms) to ::D (530 atoms), imaging off.
+  7: [distance E-C ::E ::C out PROTpi-PROTpi/E-C.dat]
+	::E (639 atoms) to ::C (1038 atoms), imaging off.
+  8: [distance E-F ::E ::F out PROTpi-PROTpi/E-F.dat]
+	::E (639 atoms) to ::F (640 atoms), imaging off.
+  9: [distance F-D ::F ::D out PROTpi-PROTpi/F-D.dat]
+	::F (640 atoms) to ::D (530 atoms), imaging off.
+  10: [distance F-C ::F ::C out PROTpi-PROTpi/F-C.dat]
+	::F (640 atoms) to ::C (1038 atoms), imaging off.
+  11: [distance F-E ::F ::E out PROTpi-PROTpi/F-E.dat]
+	::F (640 atoms) to ::E (639 atoms), imaging off.
+----- traj.dcd (1-51, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 51 frames and processed 51 frames.
+TIME: Avg. throughput= 624.1281 frames / second.
+
+ACTION OUTPUT:
+
+ANALYSIS: Performing 1 analyses:
+  0: [analyze statistics all]
+	'D-C', distance
+__________________________________________________________________
+
+STATISTICS    D-C
+   AVERAGE:  91.5410 (1.6904 stddev)
+   INITIAL:  92.1781
+   FINAL:    88.3725
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 91.541 |
+ stddev    |        |        |        |        |        |  1.690 |
+           -------------------------------------------------------
+	'D-E', distance
+__________________________________________________________________
+
+STATISTICS    D-E
+   AVERAGE: 112.3596 (2.5285 stddev)
+   INITIAL: 115.1252
+   FINAL:   110.6721
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 112.360 |
+ stddev    |        |        |        |        |        |  2.528 |
+           -------------------------------------------------------
+	'D-F', distance
+__________________________________________________________________
+
+STATISTICS    D-F
+   AVERAGE: 181.5741 (3.3541 stddev)
+   INITIAL: 187.9145
+   FINAL:   177.2894
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 181.574 |
+ stddev    |        |        |        |        |        |  3.354 |
+           -------------------------------------------------------
+	'C-D', distance
+__________________________________________________________________
+
+STATISTICS    C-D
+   AVERAGE:  91.5410 (1.6904 stddev)
+   INITIAL:  92.1781
+   FINAL:    88.3725
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 91.541 |
+ stddev    |        |        |        |        |        |  1.690 |
+           -------------------------------------------------------
+	'C-E', distance
+__________________________________________________________________
+
+STATISTICS    C-E
+   AVERAGE: 146.8073 (3.9153 stddev)
+   INITIAL: 145.5184
+   FINAL:   155.0096
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 146.807 |
+ stddev    |        |        |        |        |        |  3.915 |
+           -------------------------------------------------------
+	'C-F', distance
+__________________________________________________________________
+
+STATISTICS    C-F
+   AVERAGE: 217.1677 (4.0386 stddev)
+   INITIAL: 221.4156
+   FINAL:   222.4254
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 217.168 |
+ stddev    |        |        |        |        |        |  4.039 |
+           -------------------------------------------------------
+	'E-D', distance
+__________________________________________________________________
+
+STATISTICS    E-D
+   AVERAGE: 112.3596 (2.5285 stddev)
+   INITIAL: 115.1252
+   FINAL:   110.6721
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 112.360 |
+ stddev    |        |        |        |        |        |  2.528 |
+           -------------------------------------------------------
+	'E-C', distance
+__________________________________________________________________
+
+STATISTICS    E-C
+   AVERAGE: 146.8073 (3.9153 stddev)
+   INITIAL: 145.5184
+   FINAL:   155.0096
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 146.807 |
+ stddev    |        |        |        |        |        |  3.915 |
+           -------------------------------------------------------
+	'E-F', distance
+__________________________________________________________________
+
+STATISTICS    E-F
+   AVERAGE:  77.1131 (2.2842 stddev)
+   INITIAL:  77.4914
+   FINAL:    76.9330
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 77.113 |
+ stddev    |        |        |        |        |        |  2.284 |
+           -------------------------------------------------------
+	'F-D', distance
+__________________________________________________________________
+
+STATISTICS    F-D
+   AVERAGE: 181.5741 (3.3541 stddev)
+   INITIAL: 187.9145
+   FINAL:   177.2894
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 181.574 |
+ stddev    |        |        |        |        |        |  3.354 |
+           -------------------------------------------------------
+	'F-C', distance
+__________________________________________________________________
+
+STATISTICS    F-C
+   AVERAGE: 217.1677 (4.0386 stddev)
+   INITIAL: 221.4156
+   FINAL:   222.4254
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 217.168 |
+ stddev    |        |        |        |        |        |  4.039 |
+           -------------------------------------------------------
+	'F-E', distance
+__________________________________________________________________
+
+STATISTICS    F-E
+   AVERAGE:  77.1131 (2.2842 stddev)
+   INITIAL:  77.4914
+   FINAL:    76.9330
+
+               < 2.5   2.5-3.5  3.5-4.5  4.5-5.5  5.5-6.5   > 6.5 
+           -------------------------------------------------------
+ %occupied |        |        |        |        |        |  100.0 |
+ average   |        |        |        |        |        | 77.113 |
+ stddev    |        |        |        |        |        |  2.284 |
+           -------------------------------------------------------
+
+TIME: Analyses took 0.0035 seconds.
+
+DATASETS (12 total):
+	D-C "D-C" (double, distance), size is 51 (0.408 kB)
+	D-E "D-E" (double, distance), size is 51 (0.408 kB)
+	D-F "D-F" (double, distance), size is 51 (0.408 kB)
+	C-D "C-D" (double, distance), size is 51 (0.408 kB)
+	C-E "C-E" (double, distance), size is 51 (0.408 kB)
+	C-F "C-F" (double, distance), size is 51 (0.408 kB)
+	E-D "E-D" (double, distance), size is 51 (0.408 kB)
+	E-C "E-C" (double, distance), size is 51 (0.408 kB)
+	E-F "E-F" (double, distance), size is 51 (0.408 kB)
+	F-D "F-D" (double, distance), size is 51 (0.408 kB)
+	F-C "F-C" (double, distance), size is 51 (0.408 kB)
+	F-E "F-E" (double, distance), size is 51 (0.408 kB)
+    Total data set memory usage is at least 4.896 kB
+
+DATAFILES (12 total):
+  D-C.dat (Standard Data File):  D-C
+  D-E.dat (Standard Data File):  D-E
+  D-F.dat (Standard Data File):  D-F
+  C-D.dat (Standard Data File):  C-D
+  C-E.dat (Standard Data File):  C-E
+  C-F.dat (Standard Data File):  C-F
+  E-D.dat (Standard Data File):  E-D
+  E-C.dat (Standard Data File):  E-C
+  E-F.dat (Standard Data File):  E-F
+  F-D.dat (Standard Data File):  F-D
+  F-C.dat (Standard Data File):  F-C
+  F-E.dat (Standard Data File):  F-E
+
+RUN TIMING:
+TIME:		Init               : 0.0005 s (  0.32%)
+TIME:		Trajectory Process : 0.0817 s ( 55.95%)
+TIME:		Action Post        : 0.0000 s (  0.02%)
+TIME:		Analysis           : 0.0035 s (  2.37%)
+TIME:		Data File Write    : 0.0592 s ( 40.55%)
+TIME:		Other              : 0.0011 s (  0.01%)
+TIME:	Run Total 0.1461 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 0.4091 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+

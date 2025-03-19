@@ -1,0 +1,129 @@
+Workdir: /mnt/Web/CGN67d9bc14bc723/TRAJ_AA/ANALYSIS
+Generating stripped traj...
+Generating stripped traj without hydrogens (for pcazip)...
+Generating stripped top...
+Generating structure.stripped.top with CPPTRAJ (removing proteins!!)
+Generating stripped top without hydrogens (for pcazip) ...
+Generating structure.stripped.noH.top with CPPTRAJ (removing proteins!!)
+Generating stripped pdb...
+Generating stripped pdb without hydrogens (for pcazip)...
+grep: /mnt/Web/CGN67d9bc14bc723/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.pdb: No such file or directory
+grep: /mnt/Web/CGN67d9bc14bc723/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.noH.pdb: No such file or directory
+Executing Curves Analysis (using Curves+ program).
+
+run_curves(/mnt/Web/CGN67d9bc14bc723/TRAJ_AA/ANALYSIS/NAFlex,NAFlex,/mnt/Web/CGN67d9bc14bc723/TRAJ_AA/output_schnarp/display/traj.pdb,/mnt/Web/CGN67d9bc14bc723/TRAJ_AA/output_schnarp/display/struc.prmtop,/mnt/Web/CGN67d9bc14bc723/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.trj)
+NA_Type: DNA
+Lasts: A-DG:94
+First: A-DT:1
+Lasts: B-DA:188
+First: B-DC:95
+SEQ1: TCTCTCTCTCTCTCTCTTAAAGGTATACAAGAAAGTTTGTTGGTCTTTTTACCTTCCCGTTTCGCTCCAAGTTAGTATAAAAAAGCTGAACGAG
+SEQ2: AGAGAGAGAGAGAGAGAATTTCCATATGTTCTTTCAAACAACCAGAAAAATGGAAGGGCAAAGCGAGGTTCAATCATATTTTTTCGACTTGCTC
+
+FIRSTS: A-DT:1
+FIRSTS: B-DC:95
+Executing Curves+ program...
+
+Executing Canal program (analysis of Curves+ output)...
+
+Analysing Intra-base pair parameters...
+ls: cannot access '*opening.his': No such file or directory
+ls: cannot access '*stretch.his': No such file or directory
+ls: cannot access '*shear.his': No such file or directory
+ls: cannot access '*propel.his': No such file or directory
+ls: cannot access '*stagger.his': No such file or directory
+ls: cannot access '*buckle.his': No such file or directory
+Analysing Axis base pair parameters...
+ls: cannot access '*xdisp.his': No such file or directory
+ls: cannot access '*inclin.his': No such file or directory
+ls: cannot access '*tip.his': No such file or directory
+ls: cannot access '*ydisp.his': No such file or directory
+Analysing Base pair step parameters...
+rm: cannot remove 'helical_bpstep': No such file or directory
+ls: cannot access '*twist.his': No such file or directory
+ls: cannot access '*roll.his': No such file or directory
+ls: cannot access '*slide.his': No such file or directory
+ls: cannot access '*shift.his': No such file or directory
+ls: cannot access '*tilt.his': No such file or directory
+ls: cannot access '*rise.his': No such file or directory
+Analysing Backbone parameters...
+rm: cannot remove './backbone_torsions/': No such file or directory
+ls: cannot access '*alphaW.his': No such file or directory
+ls: cannot access '*alphaC.his': No such file or directory
+ls: cannot access '*betaW.his': No such file or directory
+ls: cannot access '*betaC.his': No such file or directory
+ls: cannot access '*chiW.his': No such file or directory
+ls: cannot access '*chiC.his': No such file or directory
+ls: cannot access '*gammaW.his': No such file or directory
+ls: cannot access '*gammaC.his': No such file or directory
+ls: cannot access '*epsilW.his': No such file or directory
+ls: cannot access '*epsilC.his': No such file or directory
+ls: cannot access '*phaseW.his': No such file or directory
+ls: cannot access '*phaseC.his': No such file or directory
+ls: cannot access '*zetaW.his': No such file or directory
+ls: cannot access '*zetaC.his': No such file or directory
+Analysing Grooves parameters...
+rm: cannot remove 'grooves': No such file or directory
+ls: cannot access '*majw.his': No such file or directory
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+ls: cannot access '*minw.his': No such file or directory
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+ls: cannot access '*mind.his': No such file or directory
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+ls: cannot access '*majd.his': No such file or directory
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+Use of uninitialized value $avg in numeric eq (==) at /app/Scripts/MCDNA/NAFlex/grooves.pl line 69.
+Analysing Stiffness parameters...
+
+Building Intra-base pair parameters plots...
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Building Axis parameters plots...
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Building Base-pair step parameters plots...
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBPS_Chromatin.pl line 152.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBPS_Chromatin.pl line 152.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBPS_Chromatin.pl line 152.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBPS_Chromatin.pl line 152.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBPS_Chromatin.pl line 152.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBPS_Chromatin.pl line 152.
+Building Backbone parameters plots...
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotPuckering_Chromatin.pl line 144.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotPuckering_Chromatin.pl line 144.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotPuckering_Chromatin.pl line 144.
+sh: 1: R: not found
+sh: 1: R: not found
+Building Grooves parameters plots...
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 2.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 2.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 91.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 91.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 2.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 2.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 91.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 91.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Argument "?" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 111, <AVG> line 1.
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsBP_Chromatin.pl line 187.
+tar: *.his: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+DONE!!

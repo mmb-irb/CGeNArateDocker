@@ -1,0 +1,13 @@
+trajin /mnt/Web/CGN67d9b89285e4a/TRAJ_AA/output_schnarp/display/traj.nc
+strip :WAT
+strip :Cl-
+strip :Cl
+strip :Na+
+strip :K+
+strip :Mn++
+strip :MNG
+strip :FED
+strip :ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL
+strip @H*
+autoimage
+trajout /mnt/Web/CGN67d9b89285e4a/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.noH.trj

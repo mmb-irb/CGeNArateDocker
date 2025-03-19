@@ -1,0 +1,792 @@
+Workdir: /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS
+Generating stripped traj...
+Generating stripped traj without hydrogens (for pcazip)...
+Generating stripped top...
+Copying structure.stripped.top (keeping proteins!!)
+Generating stripped top without hydrogens (for pcazip) ...
+Copying structure.stripped.noH.top (keeping proteins!!)
+Generating stripped pdb...
+Generating stripped pdb without hydrogens (for pcazip)...
+Problems with generated pdb (6531 TERs), stripping TER tags...
+Problems with generated pdb (6531 TERs), stripping TER tags...
+Executing Stiffness Constants Analysis (using Curves+ program).
+
+Checking if Curves Analysis has already been computed...
+Curves Analysis has already been computed, using Curves files to compute Stiffness analysis.
+cp: -r not specified; omitting directory '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/CURVES/FORCE_CTES'
+cp: -r not specified; omitting directory '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/CURVES/axis_bp'
+cp: -r not specified; omitting directory '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/CURVES/backbone_torsions'
+cp: -r not specified; omitting directory '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/CURVES/grooves'
+cp: -r not specified; omitting directory '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/CURVES/helical_bp'
+cp: -r not specified; omitting directory '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/CURVES/helical_bpstep'
+First: A-DG:1
+Lasts: A-LYS:452
+SEQ1: GATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACAGATTACATACATACATGTATGTATGTAATCTGTATGTATGTAATCTGTATGTATGTAATCTGTATGTATGTAATCTGTATGTATGTAATCTGTATGTATGTAATC
+SEQ2: 
+Getting Stiffness Constants...
+
+Argument "761.83246-333.60065" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Argument "-14.72937-296.10144" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Argument "493.72589-529.11786" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Argument "550.51532-123.14441" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Argument "380.18570-543.43951" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Argument "259.72311-193.22433" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Argument "400.62769-152.16379" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Argument "444.47626-223.62291" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Argument "579.10760-111.31139" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Argument "-21.32227-128.80867" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Argument "9.28696-105.06647" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Argument "457.80447-114.04494" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value within @array in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 42, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 43, <IN> line 6.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 52.
+Use of uninitialized value $lines[6] in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Use of uninitialized value $lines[6] in concatenation (.) or string at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 55.
+Argument "691.36090-197.43112-274.23853" isn't numeric in addition (+) at /app/Scripts/MCDNA/NAFlex/stiffnessAvgPlots.pl line 53.
+Generating Stiffness HTML tables...
+
+Argument "57.303461364.62500" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "57.303461364.62500" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "761.83246-333.60065" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-334.406221758.04468" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "761.83246-333.60065" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-334.406221758.04468" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "2383.25879-510.12985-260.15912" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-510.468445444.61719" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-8.53562-285.62430" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "37.16827-285.82388" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "2383.25879-510.12985-260.15912" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-510.468445444.61719" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-8.53562-285.62430" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "37.16827-285.82388" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "1832.38660-929.87842-242.07414" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-926.984135128.22168-261.86453" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-14.72937-296.10144" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-241.62987-262.78833" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "59.61763-296.13718" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "1832.38660-929.87842-242.07414" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-926.984135128.22168-261.86453" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-14.72937-296.10144" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-241.62987-262.78833" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "59.61763-296.13718" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "493.72589-529.11786" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-529.279973328.98584" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "27.68805-198.54541" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "42.55850-198.73761" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "493.72589-529.11786" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-529.279973328.98584" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "27.68805-198.54541" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "42.55850-198.73761" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "1354.22351-794.19342-123.88348" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-794.287662867.41479" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "10.41830-123.61465" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "74.54035-123.57674" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "1354.22351-794.19342-123.88348" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-794.287662867.41479" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "10.41830-123.61465" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "74.54035-123.57674" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "550.51532-123.14441" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-123.148191013.31323-168.45135" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "46.88620-168.38220" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "550.51532-123.14441" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-123.148191013.31323-168.45135" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "46.88620-168.38220" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "40.091621500.71021" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "40.091621500.71021" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "63.892334228.85693-209.06828" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "165.21478-209.04251" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "63.892334228.85693-209.06828" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "165.21478-209.04251" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "380.18570-543.43951" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-531.059632140.58496" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-7.73294-189.46802" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "23.71791-191.56592" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "380.18570-543.43951" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-531.059632140.58496" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-7.73294-189.46802" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "23.71791-191.56592" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "1124.17297-157.60017" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-157.682342975.11499" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "1124.17297-157.60017" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-157.682342975.11499" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "2.92182-257.30762" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "2.947541363.78748-343.44513" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-257.32068-343.33545" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "2.92182-257.30762" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "2.947541363.78748-343.44513" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-257.32068-343.33545" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "259.72311-193.22433" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "259.72311-193.22433" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "400.62769-152.16379" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "400.62769-152.16379" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "444.47626-223.62291" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "775.99310-107.01608" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "444.47626-223.62291" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "775.99310-107.01608" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "1321.707641113.86926" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "1113.192025851.74316-963.75885" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "64.28913-962.50397" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "1321.707641113.86926" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "1113.192025851.74316-963.75885" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "64.28913-962.50397" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "2606.34863**********" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "**********2936.78198-541.12842" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "408.44977-539.68536" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "2606.34863**********" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "**********2936.78198-541.12842" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "408.44977-539.68536" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "436.952121062.13440" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "436.952121062.13440" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "147.265782742.42603" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "147.265782742.42603" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "579.10760-111.31139" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-111.313981170.81250-162.63118" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "4.89130-161.89760" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "579.10760-111.31139" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-111.313981170.81250-162.63118" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "4.89130-161.89760" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "2388.851071826.24878-217.66745" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "1827.583136495.89063-908.55042" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-21.32227-128.80867" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-218.86397-911.19867" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "-27.04272-128.63264" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "2388.851071826.24878-217.66745" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "1827.583136495.89063-908.55042" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-21.32227-128.80867" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-218.86397-911.19867" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "-27.04272-128.63264" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "21.803185574.67383-246.47186" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-19.56768-228.71362" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-33.66954-246.29822" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "12.56772-228.72505" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "21.803185574.67383-246.47186" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-19.56768-228.71362" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-33.66954-246.29822" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "12.56772-228.72505" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "1518.59448**********" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "**********4320.44824-726.17627" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "206.40955-726.57330" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "1518.59448**********" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "**********4320.44824-726.17627" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "206.40955-726.57330" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "271.53531-220.45332" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "271.499021412.88184" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "271.53531-220.45332" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "271.499021412.88184" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "1696.31848-140.13281" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-140.139404879.08496-997.79041" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "9.28696-105.06647" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "26.43377-997.95294" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "-92.78216-105.02466" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "1696.31848-140.13281" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-140.139404879.08496-997.79041" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "9.28696-105.06647" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "26.43377-997.95294" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "-92.78216-105.02466" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "292.804443229.54150-548.67633" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-24.17864-548.77454" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "292.804443229.54150-548.67633" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-24.17864-548.77454" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "457.80447-114.04494" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-115.317692547.18921-482.37555" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-79.08009-483.43222" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "457.80447-114.04494" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-115.317692547.18921-482.37555" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-79.08009-483.43222" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "-93.86696-130.41248" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-59.896481813.92957" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "4.17069-147.74960" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "25.30932-150.18437" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 6.
+Argument "-93.86696-130.41248" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-59.896481813.92957" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "4.17069-147.74960" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "25.30932-150.18437" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 6.
+Argument "691.36090-197.43112-274.23853" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-197.471072435.10620-102.06223" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "-274.24069-102.06708" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 3.
+Argument "691.36090-197.43112-274.23853" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-197.471072435.10620-102.06223" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Argument "-274.24069-102.06708" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 3.
+Argument "1808.33740-367.33789-316.98157" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 1.
+Argument "-367.332212733.95044" isn't numeric in numeric gt (>) at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 31, <TABLE> line 2.
+Argument "1808.33740-367.33789-316.98157" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 1.
+Argument "-367.332212733.95044" isn't numeric in sprintf at /app/Scripts/MCDNA/NAFlex/stiffnessTableHtml.pl line 47, <TABLE> line 2.
+Building Stiffness Constants Plots...
+
+perl /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl FORCE_CTES/rise_avg.dat Kcal/mol*Angstrom^2 /app/Scripts/MCDNA/NAFlex/BasePairParamsStiffness.table &> gnuplot.errors
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl line 118.
+perl /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl FORCE_CTES/roll_avg.dat Kcal/mol*Degree^2 /app/Scripts/MCDNA/NAFlex/BasePairParamsStiffness.table &> gnuplot.errors
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl line 118.
+perl /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl FORCE_CTES/shift_avg.dat Kcal/mol*Angstrom^2 /app/Scripts/MCDNA/NAFlex/BasePairParamsStiffness.table &> gnuplot.errors
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl line 118.
+perl /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl FORCE_CTES/slide_avg.dat Kcal/mol*Angstrom^2 /app/Scripts/MCDNA/NAFlex/BasePairParamsStiffness.table &> gnuplot.errors
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl line 118.
+perl /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl FORCE_CTES/tilt_avg.dat Kcal/mol*Degree^2 /app/Scripts/MCDNA/NAFlex/BasePairParamsStiffness.table &> gnuplot.errors
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl line 118.
+perl /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl FORCE_CTES/twist_avg.dat Kcal/mol*Degree^2 /app/Scripts/MCDNA/NAFlex/BasePairParamsStiffness.table &> gnuplot.errors
+Can't exec "gnuplot": No such file or directory at /app/Scripts/MCDNA/NAFlex/plotHelicalParamsStiffness.pl line 118.
+Building Time Plots (with associated histograms)...
+
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+sh: 1: R: not found
+DONE!!

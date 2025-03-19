@@ -1,0 +1,4 @@
+parm input/traj_H.prmtop
+parmstrip @H* 
+parmwrite out input/traj.prmtop
+go

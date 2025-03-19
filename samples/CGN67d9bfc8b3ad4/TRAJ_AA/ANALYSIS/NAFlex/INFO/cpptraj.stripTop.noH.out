@@ -1,0 +1,71 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/18/25 18:53:35
+| Available memory: 489.628 MB
+
+	Reading '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/struc.prmtop' as Amber Topology
+	This Amber topology does not include atomic numbers.
+	Assigning elements from atom masses/names.
+	No SCEE section: setting Amber default (1.2)
+	No SCNB section: setting Amber default (2.0)
+Warning: Determining bond length parameters from element types for 'struc.prmtop'.
+INPUT: Reading input from 'STDIN'
+  [parmstrip :WAT]
+	Stripping atoms in mask [:WAT] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :Cl-]
+	Stripping atoms in mask [:Cl-] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :Cl]
+	Stripping atoms in mask [:Cl] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :Na+]
+	Stripping atoms in mask [:Na+] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :K+]
+	Stripping atoms in mask [:K+] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :Mn++]
+	Stripping atoms in mask [:Mn++] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :MNG]
+	Stripping atoms in mask [:MNG] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :FED]
+	Stripping atoms in mask [:FED] (0) from struc.prmtop
+	Stripped parm: 6531 atoms, 452 res, box: None, 6531 mol
+  [parmstrip :ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL]
+	Stripping atoms in mask [:ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL] (2847) from struc.prmtop
+	Stripped parm: 3684 atoms, 180 res, box: None, 3684 mol
+  [parmstrip @H*]
+	Stripping atoms in mask [@H*] (0) from struc.prmtop
+	Stripped parm: 3684 atoms, 180 res, box: None, 3684 mol
+  [parmwrite out /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.noH.top amber]
+	Writing topology 0 (struc.prmtop) to '/mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/ANALYSIS/NAFlex/INFO/structure.stripped.noH.top' with format Amber Topology
+	Memory used by full exclusion list: 0.000 kB
+Warning: 1 empty atom type names.
+  [go]
+---------- RUN BEGIN -------------------------------------------------
+Warning: No input trajectories specified.
+TIME: Analyses took 0.0000 seconds.
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 0.0000 s (  0.00%)
+TIME:		Action Post        : 0.0000 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  2.78%)
+TIME:		Data File Write    : 0.0001 s (  8.89%)
+TIME:		Other              : 0.0008 s (  0.88%)
+TIME:	Run Total 0.0009 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 0.4489 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+

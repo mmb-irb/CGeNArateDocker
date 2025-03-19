@@ -1,0 +1,14 @@
+trajin /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.dcd
+distance F-E ::F  ::E out PROTpi-PROTpi/F-E.dat
+distance F-D ::F  ::D out PROTpi-PROTpi/F-D.dat
+distance F-C ::F  ::C out PROTpi-PROTpi/F-C.dat
+distance E-F ::E  ::F out PROTpi-PROTpi/E-F.dat
+distance E-D ::E  ::D out PROTpi-PROTpi/E-D.dat
+distance E-C ::E  ::C out PROTpi-PROTpi/E-C.dat
+distance D-F ::D  ::F out PROTpi-PROTpi/D-F.dat
+distance D-E ::D  ::E out PROTpi-PROTpi/D-E.dat
+distance D-C ::D  ::C out PROTpi-PROTpi/D-C.dat
+distance C-F ::C  ::F out PROTpi-PROTpi/C-F.dat
+distance C-E ::C  ::E out PROTpi-PROTpi/C-E.dat
+distance C-D ::C  ::D out PROTpi-PROTpi/C-D.dat
+analyze statistics all

@@ -1,0 +1,25 @@
+ LINEAR STRUCTURE ANALYSED
+ BASE-PAIRS:           26
+ FRAMES:              101
+                   Elastic cte      Intercept          Slope   Confidence-I     Strd Error
+ -------------------------------------------------------------------------------------------
+    Tilt (nm):          73.084              #              #              #          4.016
+    Roll (nm):          62.355              #              #              #          4.527
+   Twist (nm):          89.817              #              #              #          0.822
+Stretch (pN) :         802.331       -0.61655        0.17544         27.274              #
+    A [a] (nm):         35.057        1.00000       -0.00970          3.426              #
+   As [a] (nm):        112.192        1.00000       -0.00303         18.906              #
+   Ad [a] (nm):         50.990        1.00000       -0.00667          4.335              #
+   A [b] (nm):          35.057              #              #              #              #
+  Ad [c] (nm):          62.432              #              #              #          0.810
+   A [d] (nm):          40.111              #              #              #              #
+ 
+Persistence lengths, Tilt and Roll calculated from whole fragment and from lengths:      11 to      15
+Twist calculated from whole fragment and from lengths:      11 to      15
+Stretch calculated from base:       5 to base     22 and from lengths:       8 to      17
+ 
+ A = Persistence lentgh, As = Static persistence length, Ad = Dynamic persistence length
+ (a) => overall fitting
+ (b) => A = As*Ad/(As+Ad)
+ (c) => Ad = Tilt*Roll/(Tilt+Roll)
+ (d) => A = As*Ad/(As+Ad) with Ad obtained by (c) 

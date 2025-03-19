@@ -1,110 +1,124 @@
-[{
-  "_id": "67d86f56eca641.18630477",
-  "id": "CGNUSER67d86f56ec511",
-  "tool": "3",
-  "resolution": "1",
-  "operations": [ "createStructure", "createTrajectory" ],
-  "numStructures": "50",
-  "proteins": [
-    { "id": "1vfc12", "code": "1vfc", "length": "12", "position": "3" },
-    { "id": "1wtr7", "code": "1wtr", "length": "7", "position": "30" },
-    { "id": "3zhm8", "code": "3zhm", "length": "8", "position": "60" },
-    { "id": "1bnz7", "code": "1bnz", "length": "7", "position": "80" }
-  ],
-  "analysis": 1,
-  "folder": "CGN67d86f56ec511",
-  "inputFile": "CGN67d86f56ec511/inputSequence.txt",
-  "type": 1000,
-  "status": 1,
-  "uploadDate": { "$date": "2025-03-17T18:52:06.969Z" },
-  "pid": 19,
-  "endDate": { "$date": "2025-03-17T19:06:50.210Z" }
-},
-{
-  "_id": "67d87049a7f7a2.49210743",
-  "id": "CGNUSER67d87049a7a14",
-  "tool": "3",
-  "resolution": "0",
-  "operations": ["createStructure", "createTrajectory"],
-  "numStructures": "50",
-  "proteins": [
-    { "id": "1vfc12", "code": "1vfc", "length": "12", "position": "3" },
-    { "id": "1wtr7", "code": "1wtr", "length": "7", "position": "30" },
-    { "id": "3zhm8", "code": "3zhm", "length": "8", "position": "60" },
-    { "id": "1bnz7", "code": "1bnz", "length": "7", "position": "80" }
-  ],
-  "analysis": 1,
-  "folder": "CGN67d87049a7a14",
-  "inputFile": "CGN67d87049a7a14/inputSequence.txt",
-  "type": 1000,
-  "status": 1,
-  "uploadDate": { "$date": "2025-03-17T18:56:09.688Z" },
-  "pid": 20,
-  "endDate": { "$date": "2025-03-17T19:09:31.441Z" }
-},
-{
-  "_id": "67d86f37021ff2.50529559",
-  "id": "CGNUSER67d86f36f0e92",
-  "tool": "1",
-  "resolution": "0",
-  "operations": ["createStructure", "createTrajectory"],
-  "numStructures": "100",
-  "analysis": 1,
-  "folder": "CGN67d86f36f0e92",
-  "inputFile": "CGN67d86f36f0e92/inputSequence.txt",
-  "type": 1000,
-  "status": 1,
-  "uploadDate": { "$date": "2025-03-17T18:51:35.008Z" },
-  "pid": 18,
-  "endDate": { "$date": "2025-03-17T18:52:38.561Z" }
-},
-{
-  "_id": "67d87509b8d2b2.67967905",
-  "id": "CGNUSER67d87509b8772",
-  "tool": "2",
-  "resolution": "1",
-  "operations": ["createStructure", "createTrajectory"],
-  "numStructures": "10",
-  "deltaLN": "-1",
-  "analysis": 1,
-  "folder": "CGN67d87509b8772",
-  "inputFile": "CGN67d87509b8772/inputSequence.txt",
-  "type": 1000,
-  "status": 1,
-  "uploadDate": { "$date": "2025-03-17T19:16:25.757Z" },
-  "pid": 21,
-  "endDate": { "$date": "2025-03-17T19:21:30.686Z" }
-},
-{
-  "_id": "67d94208e19073.61173417",
-  "id": "CGNUSER67d94208e0ecb",
-  "tool": "2",
-  "resolution": "0",
-  "operations": ["createStructure", "createTrajectory"],
-  "numStructures": "10",
-  "deltaLN": "-1",
-  "analysis": 1,
-  "folder": "CGN67d94208e0ecb",
-  "inputFile": "CGN67d94208e0ecb/inputSequence.txt",
-  "type": 1000,
-  "status": 1,
-  "uploadDate": { "$date": "2025-03-18T09:51:04.923Z" },
-  "pid": 23,
-  "endDate": { "$date": "2025-03-18T09:54:40.019Z" }
-},
-{
-  "_id": "67d94200b03b99.28165192",
-  "id": "CGNUSER67d94200afbbb",
-  "tool": "1",
-  "resolution": "1",
-  "operations": ["createStructure", "createTrajectory"],
-  "numStructures": "100",
-  "analysis": 1,
-  "folder": "CGN67d94200afbbb",
-  "inputFile": "CGN67d94200afbbb/inputSequence.txt",
-  "type": 1000,
-  "status": 1,
-  "uploadDate": { "$date": "2025-03-18T09:50:56.721Z" },
-  "pid": 22,
-  "endDate": { "$date": "2025-03-18T09:52:57.222Z" }
-}]
+[
+  {
+      "_id": "67d9b855102df1.14756966",
+      "id": "CGNUSER67d9b8550f7e9",
+      "tool": "1",
+      "resolution": "0",
+      "operations": [
+          "createStructure",
+          "createTrajectory"
+      ],
+      "numStructures": "100",
+      "analysis": 1,
+      "folder": "CGN67d9b8550f7e9",
+      "inputFile": "CGN67d9b8550f7e9/inputSequence.txt",
+      "type": 1000,
+      "status": 1,
+      "uploadDate": { "$date": "2025-03-18T18:15:49.066Z" },
+      "pid": 1
+  },
+  {
+      "_id": "67d9b89286d769.61804502",
+      "id": "CGNUSER67d9b89285e4a",
+      "tool": "1",
+      "resolution": "1",
+      "operations": [
+          "createStructure",
+          "createTrajectory"
+      ],
+      "numStructures": "100",
+      "analysis": 1,
+      "folder": "CGN67d9b89285e4a",
+      "inputFile": "CGN67d9b89285e4a/inputSequence.txt",
+      "type": 1000,
+      "status": 1,
+      "uploadDate": { "$date": "2025-03-18T18:16:50.552Z" },
+      "pid": 2
+  },
+  {
+      "_id": "67d9bc12443dc0.80753534",
+      "id": "CGNUSER67d9bc1243337",
+      "tool": "2",
+      "resolution": "0",
+      "operations": [
+          "createStructure",
+          "createTrajectory"
+      ],
+      "numStructures": "10",
+      "deltaLN": "-1",
+      "analysis": 1,
+      "folder": "CGN67d9bc1243337",
+      "inputFile": "CGN67d9bc1243337/inputSequence.txt",
+      "type": 1000,
+      "status": 1,
+      "uploadDate": { "$date": "2025-03-18T18:31:46.279Z" },
+      "pid": 3
+  },
+  {
+      "_id": "67d9bc14bdaf24.23726253",
+      "id": "CGNUSER67d9bc14bc723",
+      "tool": "2",
+      "resolution": "1",
+      "operations": [
+          "createStructure",
+          "createTrajectory"
+      ],
+      "numStructures": "10",
+      "deltaLN": "-1",
+      "analysis": 1,
+      "folder": "CGN67d9bc14bc723",
+      "inputFile": "CGN67d9bc14bc723/inputSequence.txt",
+      "type": 1000,
+      "status": 1,
+      "uploadDate": { "$date": "2025-03-18T18:31:48.776Z" },
+      "pid": 4
+  },
+  {
+      "_id": "67d9bfc0534745.72291737",
+      "id": "CGNUSER67d9bfc0515cd",
+      "tool": "3",
+      "resolution": "0",
+      "operations": [
+          "createStructure",
+          "createTrajectory"
+      ],
+      "numStructures": "50",
+      "proteins": [
+          { "id": "1vfc12", "code": "1vfc", "length": "12", "position": "3" },
+          { "id": "1wtr7", "code": "1wtr", "length": "7", "position": "30" },
+          { "id": "3zhm8", "code": "3zhm", "length": "8", "position": "60" },
+          { "id": "1bnz7", "code": "1bnz", "length": "7", "position": "80" }
+      ],
+      "analysis": 1,
+      "folder": "CGN67d9bfc0515cd",
+      "inputFile": "CGN67d9bfc0515cd/inputSequence.txt",
+      "type": 1000,
+      "status": 1,
+      "uploadDate": { "$date": "2025-03-18T18:47:28.341Z" },
+      "pid": 5
+  },
+  {
+      "_id": "67d9bfc8b5dd99.99963149",
+      "id": "CGNUSER67d9bfc8b3ad4",
+      "tool": "3",
+      "resolution": "1",
+      "operations": [
+          "createStructure",
+          "createTrajectory"
+      ],
+      "numStructures": "50",
+      "proteins": [
+          { "id": "1vfc12", "code": "1vfc", "length": "12", "position": "3" },
+          { "id": "1wtr7", "code": "1wtr", "length": "7", "position": "30" },
+          { "id": "3zhm8", "code": "3zhm", "length": "8", "position": "60" },
+          { "id": "1bnz7", "code": "1bnz", "length": "7", "position": "80" }
+      ],
+      "analysis": 1,
+      "folder": "CGN67d9bfc8b3ad4",
+      "inputFile": "CGN67d9bfc8b3ad4/inputSequence.txt",
+      "type": 1000,
+      "status": 1,
+      "uploadDate": { "$date": "2025-03-18T18:47:36.744Z" },
+      "pid": 6
+  }
+]

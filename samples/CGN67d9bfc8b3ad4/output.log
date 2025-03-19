@@ -1,0 +1,29 @@
+## CGeNArate ##
+## BUILDING CONFIGURATION FILES
+# STEP 1: Building CGeNArate-prot Configuration File
+# STEP 2: Building structure
+# STEP 3: Executing CGenerate...
+cat data.in | /app/Scripts/cgenarate-materials/Proteins/CGeNArateProteins /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/cgenerate_config.toml
+Changing to: /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_pdb
+getCG_AmberAA.sh /mnt/Web/CGN67d9bfc8b3ad4/inputSequence.txt /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_pdb/structure_000000_ 
+python /app/Scripts/cgenarate-materials/Proteins/Rebuild_nmerProteins.py --ref /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/reference.pdb --inputtop input/ProteinsChains.pdb --inputtraj /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/cgenarate_traj.mdcrd --proteintop /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/ProteinsProtAA.pdb --proteintraj /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/ProteinsProtAA.mdcrd --outputtop /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/Proteinspredicted.pdb --outputtraj /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/Proteinspredicted.mdcrd
+cpptraj -p /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/Proteinspredicted.pdb  -y /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/Proteinspredicted.mdcrd -x /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.dcd > cpptraj_dcd.log
+Building downloadable tar package...
+DONE!!
+## Analysis ##
+
+#
+# RESOLUTION: AA, SYSTEM: TRAJ, METHOD: prot-dna, SEQ_LEN: 90
+#
+
+STARTING ANALYSIS FOR prot-dna METHOD...
+
+## TRAJECTORY ANALYSES
+# STEP 1: Analysis on Flexibility (NAFlex)
+# STEP 2: Analysis on Bending...
+# STEP 3: Analysis on Elastic Energy...
+# STEP 5: Analysis on SASA (Virtual Footprinting)...
+perl /app/Scripts/MCDNA/SASA/getSASA.pl /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.pdb /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.pdb /mnt/Web/CGN67d9bfc8b3ad4/TRAJ_AA/output_schnarp/display/traj.dcd
+Building downloadable tar package for CGeNArate Analysis...
+DONE!!
+## Execute end-of-work routines ##

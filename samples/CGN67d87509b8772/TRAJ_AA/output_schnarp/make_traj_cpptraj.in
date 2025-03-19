@@ -1,6 +1,0 @@
-trajin /mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/cgenarate_traj.mdcrd
-reference /mnt/Web/CGN67d87509b8772/TRAJ_AA/output_schnarp/str.pdb
-rms reference :1-188
-trajout cgenarate_traj.fitted.mdcrd 
-go
-quit

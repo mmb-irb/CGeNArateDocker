@@ -1,0 +1,137 @@
+
+CPPTRAJ: Trajectory Analysis. V6.24.0 (AmberTools)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 03/18/25 18:17:59
+| Available memory: 843.989 MB
+
+	Reading '/mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/output_schnarp/display/struc.prmtop' as Amber Topology
+	This Amber topology does not include atomic numbers.
+	Assigning elements from atom masses/names.
+	No SCEE section: setting Amber default (1.2)
+	No SCNB section: setting Amber default (2.0)
+Warning: Determining bond length parameters from element types for 'struc.prmtop'.
+INPUT: Reading input from 'STDIN'
+  [trajin /mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/output_schnarp/display/traj.nc]
+	Reading '/mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/output_schnarp/display/traj.nc' as Amber NetCDF
+  [strip :WAT]
+    STRIP: Stripping atoms in mask [:WAT]
+  [strip :Cl-]
+    STRIP: Stripping atoms in mask [:Cl-]
+  [strip :Cl]
+    STRIP: Stripping atoms in mask [:Cl]
+  [strip :Na+]
+    STRIP: Stripping atoms in mask [:Na+]
+  [strip :K+]
+    STRIP: Stripping atoms in mask [:K+]
+  [strip :Mn++]
+    STRIP: Stripping atoms in mask [:Mn++]
+  [strip :MNG]
+    STRIP: Stripping atoms in mask [:MNG]
+  [strip :FED]
+    STRIP: Stripping atoms in mask [:FED]
+  [strip :ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL]
+    STRIP: Stripping atoms in mask [:ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL]
+  [autoimage]
+    AUTOIMAGE: To box center based on center of mass, anchor is first molecule.
+  [rmsd !@H* first out /mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/ANALYSIS/NAFlex/INFO/prova.rmsd]
+    RMSD: (!@H*), reference is first frame (!@H*).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout /mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/ANALYSIS/NAFlex/INFO/structure.stripped.trj]
+Warning: Format not specified and extension '.trj' not recognized. Defaulting to Amber Trajectory.
+	Writing '/mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/ANALYSIS/NAFlex/INFO/structure.stripped.trj' as Amber Trajectory
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: struc.prmtop, 60 atoms, 60 res, box: None, 60 mol
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'traj.nc' is a NetCDF (NetCDF3) AMBER trajectory with coordinates, Parm struc.prmtop (reading 101 of 101)
+  Coordinate processing will occur on 101 frames.
+
+OUTPUT TRAJECTORIES (1 total):
+  'structure.stripped.trj' (101 frames) is an AMBER trajectory
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'struc.prmtop' (11 actions):
+  0: [strip :WAT]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  1: [strip :Cl-]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  2: [strip :Cl]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  3: [strip :Na+]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  4: [strip :K+]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  5: [strip :Mn++]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  6: [strip :MNG]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  7: [strip :FED]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  8: [strip :ALA,ARG,ASP,GLU,PHE,TYR,TRP,LYS,GLY,HIS,HIE,HID,HIP,CYS,CYX,SER,PRO,THR,MET,LEU,ILE,ASN,GLN,VAL]
+	Stripping 0 atoms.
+Warning: No atoms to strip. Skipping.
+Warning: Setup incomplete for [strip]: Skipping
+  9: [autoimage]
+Warning: Topology struc.prmtop does not contain box information.
+Warning: Setup incomplete for [autoimage]: Skipping
+  10: [rmsd !@H* first out /mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/ANALYSIS/NAFlex/INFO/prova.rmsd]
+	Target mask: [!@H*](60)
+	Reference topology: struc.prmtop
+	Reference mask: [!@H*](60)
+.....................................................
+ACTIVE OUTPUT TRAJECTORIES (1):
+  /mnt/Web/CGN67d9b8550f7e9/TRAJ_CG/ANALYSIS/NAFlex/INFO/structure.stripped.trj (coordinates)
+----- traj.nc (1-101, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 101 frames and processed 101 frames.
+TIME: Avg. throughput= 827.5636 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+DATASETS (1 total):
+	RMSD_00001 "RMSD_00001" (double, rms), size is 101 (0.808 kB)
+    Total data set memory usage is at least 0.808 kB
+
+DATAFILES (1 total):
+  prova.rmsd (Standard Data File):  RMSD_00001
+
+RUN TIMING:
+TIME:		Init               : 0.0008 s (  0.59%)
+TIME:		Trajectory Process : 0.1220 s ( 92.43%)
+TIME:		Action Post        : 0.0001 s (  0.11%)
+TIME:		Analysis           : 0.0000 s (  0.02%)
+TIME:		Data File Write    : 0.0063 s (  4.80%)
+TIME:		Other              : 0.0027 s (  0.02%)
+TIME:	Run Total 0.1320 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 0.4036 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+

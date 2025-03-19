@@ -1,0 +1,3 @@
+trajin /mnt/Web/CGN67d9bc14bc723/TRAJ_AA/output_schnarp/display/traj.dcd
+radgyr :* out /mnt/Web/CGN67d9bc14bc723/TRAJ_AA/ANALYSIS/Circular/rg.dat
+go

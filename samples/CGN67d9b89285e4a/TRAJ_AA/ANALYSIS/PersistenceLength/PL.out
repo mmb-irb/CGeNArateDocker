@@ -1,0 +1,21 @@
+Double stranded structure
+Linear structure
+Topology file =input/traj.prmtop
+Trajectory file =input/traj.mdcrd
+ Reading topology file
+  Number of atoms =       1224
+Number of residues =        60
+              BOX =          0
+ Base pairs read =           30
+ Reading trajectory file
+  Number of frames =       101
+ Calculating structural parameters
+ Calculating elastic parameters
+ Calculating averages and standard deviations
+ Calculating average structure parameters
+ Calculating overall parameters
+ Writing output files
+Finished SerraNA
+Finished Analysis
+Analysis/Analysis_traj.out
+Persistence length, traj, 40.111

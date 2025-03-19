@@ -1,0 +1,26 @@
+## CGeNArate ##
+## BUILDING CONFIGURATION FILES
+# STEP 1: Building CGeNArate-prot Configuration File
+# STEP 2: Building structure
+# STEP 3: Executing CGenerate...
+cat data.in | /app/Scripts/cgenarate-materials/Proteins/CGeNArateProteins /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/cgenerate_config.toml
+python /app/Scripts/cgenarate-materials/Proteins/addProteinsToTraj.py --inputtraj /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/cgenarate_traj.mdcrd --outputtop /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/ProteinsProtAA.pdb --outputtraj /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/ProteinsProtAA.mdcrd 
+cpptraj -p /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/ProteinsProtAA.pdb  -y /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/ProteinsProtAA.mdcrd -x /mnt/Web/CGN67d9bfc0515cd/TRAJ_CG/output_schnarp/display/traj.dcd > cpptraj_dcd.log
+Building downloadable tar package...
+DONE!!
+## Analysis ##
+
+#
+# RESOLUTION: CG, SYSTEM: TRAJ, METHOD: prot-dna, SEQ_LEN: 90
+#
+
+STARTING ANALYSIS FOR prot-dna METHOD...
+
+## TRAJECTORY ANALYSES
+# STEP 1: Analysis on Flexibility (NAFlex)...
+# STEP 2: Analysis on Bending...
+# STEP 3: Analysis on Elastic Energy...
+# STEP 4: Analysis on SASA (Virtual Footprinting)...
+Building downloadable tar package for CGeNArate Analysis...
+DONE!!
+## Execute end-of-work routines ##
