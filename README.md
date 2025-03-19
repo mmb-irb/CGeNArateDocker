@@ -1,7 +1,7 @@
 
 # CGeNArate docker web services
 
-<div align="center"><a href="https://mmb.irbbarcelona.org/CGeNArate/"><img src="logo.png" /></a></div>
+<div align="center"><a href="https://mmb.irbbarcelona.org/CGNAW/"><img src="logo.png" /></a></div>
 
 In this repository there are all the files needed for executing the different **CGeNArate** services: **website, workflow and SGE**. All these services have been integrated into **containers** and connected between them via docker **network**.
 
@@ -433,7 +433,7 @@ $ docker stack services my_stack
 ID             NAME                  MODE         REPLICAS   IMAGE                  PORTS   
 <ID>           my_stack_mongo-seed   replicated   0/1        mongo:6                
 <ID>           my_stack_mongodb      replicated   1/1        mongo:6                *:27017->27017/tcp
-<ID>           my_stack_sge          replicated   1/1        sge_image:latest       *:22->22/tcp, *:6444->6444/tcp
+<ID>           my_stack_sge          replicated   1/1        sge_image:latest       *:222->222/tcp, *:6444->6444/tcp
 <ID>           my_stack_website      replicated   1/1        website_image:latest   *:80->3001/tcp
 <ID>           my_stack_workflow     replicated   0/0        workflow_image:latest
 ```
