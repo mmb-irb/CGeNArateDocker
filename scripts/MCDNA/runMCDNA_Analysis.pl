@@ -69,8 +69,8 @@ my $achome = "/opt/conda/envs/glimps_env";
 my $pcaMaxNatoms = 2500;
 
 # Maximum number of bases for CURVES
-#my $curvesMaxBases = 250;
-my $curvesMaxBases = 500;
+my $curvesMaxBases = 250;
+#my $curvesMaxBases = 500;
 
 # Deformation Energy factor
 my $factor = 2.28;
