@@ -69,8 +69,8 @@ my $achome = "/opt/conda/envs/glimps_env";
 my $pcaMaxNatoms = 2500;
 
 # Maximum number of bases for CURVES
-#my $curvesMaxBases = 250;
-my $curvesMaxBases = 500;
+my $curvesMaxBases = 250;
+#my $curvesMaxBases = 500;
 
 # Deformation Energy factor
 my $factor = 2.28;
@@ -129,7 +129,9 @@ if ($method == 1){
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			print "# STEP 2: Analysis on Bending...\n";
 			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
-			`python $bending/BendingAnalysis.py`;
+			if ($length < $curvesMaxBases){
+				`python $bending/BendingAnalysis.py`;
+			}
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -165,7 +167,7 @@ if ($method == 1){
 			`tleap -s -f $achome/dat/leap/cmd/leaprc.DNA.bsc1 -f tleap.in`;
 
 			open CPPIN,">cpptraj.in";
-            print CPPIN "parm input/traj_H.prmtop\n";
+	                print CPPIN "parm input/traj_H.prmtop\n";
 			print CPPIN "parmstrip \@H* \n";
 			print CPPIN "parmwrite out input/traj.prmtop\n";
 			print CPPIN "go\n";
@@ -307,14 +309,18 @@ elsif ($method == 2){
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
-			`python $bending/BendingAnalysis.py`;
+			if ($length < $curvesMaxBases){
+				`python $bending/BendingAnalysis.py`;
+			}
 
 			# STEP 3: Analysis on Circularity
 			mkdir("$out_folder/ANALYSIS/Circular") if (! -s "$out_folder/ANALYSIS/Circular");
 			print "# STEP 3: Analysis on Circularity...\n";
 			#`Rscript $bending/circle_analysis_webserver_save_csv.R $out_folder $out_folder/ANALYSIS/Circular > Circle.R.log 2>&1`;
 			`python $naflex/rgyr.py --top $traj_folder/struc.prmtop --input_traj $traj_folder/traj.dcd --output_file $out_folder/ANALYSIS/Circular/rg`;
-			`python $circular/CircularAnalysisWeb.py NAFlex/CURVES/NAFlex_canalOut_twist.ser`;
+			if ($length < $curvesMaxBases){
+				`python $circular/CircularAnalysisWeb.py NAFlex/CURVES/NAFlex_canalOut_twist.ser`;
+			}
 
 			# STEP 4: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
@@ -511,7 +517,9 @@ elsif ($method == 3){
 			#my $numStructs = 10; # HARDCODED!!!!! Need to be find out!!!
 			#`Rscript $bending/MuG_DNA_bending_ensemble.R $numStructs $out_folder $out_folder/ANALYSIS/Bending > Bending.R.log 2>&1`;
 			#`Rscript $bending/MuG_DNA_bending_extended_save_csv.R $out_folder $out_folder/ANALYSIS/Bending > newBending.R.log 2>&1`;
-			`python $bending/BendingAnalysis.py`;
+			if ($length < $curvesMaxBases){
+				`python $bending/BendingAnalysis.py`;
+			}
 
 			# STEP 3: Analysis on Elastic Energy
 			mkdir("$out_folder/ANALYSIS/ElasticEnergy") if (! -s "$out_folder/ANALYSIS/ElasticEnergy");
