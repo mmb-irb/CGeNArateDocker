@@ -256,13 +256,16 @@ sub exePtrajCM_Distances {
 
 	open IN,">ptraj.in";
 	print IN "trajin $crd\n";
-
+	
+	my %done;
 	foreach my $d (sort {$a <=> $b} keys %nucleotides){
 		foreach my $d2 (sort {$a <=> $b} keys %nucleotides){
 			#print IN "distance $d-$d2 :$d\@* :$d2\@* out NUC-NUC/$d-$d2.dat\n"
 			#print IN "distance $d-$d2 :$d\@C5 :$d2\@C5 out NUC-NUC/$d-$d2.dat\n"
-			print IN "distance $d-$d2 :$d\@C1' :$d2\@C1' out NUC-NUC/$d-$d2.dat\n"
+			print IN "distance $d-$d2 :$d\@C1' :$d2\@C1' out NUC-NUC/$d-$d2.dat\n" if (!$done{"$d-$d2"} and !$done{"$d2-$d"});
 			#print IN "distance $d-$d2 ::A:$d\@C1' ::B:$d2\@C1' out NUC-NUC/$d-$d2.dat\n"
+			$done{"$d-$d2"} = 1;
+			$done{"$d2-$d"} = 1;
 		}
 	}
 	print IN "analyze statistics all\n";

@@ -87,7 +87,7 @@ while(<INCONFIG>){
 
         my $gr = `grep ^MODEL pdb$pdb.ent`;
         if ($gr){
-            open OPDB,">$aux_folder/$pdb.pdb";
+            open OPDB,">$aux_folder/$pdb.tmp.pdb";
             open IPDB,"pdb$pdb.ent";
             while(<IPDB>){
 		if ($_ =~/ENDMDL/){
@@ -100,8 +100,13 @@ while(<INCONFIG>){
             `rm pdb$pdb.ent`;
         }
         else{
-            `mv pdb$pdb.ent $aux_folder/$pdb.pdb`;
+            `mv pdb$pdb.ent $aux_folder/$pdb.tmp.pdb`;
         }
+
+        # Assigning a single chain to each protein, even if they are multimeric
+        # Needed for PROT-PROT NGL analysis
+        `perl $scriptsFolder/addSingleChain.pl $aux_folder/$pdb.tmp.pdb $aux_folder/$pdb.pdb`;
+
         #print CONFIG "$ini_pos $protdnapath/$pdb.helprms $l\n";
         print CONFIG "$ini_pos $pdb $l\n";
 
