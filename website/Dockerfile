@@ -23,6 +23,9 @@ RUN chown -R www-data:root /var/www/.ssh
 # Configure apache
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
+# PHP init
+COPY custom.ini /usr/local/etc/php/conf.d/custom.ini
+
 # Perform search and replace using sed
 RUN sed -i "s/WEBSITE_INNER_PORT/${WEBSITE_INNER_PORT}/g" /etc/apache2/sites-available/000-default.conf
 
