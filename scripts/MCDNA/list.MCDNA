@@ -20,8 +20,6 @@
 1wtw 7 Hyperthermophile chromosomal protein SAC7D single mutant V26A in complex with DNA GCGATCGC 
 1yui 10 SOLUTION NMR STRUCTURE OF THE GAGA FACTOR/DNA COMPLEX, REGULARIZED MEAN STRUCTURE 
 1yuj 10 SOLUTION NMR STRUCTURE OF THE GAGA FACTOR/DNA COMPLEX, 50 STRUCTURES 
-1ztt 7 Netropsin bound to d(CTTAATTCGAATTAAG) in complex with MMLV RT catalytic fragment 
-1ztw 7 d(CTTAATTCGAATTAAG) complexed with Moloney Murine Leukemia Virus Reverse Transcriptase catalytic fragment 
 2a66 11 Human Liver Receptor Homologue DNA-Binding Domain (hLRH-1 DBD) in Complex with dsDNA from the hCYP7A1 Promoter 
 2ayg 17 Crystal structure of HPV6a E2 DNA binding domain bound to an 18 base pair DNA target 
 2c5r 7 The structure of phage phi29 replication organizer protein p16.7 in complex with double stranded DNA 
@@ -31,7 +29,6 @@
 2ezf 11 SOLUTION STRUCTURE OF A COMPLEX OF THE THIRD DNA BINDING DOMAIN OF HUMAN HMG-I(Y) BOUND TO DNA DODECAMER CONTAINING THE PRDII SITE OF THE INTERFERON-BETA PROMOTER, NMR, MINIMIZED AVERAGE STRUCTURE 
 2ezg 11 SOLUTION STRUCTURE OF A COMPLEX OF THE THIRD DNA BINDING DOMAIN OF HUMAN HMG-I(Y) BOUND TO DNA DODECAMER CONTAINING THE PRDII SITE OF THE INTERFERON-BETA PROMOTER, NMR, 35 STRUCTURES 
 2f8x 17 Crystal structure of activated Notch, CSL and MAML on HES-1 promoter DNA sequence 
-2fjx 7 RT29 bound to D(CTTGAATGCATTCAAG) in complex with MMLV RT catalytic fragment 
 2gig 13 Alteration of sequence specificity of the type II restriction endonuclease HINCII through an indirect readout mechanism 
 2gih 13 Q138F HincII bound to cognate DNA GTCGAC and Ca2+ 
 2gii 13 Q138F HincII bound to cognate DNA GTTAAC 
@@ -43,72 +40,37 @@
 2me6 13 NMR Structure of the homeodomain transcription factor Gbx1 from Homo sapiens in complex with the DNA sequence CGACTAATTAGTCG 
 2mf8 12 HADDOCK model of MyT1 F4F5 - DNA complex 
 2p7c 11 Solution structure of the bacillus licheniformis BlaI monomeric form in complex with the blaP half-operator. 
-2r2r 7 d(ATTAGTTATAACTAAT) complexed with MMLV RT catalytic fragment 
-2r2t 7 d(ATTTAGTTAACTAAAT) complexed with MMLV RT catalytic fragment 
 2wbs 6 Crystal structure of the zinc finger domain of Klf4 bound to its target DNA 
 2wbu 9 CRYSTAL STRUCTURE OF THE ZINC FINGER DOMAIN OF KLF4 BOUND TO ITS TARGET DNA 
-2ykg 9 Structural insights into RNA recognition by RIG-I 
-2z3x 10 Structure of a Protein-DNA Complex Essential for DNA Protection in Spore of Bacillus Species 
 3co6 15 Crystal Structure of FoxO1 DBD Bound to DBE1 DNA 
 3dw9 17 SgrAI with cognate DNA and manganese bound 
 3e41 13 Q138F HincII bound to GTCGAC and 5 mM Ca2+ 
 3e42 13 Q138F HincII bound to GTCGAC and Ca2+ (cocrystallized) 
 3e45 13 Q138F HincII bound to Noncognate DNA (GTGCAC) and Ca2+ 
 3e6c 12 CprK OCPA DNA Complex 
-3eqt 7 Crystal structure of human LGP2 C-terminal domain in complex with dsRNA 
-3fsi 7 Crystal structure of a trypanocidal 4,4'-Bis(imidazolinylamino)diphenylamine bound to DNA 
 3hqf 8 Crystal structure of restriction endonuclease EcoRII N-terminal effector-binding domain in complex with cognate DNA 
-3k4x 9 Eukaryotic Sliding Clamp PCNA Bound to DNA 
-3kmq 4 G62S mutant of foot-and-mouth disease virus RNA-polymerase in complex with a template- primer RNA, tetragonal structure 
-3l25 7 Crystal structure of Zaire Ebola VP35 interferon inhibitory domain bound to 8 bp dsRNA 
 3l2c 12 Crystal Structure of the DNA Binding Domain of FOXO4 Bound to DNA 
 3m4a 11 Crystal structure of a bacterial topoisomerase IB in complex with DNA reveals a secondary DNA binding site 
 3mkw 17 Structure of sopB(155-272)-18mer complex, I23 form 
 3mky 17 Structure of SopB(155-323)-18mer DNA complex, I23 form 
 3mln 21 DNA binding domain of Early B-cell Factor 1 (Ebf1) bound to DNA (crystal form II) 
 3n7b 15 SgrAI bound to secondary site DNA and Ca(II) 
-3n7q 11 Crystal structure of human mitochondrial mTERF fragment (aa 99-399) in complex with a 12-mer DNA encompassing the tRNALeu(UUR) binding sequence 
-3og8 13 Crystal structure of human RIG-I CTD bound to a 14-bp blunt-ended dsRNA 
-3ogu 5 DNA Polymerase beta mutant 5P20 complexed with 6bp of DNA 
 3ted 11 Crystal structure of the Chd1 DNA-binding domain in complex with a DNA duplex 
 3v79 17 Structure of human Notch1 transcription complex including CSL, RAM, ANK, and MAML-1 on HES-1 promoter DNA sequence 
 3vea 22 Crystal Structure of matP-matS23mer 
-3vyx 9 Structural insights into RISC assembly facilitated by dsRNA binding domains of human RNA helicase (DHX9) 
-3zd6 9 Snapshot 1 of RIG-I scanning on RNA duplex 
-3zd7 9 Snapshot 3 of RIG-I scanning on RNA duplex 
 3zhm 8 N-terminal domain of the CI repressor from bacteriophage TP901-1 in complex with the OL2 operator half-site 
-4b3p 20 Structures of HIV-1 RT and RNA-DNA Complex Reveal a Unique RT Conformation and Substrate Interface 
-4b3q 20 Structures of HIV-1 RT and RNA-DNA Complex Reveal a Unique RT Conformation and Substrate Interface
-4bpb 9 STRUCTURAL INSIGHTS INTO RNA RECOGNITION BY RIG-I 
-4fvu 7 Structural basis for the dsRNA specificity of the Lassa virus NP exonuclease 
 4g83 9 Crystal Structure of p73 DNA-Binding Domain Tetramer bound to a Full Response-Element 
-4g9z 3 Lassa nucleoprotein with dsRNA reveals novel mechanism for immune suppression 
-4gha 11 Crystal structure of Marburg virus VP35 RNA binding domain bound to 12-bp dsRNA 
-4ghl 17 Structural Basis for Marburg virus VP35 mediate immune evasion mechanisms 
-4hyk 7 Dbh Ternary Complex (substrates partially disordered) 
-4ig8 17 Structural basis for cytosolic double-stranded RNA surveillance by human OAS1 
 4iri 11 Auto-inhibited ERG Ets Domain-DNA Complex 
 4izz 20 Crystal Structure of Fischerella Transcription Factor HetR complexed with 21mer DNA target
 4jbm 11 Structure of murine DNA binding protein bound with ds DNA 
-4oq8 9 Satellite Tobacco Mosaic Virus Refined to 1.4 A Resolution using icosahedral constraints 
-4rwn 18 Crystal structure of the pre-reactive state of porcine OAS1
-4rwo 18 Crystal structure of the porcine OAS1 L149R mutant in complex with dsRNA and ApCpp in the AMP donor position 
-4s3n 18 Crystal structure of human OAS3 domain I in complex with dsRNA 
 4tnt 16 Structure of the human mineralocorticoid receptor in complex with DNA 
-4xpc 7 Crystal structure of 5'- CTTATAAATTTATAAG in a host-guest complex 
-4xq8 5 Human DNA polymerase lambda- MgdATP binary complex and complex with 6 paired DNA 
-5ca7 5 Human DNA polymerase lambda- MgdGTP binary and complex with 6 paired DNA 
 5cc0 15 AncSR2 - TSLP nGRE complex 
 5d8c 17 Crystal structure of HiNmlR, a MerR family regulator lacking the sensor domain, bound to promoter DNA
-5dv7 17 Crystal Structure of NF90 tandem dsRBDs with dsRNA 
 5e01 17 Crystal structure of HiNmlR, a MerR family regulator lacking the sensor domain, bound to palyndromic promoter DNA 
-5e3h 11 Structural Basis for RNA Recognition and Activation of RIG-I 
 5e3n 26 Crystal structure of Fis bound to 27bp DNA F31 (AAATTTGTAGGAATTTTCTGCAAATTT) 
 5e3o 26 Crystal structure of Fis bound to 27bp DNA F32 (AAATTTGGAGGAATTTTCTCCAAATTT) 
 5e69 15 Glucocorticoid receptor DNA binding domain - IL8 NF-kB response element complex 
 5e6a 15 Glucocorticoid receptor DNA binding domain - PLAU NF-kB response element complex
-5hrg 7 The crystal structure of AsfvPolX(D51N mutant):DNA4 binary complex 
-5jbj 11 Crystal structure of chicken LGP2 with 5'p 12-mer dsRNA at 3.6 A resolution 
 5ke6 9 mouse Klf4 ZnF1-3 and TpG/CpA sequence DNA complex structure 
 5ke9 9 mouse Klf4 E446P ZnF1-3 and TpG/CpA sequence DNA complex structure 
 5kea 9 mouse Klf4 ZnF1-3 (E446D) and CpG/CpG sequence DNA complex structure: Form I 
