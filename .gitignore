@@ -1,5 +1,6 @@
 .DS_Store
 db/
+db_backup/
 data/
 keys/
 logs/
