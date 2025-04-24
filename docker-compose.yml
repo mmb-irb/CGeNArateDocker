@@ -174,7 +174,7 @@ services:
     depends_on:
       - mongodb
     deploy:
-      replicas: ${DB_BACKUP_REPLICAS}   # Specify the number of replicas for Docker Swarm
+      replicas: ${DB_BACKUP_REPLICAS}
       resources:
         limits:
           cpus: ${DB_BACKUP_CPU_LIMIT}    # Specify the limit number of CPUs

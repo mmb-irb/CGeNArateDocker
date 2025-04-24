@@ -47,6 +47,10 @@ For this project, the choosen version of mongo is 6.
 
 Take into account that, in order to **preload databases** at the moment of deploying, a **second mongo container** named **mongo-seed**, is launched and then exited.
 
+### Database backup
+
+There is an specific service that performs a complete database backup every so often depending on a variable defined by the user.
+
 ## Prepare configuration files
 
 ### docker-compose.yml
@@ -131,6 +135,7 @@ services:
       - workflow_scripts:/scripts
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SSH_KEYS_VOLUME_PATH}:/keys
+      - ${LOGS_VOLUME_PATH}:/logs
     devices:
       - '/dev/fuse:/dev/fuse'
     cap_add:
@@ -201,11 +206,44 @@ services:
       - "./mongodb/${DB_COLLECTION_PRJ}.json:/${DB_COLLECTION_PRJ}.json:ro"
       - ./mongodb/import.sh:/import.sh:ro
       - ${SSH_KEYS_VOLUME_PATH}:/keys
+      - ${LOGS_VOLUME_PATH}:/logs
     entrypoint: ["bash", "/import.sh"]
     deploy:
       replicas: 1  # Ensures it runs only once
       restart_policy:
         condition: none  # Prevents auto-restart after completion
+
+  mongo-backup:
+    image: mongo
+    command: >
+      bash -c "sh /backup_script.sh"
+    volumes:
+      - ${DB_BACKUP_VOLUME_PATH}:/backup
+      - ./mongodb/backup_script.sh:/backup_script.sh:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_PORT: ${DB_OUTER_PORT}
+      MONGO_INITDB_DATABASE: ${DB_DATABASE}
+      DB_HOST: ${DB_HOST}
+      BACKUP_DIR: /backup
+      RETENTION_COUNT: ${DB_BACKUP_RETENTION_COUNT}
+      BACKUP_INTERVAL: ${DB_BACKUP_INTERVAL}
+    networks:
+      - dbnet
+    depends_on:
+      - mongodb
+    deploy:
+      replicas: ${DB_BACKUP_REPLICAS}
+      resources:
+        limits:
+          cpus: ${DB_BACKUP_CPU_LIMIT}    # Specify the limit number of CPUs
+          memory: ${DB_BACKUP_MEMORY_LIMIT}   # Specify the limit memory
+        reservations:
+          cpus: ${DB_BACKUP_CPU_RESERVATION}   # Specify the reserved number of CPUs
+          memory: ${DB_BACKUP_MEMORY_RESERVATION}   # Specify the reserved memory
+      restart_policy:
+        condition: on-failure   # Restart only on failure
 
 volumes:
   workflow_data:
@@ -278,6 +316,15 @@ An `.env` file must be created in the root folder. The file [`.env.git`](./.env.
 |DB_COLLECTION_WFS         | string  | collection for workflow steps (static)                               |
 |DB_COLLECTION_PRJ         | string  | collection where all the projects data will be stored                               |
 | &nbsp;
+|DB_BACKUP_VOLUME_PATH         | string  | path where the DB backups will be stored                               |
+|DB_BACKUP_RETENTION_COUNT         | number  | maximum number of DB backup copies to preserve                               |
+|DB_BACKUP_INTERVAL         | number  | interval in seconds between DB backups                               |
+|DB_BACKUP_REPLICAS         | number  | DB backup number of replicas to deploy                               |
+|DB_BACKUP_CPU_LIMIT         | string  | DB backup limit number of CPUs                                 |
+|DB_BACKUP_MEMORY_LIMIT         | string  | DB backup limit memory                                |
+|DB_BACKUP_CPU_RESERVATION         | string  | DB backup reserved number of CPUs                               |
+|DB_BACKUP_MEMORY_RESERVATION         | string  | DB backup reserved memory                               |
+| &nbsp;
 |MONGO_INITDB_ROOT_USERNAME         | string  | root user for the DB                               |
 |MONGO_INITDB_ROOT_PASSWORD         | string  | root password for the DB                               |
 
@@ -346,6 +393,18 @@ In the **volume** where the data is stored, create the following **/db folder**:
     /path/to/volume/db
 
 All the **MongoDB** data will be stored inside this volume.
+
+### MongoDB Backup
+
+The **path** assigned to the **DB_BACKUP_VOLUME_PATH** variable in the [`.env`](#env-file) file.
+
+In the **volume** where the data is stored, create the following **/db_backup folder**:
+
+    /path/to/volume/db_backup
+
+**Note: it's highly recommended to store the backups in a different volume where the MongoDB data is stored, so in case the main volume fails, the backups are safe in another one.** 
+
+All the **MongoDB** data backups will be stored inside this volume.
 
 ## Setup website code
 
@@ -749,6 +808,14 @@ Add one more replica to my_stack_website:
 
 ```sh
 docker service scale my_stack_website=2
+```
+
+## Stop a service:
+
+Stop my_stack_mongo-backup service:
+
+```sh
+docker service rm my_stack_mongo-backup
 ```
 
 ### Check service tasks
