@@ -49,7 +49,7 @@ Take into account that, in order to **preload databases** at the moment of deplo
 
 ### Database backup
 
-There is an specific service that performs a complete database backup every so often depending on a variable defined by the user.
+There is an specific service that performs a complete database backup every so often depending on a variable defined by the user. To disable this service, define **DB_BACKUP_REPLICAS** to 0.
 
 ## Prepare configuration files
 
